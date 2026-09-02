@@ -1,0 +1,176 @@
+---
+const {
+  title = 'Clinica Risorgimento — Podologia, posturologia e osteopatia a Forlì',
+  description = "Lo studio della Dott.ssa Laura Zanoni a Forlì: podologia, valutazioni posturali e biomeccaniche, plantari su misura, osteopatia e patologie dell'unghia. Su appuntamento: 0543 405479.",
+  path = '/',
+} = Astro.props;
+const canonical = new URL(path, Astro.site).href;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://clinicarisorgimento.it/#clinica",
+      "name": "Clinica Risorgimento",
+      "url": "https://clinicarisorgimento.it/",
+      "image": "https://clinicarisorgimento.it/img/sede-1.webp",
+      "logo": "https://clinicarisorgimento.it/img/logo.png",
+      "telephone": "+390543405479",
+      "vatID": "03658160407",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Viale Risorgimento 283",
+        "postalCode": "47121",
+        "addressLocality": "Forlì",
+        "addressRegion": "FC",
+        "addressCountry": "IT"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:30",
+        "closes": "19:30"
+      }],
+      "medicalSpecialty": "Podiatric",
+      "areaServed": [
+        { "@type": "City", "name": "Forlì" },
+        { "@type": "AdministrativeArea", "name": "Romagna" }
+      ],
+      "founder": { "@id": "https://clinicarisorgimento.it/#laura-zanoni" },
+      "employee": { "@id": "https://clinicarisorgimento.it/#laura-zanoni" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://clinicarisorgimento.it/#laura-zanoni",
+      "name": "Laura Zanoni",
+      "honorificPrefix": "Dott.ssa",
+      "jobTitle": "Podologa, posturologa, osteopata",
+      "worksFor": { "@id": "https://clinicarisorgimento.it/#clinica" },
+      "knowsAbout": [
+        "Podologia", "Posturologia", "Osteopatia",
+        "Patologie dell'unghia", "Plantari su misura", "Biomeccanica del passo"
+      ]
+    }
+  ]
+};
+---
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content="https://clinicarisorgimento.it/img/sede-1.webp" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</head>
+<body>
+  <slot />
+  <style is:global>
+    :root {
+      --blu: #0069a8;
+      --blu-scuro: #084f7a;
+      --inchiostro: #1d2733;
+      --grigio: #5b6673;
+      --carta: #ffffff;
+      --fondo: #f4f7f9;
+      --bordo: #e2e9ee;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+      color: var(--inchiostro);
+      background: var(--carta);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--blu); }
+    .contenitore { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
+
+    header.sito {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,.96); backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--bordo);
+    }
+    .barra { display: flex; align-items: center; justify-content: space-between; padding: .7rem 0; gap: 1rem; }
+    .barra img { height: 44px; width: auto; }
+    nav.principale { display: flex; gap: 1.4rem; align-items: center; flex-wrap: wrap; }
+    nav.principale a { color: var(--inchiostro); text-decoration: none; font-size: .95rem; font-weight: 500; }
+    nav.principale a:hover { color: var(--blu); }
+    .cta {
+      background: var(--blu); color: #fff !important; padding: .5rem 1.1rem;
+      border-radius: 999px; font-weight: 600; white-space: nowrap;
+    }
+    .cta:hover { background: var(--blu-scuro); }
+
+    .eroe { position: relative; color: #fff; overflow: hidden; background: var(--inchiostro); }
+    .eroe .sfondo { position: absolute; inset: 0; }
+    .eroe .sfondo img { width: 100%; height: 100%; object-fit: cover; opacity: .38; }
+    .eroe .contenuto { position: relative; padding: 6.5rem 0 6rem; max-width: 760px; }
+    .eroe .occhiello { text-transform: uppercase; letter-spacing: .18em; font-size: .8rem; opacity: .85; }
+    .eroe h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); line-height: 1.15; margin: .6rem 0 1rem; font-weight: 700; }
+    .eroe p { font-size: 1.1rem; max-width: 560px; opacity: .95; }
+    .eroe .azioni { margin-top: 1.8rem; display: flex; gap: .9rem; flex-wrap: wrap; }
+    .bottone-chiaro {
+      background: #fff; color: var(--blu-scuro); text-decoration: none;
+      padding: .7rem 1.4rem; border-radius: 999px; font-weight: 700;
+    }
+    .bottone-vuoto {
+      border: 1.5px solid rgba(255,255,255,.7); color: #fff; text-decoration: none;
+      padding: .7rem 1.4rem; border-radius: 999px; font-weight: 600;
+    }
+
+    section { padding: 4.5rem 0; }
+    section.alterna { background: var(--fondo); }
+    .occhiello-sez { color: var(--blu); text-transform: uppercase; letter-spacing: .16em; font-size: .8rem; font-weight: 700; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: .4rem 0 .9rem; }
+    .intro-sez { color: var(--grigio); max-width: 640px; }
+
+    .griglia-servizi {
+      margin-top: 2.4rem; display: grid; gap: 1.1rem;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    }
+    .servizio {
+      background: var(--carta); border: 1px solid var(--bordo); border-radius: 14px;
+      padding: 1.5rem 1.3rem;
+    }
+    .servizio img { height: 52px; width: 52px; object-fit: contain; margin-bottom: .9rem; }
+    .servizio h3 { font-size: 1.05rem; margin-bottom: .4rem; }
+    .servizio p { font-size: .92rem; color: var(--grigio); }
+
+    .galleria { margin-top: 2.2rem; display: grid; gap: .8rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    .galleria img { border-radius: 12px; aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+
+    .prenota { background: var(--blu); color: #fff; text-align: center; }
+    .prenota h2 { color: #fff; }
+    .prenota .numeri { font-size: 1.25rem; margin: 1rem 0 1.6rem; }
+    .prenota a.numero { color: #fff; font-weight: 700; text-decoration: none; }
+
+    .dove .colonne { display: grid; gap: 2.4rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 2rem; }
+    .dove h3 { margin-bottom: .6rem; font-size: 1.05rem; }
+    .dove table { border-collapse: collapse; }
+    .dove td { padding: .18rem .9rem .18rem 0; color: var(--grigio); }
+    .dove td:first-child { color: var(--inchiostro); font-weight: 500; }
+
+    footer.sito {
+      background: var(--inchiostro); color: #aeb8c2; padding: 2.6rem 0; font-size: .88rem;
+    }
+    footer.sito img { height: 40px; margin-bottom: 1rem; }
+    footer.sito a { color: #dbe3ea; }
+    .legale { margin-top: .8rem; }
+
+    @media (max-width: 700px) {
+      nav.principale a:not(.cta) { display: none; }
+      .eroe .contenuto { padding: 4.5rem 0 4rem; }
+    }
+  </style>
+</body>
+</html>

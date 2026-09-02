@@ -1,0 +1,128 @@
+---
+import Base from '../layouts/Base.astro';
+
+const servizi = [
+  { icona: '/img/icona-osteopatia.webp', nome: 'Osteopatia',
+    testo: "L'osteopatia è una terapia manuale che cerca di ristabilire l'equilibrio del corpo per migliorare la salute e il benessere." },
+  { icona: '/img/icona-solette.webp', nome: 'Solette e plantari',
+    testo: "Solette posturali o plantari sono dispositivi medici che vengono realizzati per compensare, correggere o attenuare sintomi legati a problematiche posturali generalizzate o strutturali del piede." },
+  { icona: '/img/icona-podologia.webp', nome: 'Podologia',
+    testo: "La podologia è lo studio dei piedi e dei problemi ad essi correlati. Si occupa di curare dolori, infezioni e malformazioni del piede." },
+  { icona: '/img/icona-posturologia.webp', nome: 'Posturologia',
+    testo: "La posturologia è lo studio della postura: mira a correggere le disfunzioni posturali per prevenire dolori e migliorare il benessere." },
+  { icona: '/img/icona-gravidanza.webp', nome: 'Trattamenti gravidanza',
+    testo: "I trattamenti osteopatici per le donne in gravidanza aiutano a gestire i cambiamenti corporei, alleviare il dolore e prepararsi al parto." },
+  { icona: '/img/icona-psicomotricita.webp', nome: 'Psicomotricità',
+    testo: "La psicomotricità è un approccio terapeutico che usa il movimento e il gioco per favorire lo sviluppo cognitivo ed emozionale del bambino." },
+  { icona: '/img/icona-motorie.webp', nome: 'Ginnastica posturale',
+    testo: "La ginnastica posturale è una serie di esercizi mirati a migliorare la consapevolezza e l'allineamento del corpo, aiutando a prevenire dolori e problemi posturali." },
+  { icona: '/img/icona-fisioterapia.webp', nome: 'Fisioterapia',
+    testo: "La fisioterapia utilizza metodi fisici come esercizi e massaggi per aiutare a curare lesioni e a migliorare la mobilità e la forza." },
+];
+const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sede-4.webp','/img/sede-5.webp','/img/sede-6.jpeg'];
+---
+<Base path="/">
+  <header class="sito">
+    <div class="contenitore barra">
+      <a href="/" aria-label="Clinica Risorgimento"><img src="/img/logo.png" alt="Clinica Risorgimento" /></a>
+      <nav class="principale" aria-label="Principale">
+        <a href="#servizi">Servizi</a>
+        <a href="#la-clinica">La clinica</a>
+        <a href="#dove-siamo">Dove siamo e orari</a>
+        <a class="cta" href="tel:+390543405479">Prenota: 0543 405479</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="eroe">
+      <div class="sfondo"><img src="/img/sede-1.webp" alt="" fetchpriority="high" /></div>
+      <div class="contenitore">
+        <div class="contenuto">
+          <p class="occhiello">Clinica Risorgimento · Forlì</p>
+          <h1>Podologia, posturologia e osteopatia a Forlì</h1>
+          <p>Lo studio della Dott.ssa Laura Zanoni: trattamenti personalizzati per il benessere del piede, della postura e del movimento, in un unico spazio dedicato.</p>
+          <div class="azioni">
+            <a class="bottone-chiaro" href="tel:+390543405479">Chiama ora</a>
+            <a class="bottone-vuoto" href="https://wa.me/393462172234">Scrivi su WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="servizi">
+      <div class="contenitore">
+        <p class="occhiello-sez">I nostri servizi</p>
+        <h2>Trattamenti personalizzati per il proprio benessere</h2>
+        <p class="intro-sez">La Clinica Risorgimento è specializzata nel fornire una gamma completa di servizi all'avanguardia, tra cui la podologia, l'osteopatia, la posturologia e la realizzazione di solette e plantari su misura. Ci occupiamo di analisi posturale completa, utilizzando le più recenti tecnologie per fornire ai nostri pazienti le soluzioni migliori per ristabilire l'equilibrio corporeo.</p>
+        <div class="griglia-servizi">
+          {servizi.map((s) => (
+            <div class="servizio">
+              <img src={s.icona} alt="" loading="lazy" />
+              <h3>{s.nome}</h3>
+              <p>{s.testo}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="la-clinica" class="alterna">
+      <div class="contenitore">
+        <p class="occhiello-sez">Ambiente</p>
+        <h2>La nostra clinica</h2>
+        <p class="intro-sez">Ogni trattamento in una clinica come la Clinica Risorgimento richiede il suo spazio dedicato per garantire l'efficacia, la privacy e la sicurezza del paziente.</p>
+        <div class="galleria">
+          {foto.map((f, i) => (
+            <img src={f} alt={`Clinica Risorgimento, gli ambienti dello studio di Forlì — ${i + 1}`} loading="lazy" />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="prenota" id="prenota">
+      <div class="contenitore">
+        <h2>Prenota subito un appuntamento</h2>
+        <p class="numeri">
+          Chiamaci al <a class="numero" href="tel:+393462172234">346 217 22 34</a>&ensp;oppure al fisso&ensp;<a class="numero" href="tel:+390543405479">0543 40 54 79</a>
+        </p>
+        <a class="bottone-chiaro" href="tel:+390543405479">Chiama ora</a>
+      </div>
+    </section>
+
+    <section class="dove" id="dove-siamo">
+      <div class="contenitore">
+        <p class="occhiello-sez">Dove trovarci</p>
+        <h2>Dove siamo e orari</h2>
+        <div class="colonne">
+          <div>
+            <h3>Indirizzo</h3>
+            <p>Clinica Risorgimento<br />Viale Risorgimento 283<br />47121 Forlì (FC)</p>
+            <p style="margin-top:.8rem;"><a href="https://www.google.com/maps/search/?api=1&query=Clinica+Risorgimento+Viale+Risorgimento+283+Forl%C3%AC" rel="noopener">Apri in Google Maps</a></p>
+          </div>
+          <div>
+            <h3>Orari</h3>
+            <table>
+              <tr><td>Lunedì – Venerdì</td><td>8.30 – 19.30</td></tr>
+              <tr><td>Sabato</td><td>chiuso</td></tr>
+              <tr><td>Domenica</td><td>chiuso</td></tr>
+            </table>
+          </div>
+          <div>
+            <h3>Contatti</h3>
+            <p>Telefono: <a href="tel:+390543405479">0543 405479</a><br />
+            WhatsApp: <a href="https://wa.me/393462172234" rel="noopener">346 2172234</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sito">
+    <div class="contenitore">
+      <img src="/img/logo-bianco.png" alt="Clinica Risorgimento" />
+      <p>Clinica Risorgimento · Viale Risorgimento 283, 47121 Forlì (FC) · <a href="tel:+390543405479">0543 405479</a></p>
+      <p class="legale">Direzione: Dott.ssa Laura Zanoni · P.IVA 03658160407 · <a href="/privacy">Privacy</a> · © 2026 Clinica Risorgimento</p>
+    </div>
+  </footer>
+</Base>
