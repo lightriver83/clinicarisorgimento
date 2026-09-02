@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+const { titolo, titoloSeo, descrizione, path, icona } = Astro.props;
+const schemaExtra = [{
+  "@type": "MedicalWebPage",
+  "@id": `https://clinicarisorgimento.it${path}#pagina`,
+  "url": `https://clinicarisorgimento.it${path}`,
+  "name": titoloSeo,
+  "about": { "@id": "https://clinicarisorgimento.it/#clinica" },
+  "inLanguage": "it-IT"
+}];
+---
+<Base title={titoloSeo} description={descrizione} path={path} schemaExtra={schemaExtra}>
+  <Header attiva="servizi" />
+  <main>
+    <div class="testata-pagina">
+      <div class="contenitore">
+        <p class="briciole"><a href="/">Clinica Risorgimento</a> › <a href="/servizi">Servizi</a> › {titolo}</p>
+        <h1>{titolo}</h1>
+        <p class="sottotitolo">{descrizione}</p>
+      </div>
+    </div>
+    <div class="contenitore articolo">
+      <slot />
+      <p class="nota">Le informazioni di questa pagina hanno carattere informativo e non sostituiscono una visita. Le prestazioni sono erogate da professionisti abilitati, ciascuno nell'ambito delle proprie competenze.</p>
+      <div class="riquadro-prenota">
+        <div><strong>Prenotare una visita</strong><span>Su appuntamento, dal lunedì al venerdì 8.30–19.30 · anche su WhatsApp</span></div>
+        <a class="cta" href="tel:+390543405479">Chiama: 0543 405479</a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>

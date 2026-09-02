@@ -1,14 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const servizi = [
-  { icona: '/img/icona-osteopatia.webp', nome: 'Osteopatia',
+  { icona: '/img/icona-osteopatia.webp', nome: 'Osteopatia', href: '/servizi/osteopatia',
     testo: "L'osteopatia è una terapia manuale che cerca di ristabilire l'equilibrio del corpo per migliorare la salute e il benessere." },
-  { icona: '/img/icona-solette.webp', nome: 'Solette e plantari',
+  { icona: '/img/icona-solette.webp', nome: 'Solette e plantari', href: '/servizi/plantari-su-misura',
     testo: "Solette posturali o plantari sono dispositivi medici che vengono realizzati per compensare, correggere o attenuare sintomi legati a problematiche posturali generalizzate o strutturali del piede." },
-  { icona: '/img/icona-podologia.webp', nome: 'Podologia',
+  { icona: '/img/icona-podologia.webp', nome: 'Podologia', href: '/servizi/podologia',
     testo: "La podologia è lo studio dei piedi e dei problemi ad essi correlati. Si occupa di curare dolori, infezioni e malformazioni del piede." },
-  { icona: '/img/icona-posturologia.webp', nome: 'Posturologia',
+  { icona: '/img/icona-posturologia.webp', nome: 'Posturologia', href: '/servizi/posturologia',
     testo: "La posturologia è lo studio della postura: mira a correggere le disfunzioni posturali per prevenire dolori e migliorare il benessere." },
   { icona: '/img/icona-gravidanza.webp', nome: 'Trattamenti gravidanza',
     testo: "I trattamenti osteopatici per le donne in gravidanza aiutano a gestire i cambiamenti corporei, alleviare il dolore e prepararsi al parto." },
@@ -22,17 +24,7 @@ const servizi = [
 const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sede-4.webp','/img/sede-5.webp','/img/sede-6.jpeg'];
 ---
 <Base path="/">
-  <header class="sito">
-    <div class="contenitore barra">
-      <a href="/" aria-label="Clinica Risorgimento"><img src="/img/logo.png" alt="Clinica Risorgimento" /></a>
-      <nav class="principale" aria-label="Principale">
-        <a href="#servizi">Servizi</a>
-        <a href="#la-clinica">La clinica</a>
-        <a href="#dove-siamo">Dove siamo e orari</a>
-        <a class="cta" href="tel:+390543405479">Prenota: 0543 405479</a>
-      </nav>
-    </div>
-  </header>
+  <Header />
 
   <main>
     <div class="eroe">
@@ -56,7 +48,14 @@ const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sed
         <h2>Trattamenti personalizzati per il proprio benessere</h2>
         <p class="intro-sez">La Clinica Risorgimento è specializzata nel fornire una gamma completa di servizi all'avanguardia, tra cui la podologia, l'osteopatia, la posturologia e la realizzazione di solette e plantari su misura. Ci occupiamo di analisi posturale completa, utilizzando le più recenti tecnologie per fornire ai nostri pazienti le soluzioni migliori per ristabilire l'equilibrio corporeo.</p>
         <div class="griglia-servizi">
-          {servizi.map((s) => (
+          {servizi.map((s) => s.href ? (
+            <a class="servizio scheda" href={s.href}>
+              <img src={s.icona} alt="" loading="lazy" />
+              <h3>{s.nome}</h3>
+              <p>{s.testo}</p>
+              <p style="margin-top:.6rem;color:var(--blu);font-size:.9rem;font-weight:600;">Scopri di più →</p>
+            </a>
+          ) : (
             <div class="servizio">
               <img src={s.icona} alt="" loading="lazy" />
               <h3>{s.nome}</h3>
@@ -77,6 +76,18 @@ const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sed
             <img src={f} alt={`Clinica Risorgimento, gli ambienti dello studio di Forlì — ${i + 1}`} loading="lazy" />
           ))}
         </div>
+      </div>
+    </section>
+
+    <section id="direzione">
+      <div class="contenitore direzione">
+        <div>
+          <p class="occhiello-sez">Direzione clinica</p>
+          <h2>Dott.ssa Laura Zanoni</h2>
+          <p class="intro-sez">Podologa dal 2006, posturologa clinica, osteopata, laureata in Podiatria in Spagna nel 2025. Docente all'Istituto Zaccagnini. Segue personalmente le valutazioni iniziali e i casi complessi, e firma i protocolli con cui lavora tutta la clinica.</p>
+          <p style="margin-top:1rem;"><a href="/laura-zanoni" style="font-weight:600;">Chi è Laura Zanoni →</a></p>
+        </div>
+        <img src="/img/sede-3.webp" alt="Clinica Risorgimento, la sala visite" loading="lazy" style="border-radius:14px;aspect-ratio:4/3;object-fit:cover;" />
       </div>
     </section>
 
@@ -118,11 +129,5 @@ const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sed
     </section>
   </main>
 
-  <footer class="sito">
-    <div class="contenitore">
-      <img src="/img/logo-bianco.png" alt="Clinica Risorgimento" />
-      <p>Clinica Risorgimento · Viale Risorgimento 283, 47121 Forlì (FC) · <a href="tel:+390543405479">0543 405479</a></p>
-      <p class="legale">Direzione: Dott.ssa Laura Zanoni · P.IVA 03658160407 · <a href="/privacy">Privacy</a> · © 2026 Clinica Risorgimento</p>
-    </div>
-  </footer>
+  <Footer />
 </Base>

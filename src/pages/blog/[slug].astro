@@ -1,0 +1,45 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const articoli = await getCollection('blog', ({ data }) => !data.draft);
+  return articoli.map((a) => ({ params: { slug: a.id }, props: { articolo: a } }));
+}
+const { articolo } = Astro.props;
+const { Content } = await render(articolo);
+const fmt = (d: Date) => d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+const schemaExtra = [{
+  "@type": "MedicalWebPage",
+  "@id": `https://clinicarisorgimento.it/blog/${articolo.id}#pagina`,
+  "url": `https://clinicarisorgimento.it/blog/${articolo.id}`,
+  "headline": articolo.data.title,
+  "description": articolo.data.description,
+  "datePublished": articolo.data.pubDate.toISOString(),
+  "dateModified": (articolo.data.updatedDate ?? articolo.data.pubDate).toISOString(),
+  "author": { "@id": "https://clinicarisorgimento.it/#laura-zanoni" },
+  "reviewedBy": { "@id": "https://clinicarisorgimento.it/#laura-zanoni" },
+  "publisher": { "@id": "https://clinicarisorgimento.it/#clinica" },
+  "inLanguage": "it-IT"
+}];
+---
+<Base title={`${articolo.data.title} — Clinica Risorgimento`} description={articolo.data.description} path={`/blog/${articolo.id}`} schemaExtra={schemaExtra}>
+  <Header />
+  <main>
+    <div class="testata-pagina">
+      <div class="contenitore">
+        <p class="briciole"><a href="/">Clinica Risorgimento</a> › <a href="/blog">Approfondimenti</a></p>
+        <h1>{articolo.data.title}</h1>
+        <p class="sottotitolo">{articolo.data.description}</p>
+        <p class="briciole" style="margin-top:.8rem;">{fmt(articolo.data.pubDate)} · {articolo.data.author}</p>
+      </div>
+    </div>
+    <div class="contenitore articolo">
+      <Content />
+      <p class="nota">Contenuto informativo, redatto e revisionato dalla Dott.ssa Laura Zanoni. Non sostituisce una visita.</p>
+    </div>
+  </main>
+  <Footer />
+</Base>

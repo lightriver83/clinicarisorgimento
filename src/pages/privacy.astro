@@ -1,17 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 <Base
   title="Privacy — Clinica Risorgimento"
   description="Informativa sulla privacy del sito clinicarisorgimento.it."
   path="/privacy"
 >
-  <header class="sito">
-    <div class="contenitore barra">
-      <a href="/" aria-label="Clinica Risorgimento"><img src="/img/logo.png" alt="Clinica Risorgimento" /></a>
-      <nav class="principale"><a href="/">← Torna al sito</a></nav>
-    </div>
-  </header>
+  <Header />
   <main>
     <section>
       <div class="contenitore" style="max-width:760px;">
@@ -25,9 +22,5 @@ import Base from '../layouts/Base.astro';
       </div>
     </section>
   </main>
-  <footer class="sito">
-    <div class="contenitore">
-      <p>Clinica Risorgimento · Viale Risorgimento 283, 47121 Forlì (FC) · P.IVA 03658160407 · © 2026</p>
-    </div>
-  </footer>
+  <Footer />
 </Base>

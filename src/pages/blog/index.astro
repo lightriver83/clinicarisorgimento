@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const articoli = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const vuoto = articoli.length === 0;
+const fmt = (d: Date) => d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base
+  title="Approfondimenti — Clinica Risorgimento"
+  description="Articoli e approfondimenti della Dott.ssa Laura Zanoni su piede, postura e movimento."
+  path="/blog"
+  noindex={vuoto}
+>
+  <Header />
+  <main>
+    <div class="testata-pagina">
+      <div class="contenitore">
+        <p class="briciole"><a href="/">Clinica Risorgimento</a> › Approfondimenti</p>
+        <h1>Approfondimenti</h1>
+        <p class="sottotitolo">Piede, postura e movimento, spiegati da chi li tratta ogni giorno.</p>
+      </div>
+    </div>
+    <div class="contenitore articolo">
+      {vuoto ? (
+        <p>I primi approfondimenti sono in preparazione. Nel frattempo, le informazioni sui servizi sono <a href="/servizi">qui</a>.</p>
+      ) : (
+        <ul style="list-style:none;margin:0;padding:0;">
+          {articoli.map((a) => (
+            <li style="padding:1.2rem 0;border-bottom:1px solid var(--bordo);">
+              <p style="color:var(--grigio);font-size:.85rem;margin:0 0 .3rem;">{fmt(a.data.pubDate)}</p>
+              <h2 style="margin:0 0 .4rem;font-size:1.25rem;"><a href={`/blog/${a.id}`} style="text-decoration:none;">{a.data.title}</a></h2>
+              <p style="margin:0;color:var(--grigio);">{a.data.description}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </main>
+  <Footer />
+</Base>

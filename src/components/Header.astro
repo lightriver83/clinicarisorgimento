@@ -1,0 +1,19 @@
+---
+const { attiva = '' } = Astro.props;
+const voci = [
+  { href: '/servizi', label: 'Servizi', key: 'servizi' },
+  { href: '/laura-zanoni', label: 'Chi è Laura Zanoni', key: 'laura' },
+  { href: '/#dove-siamo', label: 'Dove siamo e orari', key: 'dove' },
+];
+---
+<header class="sito">
+  <div class="contenitore barra">
+    <a href="/" aria-label="Clinica Risorgimento"><img src="/img/logo.png" alt="Clinica Risorgimento" /></a>
+    <nav class="principale" aria-label="Principale">
+      {voci.map((v) => (
+        <a href={v.href} aria-current={attiva === v.key ? 'page' : undefined}>{v.label}</a>
+      ))}
+      <a class="cta" href="tel:+390543405479">Prenota: 0543 405479</a>
+    </nav>
+  </div>
+</header>

@@ -3,10 +3,12 @@ const {
   title = 'Clinica Risorgimento — Podologia, posturologia e osteopatia a Forlì',
   description = "Lo studio della Dott.ssa Laura Zanoni a Forlì: podologia, valutazioni posturali e biomeccaniche, plantari su misura, osteopatia e patologie dell'unghia. Su appuntamento: 0543 405479.",
   path = '/',
+  noindex = false,
+  schemaExtra = null,
 } = Astro.props;
 const canonical = new URL(path, Astro.site).href;
 
-const schema = {
+const schemaBase = {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -54,6 +56,9 @@ const schema = {
     }
   ]
 };
+const schema = schemaExtra
+  ? { ...schemaBase, "@graph": [...schemaBase["@graph"], ...schemaExtra] }
+  : schemaBase;
 ---
 <html lang="it">
 <head>
@@ -69,6 +74,7 @@ const schema = {
   <meta property="og:url" content={canonical} />
   <meta property="og:image" content="https://clinicarisorgimento.it/img/sede-1.webp" />
   <meta property="og:locale" content="it_IT" />
+  {noindex && <meta name="robots" content="noindex, follow" />}
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </head>
 <body>
@@ -166,6 +172,38 @@ const schema = {
     footer.sito img { height: 40px; margin-bottom: 1rem; }
     footer.sito a { color: #dbe3ea; }
     .legale { margin-top: .8rem; }
+
+    /* pagine interne */
+    .testata-pagina { background: var(--fondo); padding: 3.2rem 0 2.6rem; border-bottom: 1px solid var(--bordo); }
+    .testata-pagina h1 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); line-height: 1.2; margin: .4rem 0 .6rem; }
+    .testata-pagina .sottotitolo { color: var(--grigio); max-width: 640px; font-size: 1.05rem; }
+    .briciole { font-size: .85rem; color: var(--grigio); }
+    .briciole a { color: var(--grigio); text-decoration: none; }
+    .briciole a:hover { color: var(--blu); }
+    .articolo { max-width: 720px; padding: 3rem 0 4rem; }
+    .articolo h2 { font-size: 1.35rem; margin: 2rem 0 .6rem; }
+    .articolo h3 { font-size: 1.08rem; margin: 1.4rem 0 .4rem; }
+    .articolo p { margin: 0 0 1rem; }
+    .articolo ul { margin: 0 0 1rem 1.2rem; }
+    .articolo li { margin-bottom: .35rem; }
+    .articolo .nota { color: var(--grigio); font-size: .92rem; border-left: 3px solid var(--bordo); padding-left: .9rem; margin: 1.4rem 0; }
+    .riquadro-prenota {
+      background: var(--fondo); border: 1px solid var(--bordo); border-radius: 14px;
+      padding: 1.4rem 1.5rem; margin-top: 2.4rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: space-between;
+    }
+    .riquadro-prenota strong { display: block; margin-bottom: .2rem; }
+    .riquadro-prenota span { color: var(--grigio); font-size: .92rem; }
+    .credenziali { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: .6rem; }
+    .credenziali li { display: grid; grid-template-columns: 5.2rem 1fr; gap: .8rem; padding: .7rem 0; border-bottom: 1px solid var(--bordo); }
+    .credenziali .anno { color: var(--blu); font-weight: 700; font-variant-numeric: tabular-nums; }
+    .griglia-schede { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); margin-top: 2rem; }
+    .scheda { background: var(--carta); border: 1px solid var(--bordo); border-radius: 14px; padding: 1.5rem 1.4rem; text-decoration: none; color: inherit; display: block; }
+    .scheda:hover { border-color: var(--blu); }
+    .scheda img { height: 48px; width: 48px; object-fit: contain; margin-bottom: .8rem; }
+    .scheda h3 { font-size: 1.08rem; margin-bottom: .35rem; color: var(--blu-scuro); }
+    .scheda p { font-size: .92rem; color: var(--grigio); }
+    .direzione { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; align-items: center; }
+    @media (max-width: 760px) { .direzione { grid-template-columns: 1fr; } .credenziali li { grid-template-columns: 4.2rem 1fr; } }
 
     @media (max-width: 700px) {
       nav.principale a:not(.cta) { display: none; }

@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const schemaExtra = [{
+  "@type": "ProfilePage",
+  "@id": "https://clinicarisorgimento.it/laura-zanoni#pagina",
+  "url": "https://clinicarisorgimento.it/laura-zanoni",
+  "name": "Dott.ssa Laura Zanoni — podologa, posturologa, osteopata a Forlì",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://clinicarisorgimento.it/#laura-zanoni",
+    "name": "Laura Zanoni",
+    "honorificPrefix": "Dott.ssa",
+    "jobTitle": "Podologa, posturologa, osteopata",
+    "description": "Podologa dal 2006, posturologa clinica, osteopata. Laureata in Podiatria in Spagna (2025). Docente all'Istituto Zaccagnini. Dal 2012 guida il proprio studio a Forlì, oggi Clinica Risorgimento.",
+    "worksFor": { "@id": "https://clinicarisorgimento.it/#clinica" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Università degli Studi di Perugia" },
+      { "@type": "CollegeOrUniversity", "name": "Università di Pisa" },
+      { "@type": "EducationalOrganization", "name": "CRESO — Centro Ricerche e Studi in Osteopatia" }
+    ],
+    "knowsAbout": [
+      "Podologia", "Posturologia clinica", "Osteopatia", "Podiatria",
+      "Biomeccanica del passo", "Plantari su misura", "Patologie dell'unghia",
+      "Ecografia muscoloscheletrica"
+    ]
+  }
+}];
+---
+<Base
+  title="Dott.ssa Laura Zanoni — podologa, posturologa, osteopata a Forlì"
+  description="Chi è Laura Zanoni: podologa dal 2006, Master in Posturologia clinica, osteopata, laureata in Podiatria in Spagna nel 2025, docente all'Istituto Zaccagnini. Direzione clinica della Clinica Risorgimento di Forlì."
+  path="/laura-zanoni"
+  schemaExtra={schemaExtra}
+>
+  <Header attiva="laura" />
+  <main>
+    <div class="testata-pagina">
+      <div class="contenitore">
+        <p class="briciole"><a href="/">Clinica Risorgimento</a> › Chi è Laura Zanoni</p>
+        <h1>Dott.ssa Laura Zanoni</h1>
+        <p class="sottotitolo">Podologa, posturologa clinica, osteopata. Direzione clinica della Clinica Risorgimento, Forlì.</p>
+      </div>
+    </div>
+
+    <div class="contenitore articolo">
+      <p>Laura Zanoni lavora sul piede e sulla postura dal 2006. Ha aperto il proprio studio a Forlì nel 2012 e lo ha fatto crescere fino all'attuale Clinica Risorgimento, di cui cura la direzione clinica: i protocolli di visita, gli standard di refertazione e la qualità del lavoro di chi collabora con lei.</p>
+
+      <p>Il suo modo di lavorare parte da un principio semplice: <strong>far vedere al paziente ciò che vede lei</strong>. Ogni valutazione si appoggia a strumenti — esame baropodometrico, analisi del passo, imaging — e si chiude con un referto chiaro, che il paziente porta a casa e può mostrare al proprio medico. Non si prescrive un trattamento senza prima aver misurato; e quando non serve alcun trattamento, lo si dice.</p>
+
+      <h2>Formazione</h2>
+      <ul class="credenziali">
+        <li><span class="anno">2006</span><span>Laurea in <strong>Podologia</strong>, Università degli Studi di Perugia</span></li>
+        <li><span class="anno">2011</span><span><strong>Master in Posturologia clinica</strong>, Università di Pisa</span></li>
+        <li><span class="anno">2018</span><span>Diploma in <strong>Osteopatia</strong>, percorso sessennale, CRESO</span></li>
+        <li><span class="anno">2025</span><span>Laurea in <strong>Podiatria</strong>, conseguita in Spagna</span></li>
+        <li><span class="anno">—</span><span>Formazione in <strong>ecografia muscoloscheletrica</strong></span></li>
+      </ul>
+
+      <h2>Docenza</h2>
+      <p>È docente all'<strong>Istituto Zaccagnini</strong> di Bologna, dove insegna a chi si sta formando nella professione. La didattica è parte del suo lavoro clinico, non un'attività a lato: ciò che insegna è ciò che applica in studio, e viceversa.</p>
+
+      <h2>Di cosa si occupa</h2>
+      <p>Alla Clinica Risorgimento segue personalmente le <strong>valutazioni iniziali</strong> — la parte in cui si decide che cosa fare — e i <strong>casi complessi</strong>. Le aree di lavoro sono la podologia, la posturologia e la biomeccanica del passo, i plantari su misura, le patologie dell'unghia e l'osteopatia. Le informazioni su ciascun servizio sono nella <a href="/servizi">pagina dei servizi</a>.</p>
+
+      <p class="nota">Le prestazioni sanitarie della clinica sono erogate da professionisti abilitati, ciascuno nell'ambito delle proprie competenze e del proprio titolo. Le informazioni di questa pagina hanno carattere informativo e non sostituiscono una visita.</p>
+
+      <div class="riquadro-prenota">
+        <div><strong>Prenotare una visita</strong><span>Su appuntamento, dal lunedì al venerdì 8.30–19.30</span></div>
+        <a class="cta" href="tel:+390543405479">Chiama: 0543 405479</a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>

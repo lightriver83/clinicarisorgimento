@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const servizi = [
+  { href: '/servizi/podologia', icona: '/img/icona-podologia.webp', nome: 'Podologia',
+    testo: 'Cura del piede: dolori, ipercheratosi, patologie dell\'unghia, verruche. Valutazione e trattamento podologico.' },
+  { href: '/servizi/posturologia', icona: '/img/icona-posturologia.webp', nome: 'Posturologia e biomeccanica',
+    testo: 'Valutazione posturale ed esame baropodometrico: come il piede e la postura si influenzano a vicenda.' },
+  { href: '/servizi/plantari-su-misura', icona: '/img/icona-solette.webp', nome: 'Plantari e solette su misura',
+    testo: 'Dispositivi realizzati sulla valutazione clinica e strumentale, con controllo dopo la consegna.' },
+  { href: '/servizi/osteopatia', icona: '/img/icona-osteopatia.webp', nome: 'Osteopatia',
+    testo: 'Trattamento manuale per ristabilire l\'equilibrio del corpo, in relazione con il lavoro sul piede e sulla postura.' },
+];
+const altri = ['Trattamenti in gravidanza', 'Psicomotricità', 'Ginnastica posturale', 'Fisioterapia'];
+---
+<Base
+  title="Servizi — Clinica Risorgimento, Forlì"
+  description="Podologia, posturologia e biomeccanica, plantari su misura, osteopatia: i servizi della Clinica Risorgimento di Forlì, su appuntamento."
+  path="/servizi"
+>
+  <Header attiva="servizi" />
+  <main>
+    <div class="testata-pagina">
+      <div class="contenitore">
+        <p class="briciole"><a href="/">Clinica Risorgimento</a> › Servizi</p>
+        <h1>I servizi della clinica</h1>
+        <p class="sottotitolo">Ogni percorso parte da una valutazione: si misura prima, si tratta dopo. Le visite sono su appuntamento.</p>
+      </div>
+    </div>
+    <div class="contenitore" style="padding: 2.6rem 1.25rem 4rem;">
+      <div class="griglia-schede">
+        {servizi.map((s) => (
+          <a class="scheda" href={s.href}>
+            <img src={s.icona} alt="" loading="lazy" />
+            <h3>{s.nome}</h3>
+            <p>{s.testo}</p>
+          </a>
+        ))}
+      </div>
+      <p style="margin-top:2.2rem;color:var(--grigio);font-size:.92rem;">Presso la clinica sono disponibili anche: {altri.join(' · ')}. Per informazioni: <a href="tel:+390543405479">0543 405479</a>.</p>
+    </div>
+  </main>
+  <Footer />
+</Base>
