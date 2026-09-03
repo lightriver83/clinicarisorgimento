@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+const bozza = true;
+const pagine = [
+  { href: '/problemi/unghia-incarnita', nome: 'Unghia incarnita', testo: 'Dolore al bordo dell\'alluce, rossore, a volte pus. Cosa fare nei primi giorni e quando smettere di curarla da soli.' },
+  { href: '/problemi/giradito', nome: 'Giradito: pus vicino all\'unghia', testo: 'Dito rosso e gonfio che pulsa, con la bollicina gialla. Le prime 48 ore, cosa non fare, quando serve il medico.' },
+  { href: '/problemi/unghia-nera', nome: 'Unghia nera', testo: 'Dopo una corsa, una scarpa stretta o un colpo. Cosa succede sotto, quando cade, e quali macchie vanno fatte vedere.' },
+  { href: '/problemi/unghia-gialla-spessa', nome: 'Unghia gialla e spessa: è un fungo?', testo: 'Una volta su due non lo è. Come si distingue e perché gli smalti antimicotici spesso non funzionano.' },
+];
+---
+<Base
+  title="Problemi del piede: cosa fare, spiegato da chi li cura | Clinica Risorgimento Forlì"
+  description="Unghia incarnita, giradito, unghia nera, unghia gialla e spessa: pagine scritte dalla Dott.ssa Laura Zanoni che partono da come le persone descrivono il problema, non dal nome tecnico."
+  path="/problemi"
+  noindex={bozza}
+>
+  <Header attiva="problemi" />
+  <main>
+    {bozza && (
+      <div style="background:#fff4d6;border-bottom:1px solid #f0d58a;padding:.6rem 0;font-size:.9rem;">
+        <div class="contenitore"><strong>Bozza in revisione clinica</strong> — sezione non ancora pubblica, visibile solo a chi ha il link.</div>
+      </div>
+    )}
+    <div class="testata-pagina">
+      <div class="contenitore">
+        <p class="briciole"><a href="/">Clinica Risorgimento</a> › Problemi del piede</p>
+        <h1>Problemi del piede: cosa fare, spiegato da chi li cura</h1>
+        <p class="sottotitolo">Queste pagine partono da come le persone descrivono il problema, non dal nome tecnico. Le scrive e le rivede la <a href="/laura-zanoni">Dott.ssa Laura Zanoni</a>: cosa fare a casa, cosa non fare, quando venire e quando invece serve il medico.</p>
+      </div>
+    </div>
+    <div class="contenitore articolo" style="max-width:1000px;">
+      <h2 style="margin-top:0;">Unghie</h2>
+      <div class="griglia-schede" style="margin-top:1rem;">
+        {pagine.map((p) => (
+          <a class="scheda" href={p.href}>
+            <h3>{p.nome}</h3>
+            <p>{p.testo}</p>
+          </a>
+        ))}
+      </div>
+      <p class="nota" style="margin-top:2.4rem;">Altre pagine sono in preparazione: verruche, calli e duroni profondi, dolore al tallone, dolore alla pianta, alluce valgo. Se il tuo problema non è qui, chiama: al telefono si capisce in due minuti se è un caso da vedere.</p>
+      <div class="riquadro-prenota">
+        <div><strong>Vuoi che lo guardiamo insieme?</strong><span>Su appuntamento, lunedì–venerdì 8.30–19.30 · anche su WhatsApp</span></div>
+        <a class="cta" href="tel:+390543405479">Chiama: 0543 405479</a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>

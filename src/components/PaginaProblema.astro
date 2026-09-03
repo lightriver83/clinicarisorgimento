@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+const {
+  titolo, titoloSeo, descrizione, path,
+  immagine = null,        // { src, alt, credito }
+  faq = [],               // [{ d, r }]
+  bozza = false,
+  dataAgg = '2026-09-03',
+  servizio = { href: '/servizi/podologia', label: 'Podologia' },
+} = Astro.props;
+const dataLeggibile = new Date(dataAgg).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+const schemaExtra = [
+  {
+    "@type": "MedicalWebPage",
+    "@id": `https://clinicarisorgimento.it${path}#pagina`,
+    "url": `https://clinicarisorgimento.it${path}`,
+    "name": titoloSeo,
+    "description": descrizione,
+    "inLanguage": "it-IT",
+    "dateModified": dataAgg,
+    "author": { "@id": "https://clinicarisorgimento.it/#laura-zanoni" },
+    "reviewedBy": { "@id": "https://clinicarisorgimento.it/#laura-zanoni" },
+    "publisher": { "@id": "https://clinicarisorgimento.it/#clinica" },
+    "audience": { "@type": "PeopleAudience", "audienceType": "adulti" }
+  },
+  ...(faq.length ? [{
+    "@type": "FAQPage",
+    "@id": `https://clinicarisorgimento.it${path}#faq`,
+    "mainEntity": faq.map((f) => ({
+      "@type": "Question", "name": f.d,
+      "acceptedAnswer": { "@type": "Answer", "text": f.r }
+    }))
+  }] : [])
+];
+---
+<Base title={titoloSeo} description={descrizione} path={path} noindex={bozza} schemaExtra={schemaExtra}>
+  <Header attiva="problemi" />
+  <main>
+    {bozza && (
+      <div style="background:#fff4d6;border-bottom:1px solid #f0d58a;padding:.6rem 0;font-size:.9rem;">
+        <div class="contenitore"><strong>Bozza in revisione clinica</strong> — pagina non ancora pubblica, visibile solo a chi ha il link.</div>
+      </div>
+    )}
+    <div class="testata-pagina">
+      <div class="contenitore">
+        <p class="briciole"><a href="/">Clinica Risorgimento</a> › <a href="/problemi">Problemi del piede</a> › {titolo}</p>
+        <h1>{titolo}</h1>
+        <p class="sottotitolo">{descrizione}</p>
+        <p class="briciole" style="margin-top:.8rem;">Scritto e rivisto dalla <a href="/laura-zanoni">Dott.ssa Laura Zanoni</a> · aggiornato il {dataLeggibile}</p>
+      </div>
+    </div>
+    <div class="contenitore articolo">
+      {immagine && (
+        <figure style="margin:0 0 1.6rem;">
+          <img src={immagine.src} alt={immagine.alt} loading="lazy" style="border-radius:12px;width:100%;max-height:420px;object-fit:cover;" />
+          {immagine.credito && <figcaption style="font-size:.78rem;color:var(--grigio);margin-top:.4rem;" set:html={immagine.credito} />}
+        </figure>
+      )}
+      <slot />
+      {faq.length > 0 && (
+        <section style="margin-top:2.4rem;">
+          <h2>Le domande che mi fanno più spesso</h2>
+          {faq.map((f) => (
+            <details style="border-bottom:1px solid var(--bordo);padding:.7rem 0;">
+              <summary style="cursor:pointer;font-weight:600;">{f.d}</summary>
+              <p style="margin:.6rem 0 0;color:var(--grigio);">{f.r}</p>
+            </details>
+          ))}
+        </section>
+      )}
+      <p class="nota" style="margin-top:2rem;">Queste informazioni servono a orientarsi, non a sostituire una visita. Se hai febbre, diabete, problemi di circolazione o prendi anticoagulanti, per qualunque infezione al piede rivolgiti subito al medico.</p>
+      <div class="riquadro-prenota">
+        <div><strong>Vuoi che lo guardiamo insieme?</strong><span>Su appuntamento, lunedì–venerdì 8.30–19.30 · anche su WhatsApp</span></div>
+        <a class="cta" href="tel:+390543405479">Chiama: 0543 405479</a>
+      </div>
+      <p style="margin-top:1.4rem;font-size:.9rem;"><a href={servizio.href}>→ {servizio.label}: come lavoriamo</a></p>
+    </div>
+  </main>
+  <Footer />
+</Base>

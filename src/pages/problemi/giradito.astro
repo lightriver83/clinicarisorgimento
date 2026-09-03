@@ -1,0 +1,49 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+const faq = [
+  { d: "Posso farlo scoppiare da solo?",
+    r: "No. Spremere o bucare spinge l'infezione in profondità. I pediluvi caldi aiutano la raccolta ad aprirsi da sola; se non lo fa entro 48 ore, deve aprirla il medico." },
+  { d: "Quanto dura?",
+    r: "Se la causa viene tolta e il dito viene tenuto pulito e asciutto, tre-cinque giorni. Se resta dentro un bordo di unghia che punge, può andare avanti settimane a fasi alterne." },
+  { d: "Serve l'antibiotico?",
+    r: "Lo decide il medico. Nei giraditi superficiali del piede, tolta la causa e con le medicazioni giuste, spesso non serve. Serve più facilmente se il gonfiore prende tutto il dito, se c'è febbre o se hai il diabete." },
+  { d: "Posso andare in piscina o correre?",
+    r: "Finché c'è pus o la pelle è aperta, no. L'acqua della piscina non fa bene alla ferita, e la scarpa da corsa comprime proprio il punto sbagliato." },
+  { d: "È contagioso?",
+    r: "In pratica no. Non si prende da un'altra persona: sono batteri che abbiamo tutti sulla pelle e che entrano da una ferita. Usare forbicine pulite e proprie è comunque una buona regola." },
+  { d: "Mi viene spesso, sempre sullo stesso dito: perché?",
+    r: "Perché quell'unghia ha una forma, o un taglio, che punge la pelle ogni volta che ricresce. Si risolve lavorando sull'unghia, non solo sull'infezione." },
+];
+---
+<PaginaProblema
+  titolo="Giradito al piede: pus vicino all'unghia"
+  titoloSeo="Giradito al piede: cosa fare se c'è pus vicino all'unghia | Forlì"
+  descrizione="Dito rosso, gonfio, che pulsa, con una bollicina gialla di fianco all'unghia. Cosa fare nelle prime 48 ore, cosa non fare, e quando il giradito ha bisogno del medico."
+  path="/problemi/giradito"
+  immagine={{ src: '/img/problemi/giradito.webp', alt: "Alluce con giradito: la pelle attorno all'unghia è rossa e gonfia e nell'angolo esterno si vede una raccolta di pus giallo", credito: 'Foto: <a href="https://commons.wikimedia.org/wiki/File:Paronychia_green_discolor.jpg" rel="noopener">X-Fi6, Wikimedia Commons</a>, CC0 (pubblico dominio), ritagliata.' }}
+  faq={faq}
+  bozza={true}
+>
+  <p>Giradito è la parola con cui in Romagna, e in buona parte d'Italia, si chiama l'infezione della pelle attorno all'unghia. Il nome tecnico è paronichia, ma in vent'anni nessuno è entrato in studio dicendo «ho una paronichia». Si entra dicendo che il dito è rosso, gonfio, pulsa, e che di fianco all'unghia c'è una bollicina gialla.</p>
+  <p>Succede alle mani e ai piedi. Qui parlo del piede, perché è quello che vedo io, e perché al piede il giradito ha di regola una causa precisa che va tolta, altrimenti torna.</p>
+
+  <h2>Cosa fare nelle prime 48 ore</h2>
+  <p>Pediluvi in acqua tiepida, dieci-quindici minuti, tre volte al giorno. L'acqua calda richiama sangue nella zona e aiuta la raccolta a maturare e a trovare una via d'uscita da sola. Dopo, asciugare bene e lasciare il dito libero: niente cerotti che chiudono per tutto il giorno, niente scarpe che stringono. Un disinfettante sul bordo.</p>
+  <p>Non spremere. Non bucare con un ago «sterilizzato» con l'accendino. Non tirare via la pellicina. Ogni volta che si forza, i batteri vanno più in profondità, e un giradito superficiale diventa un ascesso sotto l'unghia, che è tutta un'altra storia. Le pomate antibiotiche che si trovano nel cassetto di casa raramente servono e a volte macerano la pelle.</p>
+
+  <h2>Perché viene</h2>
+  <p>I batteri, di solito stafilococchi che vivono normalmente sulla pelle, entrano da una piccola ferita che spesso non si è nemmeno vista. Al piede, la ferita nella grande maggioranza dei casi la fa l'unghia stessa: un angolo tagliato male, una <a href="/problemi/unghia-incarnita">spicola che rientra</a>, un bordo che ha punto la pelle. Poi ci sono la cuticola tirata via durante la pedicure, la scarpa che sfrega sempre nello stesso punto, il piede che resta umido per ore.</p>
+  <p>Esiste anche una forma cronica, che non ha pus ma un bordo gonfio e dolente per settimane o mesi: di solito è la pelle rovinata dall'umidità continua, e a volte c'è un fungo in mezzo. Si cura in modo diverso, e la prima cosa è capire quale delle due hai davanti.</p>
+
+  <h2>Come riconoscerlo</h2>
+  <p>Il giradito acuto segue un ordine. Prima rossore e gonfiore vicino all'unghia, caldo al tatto. Poi il dolore che diventa pulsante, che si sente anche a riposo e di notte. Poi, in uno-due giorni, la raccolta gialla o bianca che si vede attraverso la pelle. Se si apre da sola ed esce il pus, il dolore cala di colpo: è il segno che la pressione è uscita.</p>
+  <p>Se il dolore è forte ma la raccolta non si vede, se il gonfiore prende tutto il dito e non solo il bordo, o se il pus sembra stare sotto l'unghia, la situazione è più profonda e va vista.</p>
+
+  <h2>Quando dal medico e quando da noi</h2>
+  <p>Dal medico, o al pronto soccorso, subito se hai febbre, se vedi una striscia rossa che risale dal dito verso il piede, se il gonfiore coinvolge tutto il dito, se hai il diabete, problemi di circolazione, se prendi anticoagulanti o farmaci che abbassano le difese. Dal medico anche se dopo 48 ore di pediluvi non è cambiato niente e la raccolta non trova una via d'uscita: a quel punto serve aprirla, e quello è un atto medico, come lo è prescrivere l'antibiotico.</p>
+  <p>Da noi se dietro al giradito c'è un'unghia che punge, se è già la seconda volta sullo stesso dito, o per le medicazioni e il controllo nei giorni dopo. Nella mia esperienza al piede il giradito da solo è raro: sotto c'è un bordo di unghia che l'ha causato, e finché resta lì l'infezione si riaccende.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Guardo il dito con ingrandimento e cerco la causa. Se c'è una spicola o un angolo di unghia che ha aperto la pelle, la tolgo: senza anestesia, sul bordo dell'unghia, in pochi minuti. Si medica in modo che il dito resti asciutto e protetto ma non chiuso. Ti dico cosa fare a casa nei giorni successivi e come tagliare l'unghia da qui in avanti. Se serve un antibiotico o se la raccolta va aperta, lo dico chiaramente e ti mando dal medico: non è una cosa che faccio io.</p>
+  <p>Non tratto il giradito «in generale». Tratto il motivo per cui è venuto. È la differenza fra un dito che guarisce in quattro giorni e uno che si riaccende ogni mese.</p>
+</PaginaProblema>

@@ -1,0 +1,56 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+const faq = [
+  { d: "Posso tagliare io l'angolo che dà fastidio?",
+    r: "Meglio di no. Con le forbicine da casa ci si ferma a metà, e resta la spicola, che spinge nella carne più di prima. Se il dito è solo arrossato, tieni l'unghia dritta e non corta e fai i pediluvi. Se c'è pus, non toccare e vieni." },
+  { d: "Serve l'antibiotico?",
+    r: "Lo decide il medico, non io. Ma in quasi tutti i casi che vedo, tolta la spicola l'infezione si spegne da sola in pochi giorni. L'antibiotico non serve se resta dentro la causa, e spesso non serve neanche dopo." },
+  { d: "Fa male togliere la spicola?",
+    r: "Qualche secondo di fastidio, senza anestesia e senza punti. Chi arriva dopo settimane di dolore di solito esce sorpreso di quanto sia stato veloce." },
+  { d: "Quanto ci mette a guarire?",
+    r: "Se non c'è granuloma, tre-sette giorni dopo la rimozione. Con il granuloma, qualche settimana e un paio di medicazioni. La rieducazione dell'unghia, se serve, dura qualche mese." },
+  { d: "Torna?",
+    r: "Può tornare se tornano il taglio sbagliato o la scarpa stretta, o se l'unghia ha una forma molto curva. Per questo la parte più importante non è togliere la spicola, ma cambiare quello che l'ha prodotta." },
+  { d: "Ho l'unghia incarnita e sono diabetico: vengo da voi?",
+    r: "Prima il medico o il centro del piede diabetico, poi eventualmente noi, in accordo con loro. Nel diabete una piccola ferita al piede può diventare un problema serio in pochi giorni." },
+];
+---
+<PaginaProblema
+  titolo="Unghia incarnita"
+  titoloSeo="Unghia incarnita: cosa fare a casa e quando farla vedere | Forlì"
+  descrizione="Dolore al bordo dell'alluce, rossore, a volte pus. Cosa fare a casa nei primi giorni, cosa peggiora le cose, e da che punto in poi l'unghia incarnita va tolta di mano a chi la cura da solo."
+  path="/problemi/unghia-incarnita"
+  immagine={{ src: '/img/problemi/unghia-incarnita.webp', alt: "Alluce con unghia incarnita: il bordo esterno dell'unghia è rientrato nella pelle, che è arrossata e gonfia", credito: 'Foto: <a href="https://commons.wikimedia.org/wiki/File:Ingrown_toenail_-_Paronychia.png" rel="noopener">Cenbutz1, Wikimedia Commons</a>, CC0 (pubblico dominio).' }}
+  faq={faq}
+  bozza={true}
+>
+  <p>L'unghia incarnita è il motivo più frequente per cui un adulto entra nel mio studio per la prima volta senza che nessuno glielo abbia consigliato. Fa male, si vede, e di solito si arriva dopo due o tre settimane di tentativi in casa. Questa pagina è per quelle due o tre settimane: cosa ha senso fare, cosa peggiora le cose, e da che punto in poi conviene smettere di farsela da soli.</p>
+
+  <h2>Cosa fare a casa, nei primi giorni</h2>
+  <p>Se il dito è rosso e dolente ma non c'è pus, si può provare a risolvere da soli. Pediluvio in acqua tiepida con un po' di sale, dieci minuti, due volte al giorno. Poi si asciuga bene, soprattutto nell'angolo. Scarpe aperte o con la punta larga per qualche giorno: la scarpa che stringe è spesso metà del problema. Un disinfettante sul bordo, senza cerotti che chiudono e macerano.</p>
+  <p>Quello che non va fatto è la cosa che viene in mente per prima: tagliare l'angolo. Con le forbicine si arriva quasi sempre a metà, e quel pezzetto che resta, la spicola, continua a spingere nella carne più in profondità di prima. Non scavare, non spremere se c'è pus, non mettere pomate antibiotiche a caso.</p>
+  <figure style="margin:1.4rem 0;">
+    <img src="/img/problemi/unghia-incarnita-taglio.webp" alt="Schema: a sinistra l'unghia tagliata dritta, con gli angoli che sporgono oltre la pelle; a destra l'unghia tagliata arrotondata e corta, con gli angoli che rientrano nella pelle" loading="lazy" style="border-radius:12px;width:100%;background:#fff;" />
+    <figcaption style="font-size:.78rem;color:var(--grigio);margin-top:.4rem;">A sinistra il taglio giusto, a destra quello che produce l'unghia incarnita. Schema: <a href="https://commons.wikimedia.org/wiki/File:Foot_care_and_shoe_fitting-Fig14_Trimming_of_toenails_to_avoid_ingrown_toenails_left-correct_right-incorrect.png" rel="noopener">Mann e Folsom, US Navy, «Foot care and shoe fitting»</a>, pubblico dominio.</figcaption>
+  </figure>
+  <p>Il taglio giusto è dritto, senza arrotondare gli angoli, e non troppo corto: il bordo libero dell'unghia deve arrivare almeno alla punta del dito. Se hai un'unghia molto curva e non riesci a tagliarla dritta senza farti male, quello è già un buon motivo per venire.</p>
+
+  <h2>Perché succede</h2>
+  <p>Nella maggior parte dei casi che vedo la causa è il taglio: l'angolo arrotondato, o l'unghia tagliata troppo corta, lascia un bordo che rientra e la pelle ci cresce sopra. Poi ci sono le scarpe strette in punta, che schiacciano la pelle contro il bordo dell'unghia a ogni passo. E c'è la forma dell'unghia: alcune persone hanno una lamina molto curva, «a tegola», che tende a incarnirsi qualsiasi cosa facciano. Con quelle non basta imparare a tagliare, bisogna cambiare il modo in cui l'unghia cresce.</p>
+  <p>Il sudore e l'umidità ammorbidiscono la pelle e la rendono più facile da ferire. Un colpo sull'alluce, una scarpa da corsa mezzo numero più corta, un'unghia che si è staccata e ricresce storta: sono tutte cose che vedo regolarmente come punto di partenza.</p>
+
+  <h2>Come capire a che punto sei</h2>
+  <p>Lo stadio conta più della causa, perché decide cosa si può fare.</p>
+  <p><strong>Rossore e dolore alla pressione, senza pus.</strong> Dà fastidio nella scarpa, si tocca e fa male, ma la pelle è integra. Qui le cure a casa e un taglio corretto risolvono spesso.</p>
+  <p><strong>Pus, dolore anche a riposo, la scarpa non si sopporta.</strong> Il bordo dell'unghia ha aperto la pelle e i batteri sono entrati. A questo punto il pediluvio non basta: finché la spicola resta dov'è, l'infezione ha una spina dentro e non guarisce.</p>
+  <p><strong>«Carne che cresce» sul bordo, sanguina al minimo tocco, va avanti da settimane.</strong> È il granuloma, un tessuto rosso e molle che il corpo produce per reazione. Non sparisce finché la spicola resta dov'è, e più passa il tempo più si allarga.</p>
+
+  <h2>Quando venire in studio, e quando invece dal medico</h2>
+  <p>Vieni da noi se dopo cinque-sette giorni di cure a casa il dito è uguale o peggio, se c'è pus, se vedi il granuloma, se è già la seconda o terza volta che ti succede sullo stesso dito, o semplicemente se non riesci a tagliare l'unghia senza farti male.</p>
+  <p>Vai prima dal medico, o al pronto soccorso, se hai febbre, se il rossore risale sul piede oltre il dito, se hai il diabete, problemi di circolazione, se prendi anticoagulanti o farmaci che abbassano le difese. Ho passato dodici anni nell'ambulatorio del Piede Diabetico dell'ospedale di Forlì: in quei casi un'unghia incarnita non è un fastidio, è una porta d'ingresso, e non si aspetta.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Guardo il dito con ingrandimento, cerco la spicola e la tolgo. Non è un intervento chirurgico: si lavora sul bordo dell'unghia, non sulla carne, senza anestesia e senza punti. Dà fastidio per qualche secondo, poi il sollievo è quasi immediato, perché è la spicola che fa male. Si medica, e di solito in tre-sette giorni il dito è tornato normale. Con il granuloma ci vuole qualche settimana e qualche medicazione in più.</p>
+  <p>Poi si lavora sul motivo per cui è successo. Ti faccio vedere come tagliare, guardo le scarpe, e se l'unghia ha una forma che tende a rientrare propongo la rieducazione ungueale: una piccola lamina o un filo che si fissa sull'unghia e la porta piano piano a crescere più piatta. Si ricalibra ogni quattro-sei settimane, per qualche mese. È la cosa che fa la differenza fra un'unghia incarnita curata e un'unghia incarnita che non torna.</p>
+  <p>Ci sono casi in cui l'intervento è la scelta giusta: la spicola che si riforma a ogni crescita nonostante tutto, un granuloma esteso, un'infezione che non risponde. In quei casi lo dico io, senza aspettare che peggiori, e dico anche a chi andare. L'intervento lo fa un chirurgo, in anestesia locale, e toglie in modo definitivo la striscia di unghia che dà problemi. Ne ho scritto anche nella pagina della <a href="/servizi/podologia">podologia</a>.</p>
+</PaginaProblema>

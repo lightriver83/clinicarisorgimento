@@ -1,0 +1,48 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+const faq = [
+  { d: "L'unghia nera cade?",
+    r: "Se l'ematoma è grande, di solito sì, ma non subito: resta attaccata al sangue secco per settimane e viene spinta via da quella nuova. Se è piccolo, l'unghia resta e la macchia esce con la crescita." },
+  { d: "Quanto ci mette a ricrescere?",
+    r: "L'unghia dell'alluce cresce poco più di un millimetro al mese: per rifarla tutta servono dodici-diciotto mesi. Quelle delle altre dita fanno un po' prima." },
+  { d: "Posso continuare a correre?",
+    r: "Se non fa male e l'unghia è ferma, sì, con una scarpa che non tocca in punta. Se l'unghia è scollata e si muove, meglio aspettare che sia messa in sicurezza, altrimenti si impiglia e si strappa." },
+  { d: "Posso coprirla con lo smalto?",
+    r: "Con un ematoma che sta uscendo, sì. Con una macchia che non sai cos'è, no: lo smalto nasconde esattamente quello che serve guardare, e va tolto prima di ogni controllo." },
+  { d: "Come faccio a sapere se è sangue o un fungo?",
+    r: "Il sangue ha bordi netti e si sposta con la crescita. Il fungo di solito parte dal bordo libero, rende l'unghia spessa e friabile, e non si muove. Se hai dubbi, una foto al mese risponde meglio di qualsiasi descrizione." },
+  { d: "Non ho preso colpi e ho una riga scura sull'unghia: devo preoccuparmi?",
+    r: "Devi farla vedere, che non è la stessa cosa. Nella grande maggioranza dei casi è benigna, ma è esattamente il caso in cui non si aspetta e non si copre." },
+];
+---
+<PaginaProblema
+  titolo="Unghia nera del piede"
+  titoloSeo="Unghia nera del piede: sangue sotto l'unghia, scarpe, quando farla vedere | Forlì"
+  descrizione="Un'unghia dell'alluce diventata nera o viola dopo una corsa, una scarpa stretta o un colpo. Cosa succede sotto, cosa fare, quando cade, e quali macchie vanno fatte vedere anche senza trauma."
+  path="/problemi/unghia-nera"
+  immagine={{ src: '/img/problemi/unghia-nera.webp', alt: "Unghia di un dito del piede con una macchia scura rosso-marrone sotto la lamina: un ematoma subungueale", credito: 'Foto: <a href="https://commons.wikimedia.org/wiki/File:Hematomasubungual.png" rel="noopener">TemporaryAvoidance, Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.it" rel="noopener">CC BY-SA 3.0</a>, ritagliata.' }}
+  faq={faq}
+  bozza={true}
+>
+  <p>L'unghia nera arriva in studio in due modi. C'è chi sa esattamente cosa è successo: il colpo contro lo spigolo, la discesa in montagna, la maratona con le scarpe nuove. E c'è chi se n'è accorto una mattina, senza ricordare niente. Il primo caso è in genere semplice. Il secondo è quello che voglio guardare bene, per un motivo che spiego più sotto.</p>
+
+  <h2>Cosa fare a casa</h2>
+  <p>Nelle prime ore dopo un colpo: ghiaccio avvolto in un panno, dieci minuti alla volta, piede sollevato, scarpa aperta. Il dolore pulsante è la pressione del sangue chiuso fra l'unghia e il letto che sta sotto, e finché non ha spazio fa male.</p>
+  <p>Non bucare l'unghia da soli con aghi o graffette scaldate: si vede fare su internet, e si vede anche il risultato, che spesso è un'infezione. Se l'unghia comincia a sollevarsi, non strapparla: tienila corta, ferma con un cerotto, e lascia che si stacchi da sola quando sotto ne è cresciuta abbastanza di nuova. Un'unghia strappata via lascia il letto scoperto per settimane.</p>
+
+  <h2>Perché diventa nera</h2>
+  <p>Nella maggior parte dei casi è sangue: un ematoma sotto l'unghia. O per un colpo unico, o, molto più spesso di quanto si pensi, per tanti piccoli colpi ripetuti: la punta del dito che sbatte contro la scarpa a ogni passo in discesa, la scarpa da corsa mezzo numero più corta, le partite a calcetto, il trekking lungo. L'unghia resta attaccata al sangue secco e in qualche mese viene spinta via da quella nuova che cresce sotto.</p>
+  <p>Non tutto il nero è sangue. Il verde-nero è di solito un batterio che si è infilato sotto un'unghia scollata. Il giallo-marrone spesso, con l'unghia friabile, fa pensare a un <a href="/problemi/unghia-gialla-spessa">fungo</a>. E poi c'è la macchia scura che non c'entra con nessuna di queste cose, ed è il motivo per cui un'unghia nera senza trauma va guardata.</p>
+
+  <h2>Come capire cos'è</h2>
+  <p>Il sangue sotto l'unghia ha un bordo abbastanza netto, un colore che va dal rosso scuro al viola al nero, e soprattutto si sposta: crescendo, l'unghia porta la macchia verso la punta, e dopo qualche settimana si vede una zona sana alla base. Se fotografi l'unghia oggi e fra un mese, la macchia deve essersi mossa.</p>
+  <p>I segnali che invece voglio vedere da vicino, e che mando al dermatologo: una striscia scura verticale che parte dalla base dell'unghia e non si sposta con la crescita; un colore che «sborda» dall'unghia sulla pelle attorno; una sola unghia che cambia senza nessun motivo, in una persona che non fa sport e non ha preso colpi; una macchia che si allarga o cambia forma. Il melanoma dell'unghia è raro, ma esiste, e l'unico modo per non perderlo è guardare tutte le unghie nere con la stessa attenzione.</p>
+
+  <h2>Quando dal medico e quando da noi</h2>
+  <p>Al pronto soccorso o dal medico nelle prime 24-48 ore se il dolore pulsante è forte e non passa: il sangue si può far uscire con un piccolo foro nell'unghia, e il sollievo è immediato, ma è un atto che fa il medico, con strumenti sterili. Dal medico anche se il colpo è stato forte e il dito è deformato, per escludere una frattura. Dal dermatologo per qualsiasi macchia con le caratteristiche che ho descritto sopra.</p>
+  <p>Da noi quando l'unghia si sta staccando o è già caduta, quando quella nuova ricresce ispessita o storta o si incarnisce, e quando le unghie nere sono una cosa che ti succede regolarmente. Chi corre e perde un'unghia ogni stagione non ha un problema all'unghia: ha un problema di scarpa, di calzata o di appoggio, e quello si può correggere.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Guardo l'unghia con ingrandimento e faccio la prima distinzione: sangue, batterio, fungo o altro. Se è sangue e l'unghia è già scollata, tolgo la parte che si muove e che rischia di impigliarsi, regolarizzo il bordo, medico, e ti spiego come proteggere il letto mentre ricresce. Se c'è un'infezione batterica o un fungo, si tratta quello. Se il quadro non mi convince, non tratto niente e ti mando dal dermatologo, con una descrizione precisa di quello che ho visto.</p>
+  <p>Con chi corre o cammina in montagna guardiamo la scarpa (la lunghezza soprattutto: fra la punta dell'alluce e la fine della scarpa deve restare circa un centimetro), l'allacciatura, il taglio dell'unghia e, se serve, come appoggia il piede. L'unghia nera che si ripete è quasi sempre un problema meccanico, e i problemi meccanici si risolvono a monte.</p>
+</PaginaProblema>

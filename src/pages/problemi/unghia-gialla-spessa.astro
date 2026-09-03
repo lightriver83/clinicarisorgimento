@@ -1,0 +1,50 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+const faq = [
+  { d: "È contagioso?",
+    r: "Poco fra persone, ma in famiglia sì: forbicine, lime, il piatto della doccia, le calze lavate a bassa temperatura. Attrezzi personali e ciabatte nelle docce comuni di solito bastano." },
+  { d: "Lo smalto antimicotico della farmacia funziona?",
+    r: "Solo se tre cose sono vere insieme: è davvero un fungo, l'unghia è abbastanza sottile perché il prodotto entri, e lo si applica per tutto il tempo che serve, che è quasi un anno. Se ne manca una, non funziona, e non è colpa del prodotto." },
+  { d: "Posso mettere lo smalto colorato sopra?",
+    r: "Durante una cura, meglio di no: chiude l'unghia e nasconde l'evoluzione. Se proprio serve per un'occasione, un giorno o due, poi via." },
+  { d: "Devo prendere le compresse?",
+    r: "Questo lo stabilisce il medico. Non sempre servono: dipende da quanta unghia è colpita, da quante unghie, e dalla tua salute generale. Sono efficaci, ma non sono per tutti." },
+  { d: "Posso andare in piscina?",
+    r: "Sì, con le ciabatte, e asciugando bene i piedi dopo. Il problema non è la vasca, sono i bordi e le docce." },
+  { d: "L'unghia tornerà com'era?",
+    r: "Se la causa viene tolta e la matrice, la parte che produce l'unghia, non ha subito danni, sì, ma ci vuole il tempo di una ricrescita completa. Se l'unghia è stata spessa e deformata per anni, può restare un po' diversa: si tiene in ordine e si convive bene." },
+];
+---
+<PaginaProblema
+  titolo="Unghia gialla, spessa, che si sbriciola: è un fungo?"
+  titoloSeo="Unghia gialla e spessa del piede: fungo o no? Cosa fare | Forlì"
+  descrizione="Unghia dell'alluce ingiallita, ispessita, che si sfalda o si stacca. Circa una volta su due non è una micosi. Come si distingue, perché gli smalti antimicotici spesso non funzionano, cosa facciamo in studio."
+  path="/problemi/unghia-gialla-spessa"
+  immagine={{ src: '/img/problemi/unghia-gialla-spessa.webp', alt: "Unghia dell'alluce gialla, ispessita e friabile, con la superficie irregolare: il quadro tipico di un'onicomicosi", credito: 'Foto: <a href="https://commons.wikimedia.org/wiki/File:Toefungus.jpg" rel="noopener">Medguy, Wikimedia Commons</a>, pubblico dominio, ritagliata.' }}
+  faq={faq}
+  bozza={true}
+>
+  <p>Ogni settimana qualcuno mi mostra un'unghia gialla e spessa dicendo «ho un fungo, ho provato di tutto». Circa una volta su due non è un fungo. E quando lo è, la cura fatta a casa non ha funzionato per un motivo preciso: l'unghia era troppo spessa perché il prodotto arrivasse dove serve.</p>
+  <p>Questa pagina serve a fare la prima distinzione, quella che decide tutto il resto.</p>
+
+  <h2>Cosa fare a casa (e cosa smettere di fare)</h2>
+  <p>Tieni l'unghia corta e il piede asciutto. Scarpe che respirano, calze cambiate ogni giorno, ciabatte in piscina e nelle docce comuni. Forbicine e lime tue, non condivise. Se vuoi fare qualcosa di utile, fotografa l'unghia oggi con il telefono e poi una volta al mese: è l'unico modo per vedere se sta cambiando davvero.</p>
+  <p>Quello che non serve: raschiare o limare a fondo con attrezzi da casa, che aprono la strada ai batteri; mesi di smalto antimicotico comprato senza sapere se c'è un fungo; rimedi con aceto, bicarbonato, tea tree oil e simili. Raramente fanno danni, ma fanno passare tempo, e l'unghia dell'alluce impiega più di un anno a ricrescere: ogni mese perso è un mese in più di unghia brutta.</p>
+
+  <h2>Perché diventa così</h2>
+  <p>Il fungo, quando c'è, è di solito lo stesso che dà il piede d'atleta: entra da una piccola lesione, spesso dal bordo libero, e da lì risale. Gli piacciono l'umidità, le scarpe chiuse per molte ore, le unghie che hanno già preso colpi. Con l'età è più frequente, perché l'unghia cresce più lenta e si difende peggio.</p>
+  <p>Ma un'unghia identica la producono anche i microtraumi ripetuti, che sono il motivo più sottovalutato: la scarpa che tocca in punta, lo sport, un alluce che appoggia male e sbatte. L'unghia reagisce ispessendosi, e diventa gialla e opaca senza nessun fungo dentro. Poi ci sono la psoriasi, che spesso prende anche le unghie, alcune malattie della pelle, i problemi di circolazione, e l'onicogrifosi, l'unghia «a corno» di chi non riesce più a tagliarla da anni.</p>
+
+  <h2>Come si distingue, a occhio</h2>
+  <p>Il fungo di solito parte dal bordo libero o da un lato, con una macchia bianco-gialla che risale verso la base; l'unghia si sfalda, sotto si forma una polvere, spesso una sola unghia è colpita, o poche, in modo asimmetrico. Il microtrauma dà un ispessimento più uniforme, spesso sulle stesse dita di entrambi i piedi, in chi ha una storia di scarpe strette o di sport. La psoriasi lascia piccole «ditate» sulla superficie e macchie color olio, e spesso c'è anche la pelle.</p>
+  <p>Detto questo, a occhio sbaglio anch'io, e non di rado. Per questo, prima di iniziare qualsiasi cura lunga, la domanda giusta non è «che prodotto uso» ma «è davvero un fungo?». Si risponde con un esame di laboratorio su un frammento dell'unghia, da fare prima di iniziare, non dopo sei mesi di smalto.</p>
+
+  <h2>Quando venire da noi e quando serve il medico</h2>
+  <p>Da noi per la prima valutazione, per ridurre lo spessore, per organizzare l'esame di laboratorio e per il monitoraggio nei mesi. Dal medico, di base o dermatologo, quando serve una cura per bocca: le compresse antimicotiche sono efficaci ma vanno prescritte e controllate con esami del sangue, ed è una decisione medica. Dal dermatologo anche se sospettiamo psoriasi o un'altra malattia della pelle, e sempre se l'unghia cambia verso il marrone-nero, con una <a href="/problemi/unghia-nera">striscia scura</a> che non si sposta con la crescita.</p>
+  <p>Se hai il diabete o problemi di circolazione, un'unghia spessa non è solo un problema estetico: quando preme sul letto o taglia la pelle del dito vicino, apre una ferita che in quei casi fa fatica a chiudersi. Vale la pena farla gestire da qualcuno.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>La prima cosa è ridurre lo spessore con la fresa, che non fa male: si porta via lo strato malato e l'unghia torna a uno spessore normale in una seduta. Già questo cambia molto, per la scarpa e per l'aspetto. Poi si guarda cosa c'è sotto e, se il quadro non è chiaro, si organizza l'esame di laboratorio su un frammento dell'unghia.</p>
+  <p>Se è un fungo, la cura topica prescritta dal medico ha senso solo su un'unghia sottile: per questo si ripete la riduzione ogni quattro-otto settimane, per tutta la durata della cura, che è lunga. L'unghia dell'alluce si rinnova completamente in dodici-diciotto mesi, e il fungo è sconfitto quando tutta l'unghia nuova è cresciuta pulita, non quando la macchia sembra più chiara. Chi promette un'unghia nuova in un mese sta vendendo qualcosa.</p>
+  <p>Se non è un fungo, si cura la causa: la scarpa, il taglio, l'appoggio, e si tiene l'unghia sottile finché non ricresce normale. È il caso in cui si buttano più soldi in prodotti inutili, e in cui la soluzione è quasi sempre meccanica.</p>
+</PaginaProblema>
