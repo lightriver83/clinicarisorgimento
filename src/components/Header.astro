@@ -9,8 +9,12 @@ const voci = [
 ---
 <header class="sito">
   <div class="contenitore barra">
-    <a href="/" aria-label="Clinica Risorgimento"><img src="/img/logo.png" alt="Clinica Risorgimento" /></a>
-    <nav class="principale" aria-label="Principale">
+    <a href="/" class="marchio" aria-label="Clinica Risorgimento"><img src="/img/logo.png" alt="Clinica Risorgimento" /></a>
+    <a class="cta cta-mobile" href="tel:+390543405479">Chiama</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principale" aria-label="Apri il menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="principale" id="menu-principale" aria-label="Principale">
       {voci.map((v) => (
         <a href={v.href} aria-current={attiva === v.key ? 'page' : undefined}>{v.label}</a>
       ))}
@@ -18,3 +22,12 @@ const voci = [
     </nav>
   </div>
 </header>
+<script>
+  const bottone = document.querySelector('.menu-toggle');
+  bottone?.addEventListener('click', () => {
+    const aperto = bottone.getAttribute('aria-expanded') === 'true';
+    bottone.setAttribute('aria-expanded', String(!aperto));
+    bottone.setAttribute('aria-label', aperto ? 'Apri il menu' : 'Chiudi il menu');
+    document.body.classList.toggle('menu-aperto', !aperto);
+  });
+</script>
