@@ -1,4 +1,5 @@
 ---
+import { hasCredential } from '../data/laura';
 const {
   title = 'Clinica Risorgimento — Podologia, posturologia e osteopatia a Forlì',
   description = "Lo studio della Dott.ssa Laura Zanoni a Forlì: podologia, valutazioni posturali e biomeccaniche, plantari su misura, osteopatia e patologie dell'unghia. Su appuntamento: 0543 405479.",
@@ -57,10 +58,11 @@ const schemaBase = {
       "jobTitle": "Podologa e podiatra, posturologa, osteopata",
       "sameAs": ["https://www.istitutozaccagnini.it/istituto/docenti/zanoni-laura", "https://it.linkedin.com/in/laura-zanoni-121255169"],
       "worksFor": { "@id": "https://clinicarisorgimento.it/#clinica" },
+      "hasCredential": hasCredential,
       "knowsAbout": [
         "Podologia", "Posturologia", "Osteopatia",
         "Patologie dell'unghia", "Plantari su misura", "Biomeccanica del passo",
-        "Esame micologico dell'unghia", "Laser per onicomicosi", "Ecografia muscoloscheletrica del piede"
+        "Esame micologico dell'unghia", "Laser per onicomicosi", "Ecografia podologica del piede e della caviglia"
       ]
     }
   ]
