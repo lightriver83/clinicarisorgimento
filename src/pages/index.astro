@@ -5,15 +5,22 @@ import Footer from '../components/Footer.astro';
 
 const servizi = [
   { icona: '/img/icona-podologia.webp', nome: 'Podologia', href: '/servizi/podologia',
-    testo: "Dolori del piede, calli e duroni, unghie incarnite, ispessite o con micosi, verruche. Prima si capisce la causa, poi si tratta." },
-  { icona: '/img/icona-posturologia.webp', nome: 'Posturologia e biomeccanica', href: '/servizi/posturologia',
-    testo: "Come il piede si appoggia e come questo si riflette su ginocchia, anche e schiena. Esame baropodometrico e analisi del passo, con un referto che si legge." },
+    testo: "Dolori del piede, calli e duroni, verruche, pelle che si screpola. Prima si capisce la causa, poi si tratta." },
+  { icona: '/img/icona-unghie.svg', nome: 'Trattamenti ungueali', href: '/servizi/unghie',
+    testo: "Unghia incarnita, ispessita, con micosi, nera dopo un colpo. Esame micologico con coltura, laser, rieducazione della crescita. I tempi si dicono prima." },
   { icona: '/img/icona-solette.webp', nome: 'Plantari e solette su misura', href: '/servizi/plantari-su-misura',
     testo: "Nascono dalla valutazione, non da un catalogo, e si controllano dopo la consegna. Se non servono, lo diciamo." },
+  { icona: '/img/icona-posturologia.webp', nome: 'Posturologia e biomeccanica', href: '/servizi/posturologia',
+    testo: "Come il piede si appoggia e come questo si riflette su ginocchia, anche e schiena. Esame baropodometrico e analisi del passo, con un referto che si legge." },
   { icona: '/img/icona-osteopatia.webp', nome: 'Osteopatia', href: '/servizi/osteopatia',
     testo: "Trattamento manuale di articolazioni, muscoli e fasce. Qui si legge insieme al piede: un appoggio sbagliato e un mal di schiena spesso si tengono a vicenda." },
+  { icona: '/img/icona-gravidanza.webp', nome: 'Trattamenti in gravidanza',
+    testo: "Osteopatia per schiena, bacino e gambe quando il peso e l'appoggio cambiano. Si valuta di trimestre in trimestre cosa è utile e cosa no." },
+  { icona: '/img/icona-motorie.webp', nome: 'Ginnastica posturale',
+    testo: "Pochi esercizi, precisi, per tenere quello che plantari e osteopatia hanno corretto. Prima si misura la postura, poi si sceglie cosa allenare." },
+  { icona: '/img/icona-fisioterapia.webp', nome: 'Fisioterapia',
+    testo: "Recupero dopo un trauma, un intervento o un periodo fermi: caviglia, ginocchio, schiena. Si parte dalla valutazione e si misura il progresso." },
 ];
-const altri = ['trattamenti in gravidanza', 'psicomotricità', 'ginnastica posturale', 'fisioterapia'];
 const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sede-4.webp','/img/sede-5.webp','/img/sede-6.jpeg'];
 ---
 <Base path="/">
@@ -41,16 +48,21 @@ const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sed
         <h2>Piede, appoggio, postura, movimento</h2>
         <p class="intro-sez">Sono legati fra loro, e qui si guardano insieme. Ogni percorso parte da una valutazione con strumenti (esame baropodometrico, analisi del passo, ecografia quando serve) e si chiude con un referto scritto per essere capito: dal paziente prima, dal suo medico poi.</p>
         <div class="griglia-servizi">
-          {servizi.map((s) => (
+          {servizi.map((s) => s.href ? (
             <a class="servizio scheda" href={s.href}>
               <img src={s.icona} alt="" loading="lazy" />
               <h3>{s.nome}</h3>
               <p>{s.testo}</p>
               <p style="margin-top:.6rem;color:var(--blu);font-size:.9rem;font-weight:600;">Scopri di più →</p>
             </a>
+          ) : (
+            <div class="servizio">
+              <img src={s.icona} alt="" loading="lazy" />
+              <h3>{s.nome}</h3>
+              <p>{s.testo}</p>
+            </div>
           ))}
         </div>
-        <p style="margin-top:1.6rem;color:var(--grigio);font-size:.92rem;">In studio si fanno anche {altri.join(', ')}. Per sapere se è il caso tuo: <a href="tel:+390543405479">0543 405479</a>.</p>
       </div>
     </section>
 
