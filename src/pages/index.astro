@@ -4,23 +4,16 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const servizi = [
-  { icona: '/img/icona-osteopatia.webp', nome: 'Osteopatia', href: '/servizi/osteopatia',
-    testo: "L'osteopatia è una terapia manuale che cerca di ristabilire l'equilibrio del corpo per migliorare la salute e il benessere." },
-  { icona: '/img/icona-solette.webp', nome: 'Solette e plantari', href: '/servizi/plantari-su-misura',
-    testo: "Solette posturali o plantari sono dispositivi medici che vengono realizzati per compensare, correggere o attenuare sintomi legati a problematiche posturali generalizzate o strutturali del piede." },
   { icona: '/img/icona-podologia.webp', nome: 'Podologia', href: '/servizi/podologia',
-    testo: "La podologia è lo studio dei piedi e dei problemi ad essi correlati. Si occupa di curare dolori, infezioni e malformazioni del piede." },
-  { icona: '/img/icona-posturologia.webp', nome: 'Posturologia', href: '/servizi/posturologia',
-    testo: "La posturologia è lo studio della postura: mira a correggere le disfunzioni posturali per prevenire dolori e migliorare il benessere." },
-  { icona: '/img/icona-gravidanza.webp', nome: 'Trattamenti gravidanza',
-    testo: "I trattamenti osteopatici per le donne in gravidanza aiutano a gestire i cambiamenti corporei, alleviare il dolore e prepararsi al parto." },
-  { icona: '/img/icona-psicomotricita.webp', nome: 'Psicomotricità',
-    testo: "La psicomotricità è un approccio terapeutico che usa il movimento e il gioco per favorire lo sviluppo cognitivo ed emozionale del bambino." },
-  { icona: '/img/icona-motorie.webp', nome: 'Ginnastica posturale',
-    testo: "La ginnastica posturale è una serie di esercizi mirati a migliorare la consapevolezza e l'allineamento del corpo, aiutando a prevenire dolori e problemi posturali." },
-  { icona: '/img/icona-fisioterapia.webp', nome: 'Fisioterapia',
-    testo: "La fisioterapia utilizza metodi fisici come esercizi e massaggi per aiutare a curare lesioni e a migliorare la mobilità e la forza." },
+    testo: "Dolori del piede, calli e duroni, unghie incarnite, ispessite o con micosi, verruche. Prima si capisce la causa, poi si tratta." },
+  { icona: '/img/icona-posturologia.webp', nome: 'Posturologia e biomeccanica', href: '/servizi/posturologia',
+    testo: "Come il piede si appoggia e come questo si riflette su ginocchia, anche e schiena. Esame baropodometrico e analisi del passo, con un referto che si legge." },
+  { icona: '/img/icona-solette.webp', nome: 'Plantari e solette su misura', href: '/servizi/plantari-su-misura',
+    testo: "Nascono dalla valutazione, non da un catalogo, e si controllano dopo la consegna. Se non servono, lo diciamo." },
+  { icona: '/img/icona-osteopatia.webp', nome: 'Osteopatia', href: '/servizi/osteopatia',
+    testo: "Trattamento manuale di articolazioni, muscoli e fasce. Qui si legge insieme al piede: un appoggio sbagliato e un mal di schiena spesso si tengono a vicenda." },
 ];
+const altri = ['trattamenti in gravidanza', 'psicomotricità', 'ginnastica posturale', 'fisioterapia'];
 const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sede-4.webp','/img/sede-5.webp','/img/sede-6.jpeg'];
 ---
 <Base path="/">
@@ -33,7 +26,7 @@ const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sed
         <div class="contenuto">
           <p class="occhiello">Clinica Risorgimento · Forlì</p>
           <h1>Podologia, posturologia e osteopatia a Forlì</h1>
-          <p>Lo studio della Dott.ssa Laura Zanoni: trattamenti personalizzati per il benessere del piede, della postura e del movimento, in un unico spazio dedicato.</p>
+          <p>Lo studio della Dott.ssa Laura Zanoni. Si misura prima di trattare, si spiega tutto in parole semplici, e se un trattamento non serve lo diciamo.</p>
           <div class="azioni">
             <a class="bottone-chiaro" href="tel:+390543405479">Chiama ora</a>
             <a class="bottone-vuoto" href="https://wa.me/393462172234">Scrivi su WhatsApp</a>
@@ -44,33 +37,28 @@ const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sed
 
     <section id="servizi">
       <div class="contenitore">
-        <p class="occhiello-sez">I nostri servizi</p>
-        <h2>Trattamenti personalizzati per il proprio benessere</h2>
-        <p class="intro-sez">La Clinica Risorgimento è specializzata nel fornire una gamma completa di servizi all'avanguardia, tra cui la podologia, l'osteopatia, la posturologia e la realizzazione di solette e plantari su misura. Ci occupiamo di analisi posturale completa, utilizzando le più recenti tecnologie per fornire ai nostri pazienti le soluzioni migliori per ristabilire l'equilibrio corporeo.</p>
+        <p class="occhiello-sez">Di cosa ci occupiamo</p>
+        <h2>Piede, appoggio, postura, movimento</h2>
+        <p class="intro-sez">Sono legati fra loro, e qui si guardano insieme. Ogni percorso parte da una valutazione con strumenti (esame baropodometrico, analisi del passo, ecografia quando serve) e si chiude con un referto scritto per essere capito: dal paziente prima, dal suo medico poi.</p>
         <div class="griglia-servizi">
-          {servizi.map((s) => s.href ? (
+          {servizi.map((s) => (
             <a class="servizio scheda" href={s.href}>
               <img src={s.icona} alt="" loading="lazy" />
               <h3>{s.nome}</h3>
               <p>{s.testo}</p>
               <p style="margin-top:.6rem;color:var(--blu);font-size:.9rem;font-weight:600;">Scopri di più →</p>
             </a>
-          ) : (
-            <div class="servizio">
-              <img src={s.icona} alt="" loading="lazy" />
-              <h3>{s.nome}</h3>
-              <p>{s.testo}</p>
-            </div>
           ))}
         </div>
+        <p style="margin-top:1.6rem;color:var(--grigio);font-size:.92rem;">In studio si fanno anche {altri.join(', ')}. Per sapere se è il caso tuo: <a href="tel:+390543405479">0543 405479</a>.</p>
       </div>
     </section>
 
     <section id="la-clinica" class="alterna">
       <div class="contenitore">
-        <p class="occhiello-sez">Ambiente</p>
-        <h2>La nostra clinica</h2>
-        <p class="intro-sez">Ogni trattamento in una clinica come la Clinica Risorgimento richiede il suo spazio dedicato per garantire l'efficacia, la privacy e la sicurezza del paziente.</p>
+        <p class="occhiello-sez">Lo studio</p>
+        <h2>Viale Risorgimento 283, Forlì</h2>
+        <p class="intro-sez">Sale separate per la podologia, la valutazione strumentale e l'osteopatia. La strumentazione è in sede: pedana baropodometrica, ecografo, laser per le unghie. Si riceve solo su appuntamento, così ogni visita ha il tempo che le serve.</p>
         <div class="galleria">
           {foto.map((f, i) => (
             <img src={f} alt={`Clinica Risorgimento, gli ambienti dello studio di Forlì — ${i + 1}`} loading="lazy" />
@@ -84,7 +72,7 @@ const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sed
         <div>
           <p class="occhiello-sez">Direzione clinica</p>
           <h2>Dott.ssa Laura Zanoni</h2>
-          <p class="intro-sez">Podologa dal 2006 e podiatra (laurea in Spagna, 2026), posturologa clinica, osteopata. Docente all'Istituto Zaccagnini, per dodici anni referente podologo del Piede Diabetico all'ospedale di Forlì. Segue personalmente le valutazioni iniziali e i casi complessi, e firma i protocolli con cui lavora tutta la clinica.</p>
+          <p class="intro-sez">Podologa dal 2006 e podiatra (laurea in Spagna, 2026), posturologa clinica, osteopata. Docente all'Istituto Zaccagnini, per dodici anni referente podologo del Piede Diabetico all'ospedale di Forlì. Segue personalmente le valutazioni iniziali e i casi complessi, e firma i protocolli con cui lavora tutta la clinica. Ha un modo suo di lavorare: far vedere al paziente quello che vede lei, e spiegarlo in parole semplici.</p>
           <p style="margin-top:1rem;"><a href="/laura-zanoni" style="font-weight:600;">Chi è Laura Zanoni →</a></p>
         </div>
         <img src="/img/sede-3.webp" alt="Clinica Risorgimento, la sala visite" loading="lazy" style="border-radius:14px;aspect-ratio:4/3;object-fit:cover;" />
@@ -93,7 +81,7 @@ const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sed
 
     <section class="prenota" id="prenota">
       <div class="contenitore">
-        <h2>Prenota subito un appuntamento</h2>
+        <h2>Prenotare una visita</h2>
         <p class="numeri">
           Chiamaci al <a class="numero" href="tel:+393462172234">346 217 22 34</a>&ensp;oppure al fisso&ensp;<a class="numero" href="tel:+390543405479">0543 40 54 79</a>
         </p>
