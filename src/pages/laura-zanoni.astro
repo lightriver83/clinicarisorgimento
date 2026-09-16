@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CtaContatti from '../components/CtaContatti.astro';
 import { hasCredential } from '../data/laura';
 
 const schemaExtra = [{
@@ -79,7 +80,7 @@ const schemaExtra = [{
 
       <div class="riquadro-prenota">
         <div><strong>Prenotare una visita</strong><span>Su appuntamento, dal lunedì al venerdì 8.30–19.30</span></div>
-        <a class="cta" href="tel:+390543405479">Chiama: 0543 405479</a>
+        <CtaContatti />
       </div>
     </div>
   </main>

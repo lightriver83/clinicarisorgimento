@@ -149,7 +149,7 @@ const schema = schemaExtra
     }
     .barra { display: flex; align-items: center; justify-content: space-between; padding: .7rem 0; gap: 1rem; }
     .barra .marchio { margin-right: auto; }
-    .cta-mobile, .menu-toggle { display: none; }
+    .cta-coppia-mobile, .menu-toggle { display: none; }
     .barra img { height: 44px; width: auto; }
     nav.principale { display: flex; gap: 1.4rem; align-items: center; flex-wrap: wrap; }
     nav.principale a { color: var(--inchiostro); text-decoration: none; font-size: .95rem; font-weight: 500; }
@@ -159,6 +159,16 @@ const schema = schemaExtra
       border-radius: 999px; font-weight: 600; white-space: nowrap;
     }
     .cta:hover { background: var(--blu-scuro); }
+    .cta-coppia { display: inline-flex; gap: .55rem; align-items: center; flex-wrap: wrap; }
+    .cta-coppia .cta { display: inline-flex; align-items: center; gap: .45rem; text-decoration: none; }
+    .cta-wa { background: #25d366; }
+    .cta-wa:hover { background: #1da851; }
+    .cta-coppia--chiaro .cta-chiama { background: #fff; color: var(--blu-scuro) !important; padding: .7rem 1.4rem; font-weight: 700; }
+    .cta-coppia--chiaro .cta-chiama:hover { background: #eef4f8; }
+    .cta-coppia--chiaro .cta-wa { padding: .7rem 1.4rem; font-weight: 700; }
+    .cta-coppia--compatto .cta { padding: .45rem .9rem; font-size: .9rem; }
+    .cta-coppia--compatto .cta-wa { padding: .45rem .7rem; }
+    .cta-coppia--compatto .cta-wa-testo { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
     .eroe { position: relative; color: #fff; overflow: hidden; background: var(--inchiostro); }
     .eroe .sfondo { position: absolute; inset: 0; }
@@ -251,7 +261,6 @@ const schema = schemaExtra
     @media (max-width: 700px) {
       .eroe .contenuto { padding: 4.5rem 0 4rem; }
       .barra { gap: .6rem; }
-      .cta-mobile { display: inline-block; padding: .45rem .9rem; font-size: .9rem; }
       .menu-toggle {
         display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
         width: 44px; height: 44px; padding: 0 10px; border: 1px solid var(--bordo); border-radius: 10px; background: #fff; cursor: pointer;
@@ -269,7 +278,10 @@ const schema = schemaExtra
       body.menu-aperto nav.principale { display: flex; }
       nav.principale a:not(.cta) { padding: .85rem 0; border-bottom: 1px solid var(--bordo); font-size: 1.05rem; }
       nav.principale a[aria-current="page"] { color: var(--blu); }
-      nav.principale .cta { margin-top: .9rem; text-align: center; }
+      nav.principale .cta-coppia { margin-top: .9rem; justify-content: center; }
+      nav.principale .cta-coppia .cta { padding: .6rem 1.1rem; }
+      .cta-mobile { display: none; }
+      .cta-coppia-mobile { display: inline-flex; }
     }
   </style>
 </body>

@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import CtaContatti from '../../components/CtaContatti.astro';
 const bozza = true;
 const pagine = [
   { href: '/problemi/unghia-incarnita', nome: 'Unghia incarnita', testo: 'Dolore al bordo dell\'alluce, rossore, a volte pus. Cosa fare nei primi giorni e quando smettere di curarla da soli.' },
@@ -43,7 +44,7 @@ const pagine = [
       <p class="nota" style="margin-top:2.4rem;">Altre pagine sono in preparazione: verruche, calli e duroni profondi, dolore al tallone, dolore alla pianta, alluce valgo. Se il tuo problema non è qui, chiama: al telefono si capisce in due minuti se è un caso da vedere.</p>
       <div class="riquadro-prenota">
         <div><strong>Vuoi che lo guardiamo insieme?</strong><span>Su appuntamento, lunedì–venerdì 8.30–19.30 · anche su WhatsApp</span></div>
-        <a class="cta" href="tel:+390543405479">Chiama: 0543 405479</a>
+        <CtaContatti />
       </div>
     </div>
   </main>

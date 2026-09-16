@@ -1,4 +1,5 @@
 ---
+import CtaContatti from './CtaContatti.astro';
 const { attiva = '' } = Astro.props;
 const voci = [
   { href: '/servizi', label: 'Servizi', key: 'servizi' },
@@ -10,7 +11,7 @@ const voci = [
 <header class="sito">
   <div class="contenitore barra">
     <a href="/" class="marchio" aria-label="Clinica Risorgimento"><img src="/img/logo.png" alt="Clinica Risorgimento" /></a>
-    <a class="cta cta-mobile" href="tel:+390543405479">Chiama</a>
+    <div class="cta-coppia-mobile"><CtaContatti stile="compatto" etichetta="Chiama" /></div>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principale" aria-label="Apri il menu">
       <span></span><span></span><span></span>
     </button>
@@ -18,7 +19,7 @@ const voci = [
       {voci.map((v) => (
         <a href={v.href} aria-current={attiva === v.key ? 'page' : undefined}>{v.label}</a>
       ))}
-      <a class="cta" href="tel:+390543405479">Prenota: 0543 405479</a>
+      <CtaContatti stile="compatto" mostraNumero={true} />
     </nav>
   </div>
 </header>
