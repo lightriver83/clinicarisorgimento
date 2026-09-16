@@ -91,9 +91,35 @@ const schema = schemaExtra
   <meta property="og:locale" content="it_IT" />
   {noindex && <meta name="robots" content="noindex, follow" />}
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  {/* Statistiche senza cookie (Cloudflare Web Analytics): conta visite e pagine, non riconosce le persone. Il token è pubblico per protocollo. */}
+  <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "fad2a32b918f499cbf23d8e6c72ee2bb"}'></script>
 </head>
 <body>
   <slot />
+  {/* Conta i click su Chiama / WhatsApp: manda al Worker clinica-eventi solo tipo di pulsante e pagina, senza cookie né identificativi. */}
+  <script is:inline>
+    (function () {
+      var W = 'https://clinica-eventi.nicola-giunchi.workers.dev/e';
+      function tipo(a) {
+        var h = (a.getAttribute('href') || '').toLowerCase();
+        if (h.indexOf('tel:') === 0) return 'chiama';
+        if (h.indexOf('wa.me') !== -1 || h.indexOf('whatsapp') !== -1) return 'whatsapp';
+        if (h.indexOf('mailto:') === 0) return 'email';
+        return null;
+      }
+      document.addEventListener('click', function (ev) {
+        var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+        if (!a) return;
+        var t = tipo(a);
+        if (!t) return;
+        var d = JSON.stringify({ e: t, p: location.pathname });
+        try {
+          if (navigator.sendBeacon) navigator.sendBeacon(W, d);
+          else fetch(W, { method: 'POST', body: d, keepalive: true });
+        } catch (e) {}
+      }, true);
+    })();
+  </script>
   <style is:global>
     :root {
       --blu: #0069a8;
