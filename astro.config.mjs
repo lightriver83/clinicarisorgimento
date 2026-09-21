@@ -8,8 +8,8 @@ export default defineConfig({
   build: { format: 'file' },
   integrations: [
     sitemap({
-      // blog e problemi entrano in sitemap quando escono dalla bozza
-      filter: (page) => !page.includes('/blog') && !page.includes('/problemi'),
+      // blog e problemi entrano in sitemap quando escono dalla bozza; privacy è noindex
+      filter: (page) => !page.includes('/blog') && !page.includes('/problemi') && !page.endsWith('/privacy'),
     }),
   ],
 });

@@ -93,8 +93,24 @@ const schema = schemaExtra
   <meta property="og:locale" content="it_IT" />
   {noindex && <meta name="robots" content="noindex, follow" />}
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-  {/* Statistiche senza cookie (Cloudflare Web Analytics): conta visite e pagine, non riconosce le persone. Il token è pubblico per protocollo. */}
-  <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "fad2a32b918f499cbf23d8e6c72ee2bb"}'></script>
+  {/* Statistiche senza cookie (Cloudflare Web Analytics): conta visite e pagine, non riconosce le persone. Il token è pubblico per protocollo.
+      Interruttore «non contarmi» per i telefoni dello studio: si apre una volta /?nocontare=1 e da lì quel dispositivo non viene contato
+      (né visite né click); /?nocontare=0 lo riattiva. Vive in localStorage del dispositivo: nessun cookie, nessun dato che parte. */}
+  <script is:inline>
+    (function () {
+      try {
+        var m = /[?&]nocontare=([01])/.exec(location.search);
+        if (m) localStorage.setItem('nocontare', m[1]);
+        window.__nocontare = localStorage.getItem('nocontare') === '1';
+      } catch (e) { window.__nocontare = false; }
+      if (window.__nocontare) return;
+      var s = document.createElement('script');
+      s.type = 'module';
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', '{"token": "fad2a32b918f499cbf23d8e6c72ee2bb"}');
+      document.head.appendChild(s);
+    })();
+  </script>
 </head>
 <body>
   <slot />
@@ -110,6 +126,7 @@ const schema = schemaExtra
         return null;
       }
       document.addEventListener('click', function (ev) {
+        if (window.__nocontare) return;
         var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
         if (!a) return;
         var t = tipo(a);
@@ -227,6 +244,14 @@ const schema = schemaExtra
     footer.sito img { height: 40px; margin-bottom: 1rem; }
     footer.sito a { color: #dbe3ea; }
     .legale { margin-top: .8rem; }
+    .piede-servizi { margin-top: 1rem; line-height: 1.9; }
+    .piede-servizi a { text-decoration: none; }
+    .piede-servizi a:hover { text-decoration: underline; }
+    .vedi-anche { margin-top: 2.2rem; padding-top: 1.2rem; border-top: 1px solid var(--bordo); }
+    .vedi-anche h2 { font-size: 1.05rem; margin: 0 0 .5rem; }
+    .vedi-anche ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem .9rem; }
+    .vedi-anche li a { display: inline-block; padding: .4rem .85rem; border: 1px solid var(--bordo); border-radius: 999px; text-decoration: none; color: var(--blu-scuro); font-size: .92rem; }
+    .vedi-anche li a:hover { border-color: var(--blu); }
 
     /* pagine interne */
     .testata-pagina { background: var(--fondo); padding: 3.2rem 0 2.6rem; border-bottom: 1px solid var(--bordo); }
