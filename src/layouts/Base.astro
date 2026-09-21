@@ -6,6 +6,7 @@ const {
   path = '/',
   noindex = false,
   schemaExtra = null,
+  ogImage = 'https://clinicarisorgimento.it/img/sede-1.webp',
 } = Astro.props;
 const canonical = new URL(path, Astro.site).href;
 
@@ -57,6 +58,7 @@ const schemaBase = {
       "alternateName": ["Dott.ssa Laura Zanoni", "Dottoressa Laura Zanoni"],
       "url": "https://clinicarisorgimento.it/laura-zanoni",
       "honorificPrefix": "Dott.ssa",
+      "image": "https://clinicarisorgimento.it/img/laura-zanoni-quadrata.jpg",
       "jobTitle": "Podologa e podiatra, posturologa, osteopata",
       "sameAs": ["https://www.istitutozaccagnini.it/istituto/docenti/zanoni-laura", "https://it.linkedin.com/in/laura-zanoni-121255169", "https://www.facebook.com/clinicarisorgimento", "https://www.google.com/maps?cid=16692031514607331278"],
       "worksFor": { "@id": "https://clinicarisorgimento.it/#clinica" },
@@ -89,7 +91,7 @@ const schema = schemaExtra
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
-  <meta property="og:image" content="https://clinicarisorgimento.it/img/sede-1.webp" />
+  <meta property="og:image" content={ogImage} />
   <meta property="og:locale" content="it_IT" />
   {noindex && <meta name="robots" content="noindex, follow" />}
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
@@ -274,6 +276,10 @@ const schema = schemaExtra
     }
     .riquadro-prenota strong { display: block; margin-bottom: .2rem; }
     .riquadro-prenota span { color: var(--grigio); font-size: .92rem; }
+    .ritratto { float: right; width: 240px; margin: .2rem 0 1.2rem 1.6rem; }
+    .ritratto img { width: 100%; height: auto; border-radius: 14px; aspect-ratio: 4/5; object-fit: cover; }
+    .ritratto figcaption { font-size: .82rem; color: var(--grigio); margin-top: .5rem; line-height: 1.4; }
+    @media (max-width: 600px) { .ritratto { float: none; width: min(100%, 320px); margin: 0 0 1.4rem; } }
     .credenziali { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: .6rem; }
     .credenziali li { display: grid; grid-template-columns: 5.2rem 1fr; gap: .8rem; padding: .7rem 0; border-bottom: 1px solid var(--bordo); }
     .credenziali .anno { color: var(--blu); font-weight: 700; font-variant-numeric: tabular-nums; }
