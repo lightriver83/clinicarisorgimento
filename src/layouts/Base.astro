@@ -185,8 +185,9 @@ const schema = schemaExtra
     .cta-coppia--chiaro .cta-chiama { background: #fff; color: var(--blu-scuro) !important; padding: .7rem 1.4rem; font-weight: 700; }
     .cta-coppia--chiaro .cta-chiama:hover { background: #eef4f8; }
     .cta-coppia--chiaro .cta-wa { padding: .7rem 1.4rem; font-weight: 700; }
-    .cta-coppia--compatto .cta { padding: .45rem .9rem; font-size: .9rem; }
-    .cta-coppia--compatto .cta-wa { padding: .45rem .7rem; }
+    /* Area di tocco: 44 px minimi (Apple HIG / WCAG 2.5.8), misurati il 21/9: WhatsApp era 40×32, Chiama 105×37. */
+    .cta-coppia--compatto .cta { padding: .45rem .9rem; font-size: .9rem; min-height: 44px; box-sizing: border-box; }
+    .cta-coppia--compatto .cta-wa { padding: .45rem .7rem; min-width: 44px; justify-content: center; }
     .cta-coppia--compatto .cta-wa-testo { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
     .eroe { position: relative; color: #fff; overflow: hidden; background: var(--inchiostro); }
