@@ -181,7 +181,7 @@ const schema = schemaExtra
     }
     .cta:hover { background: var(--blu-scuro); }
     .cta-coppia { display: inline-flex; gap: .55rem; align-items: center; flex-wrap: wrap; }
-    .cta-coppia .cta { display: inline-flex; align-items: center; gap: .45rem; text-decoration: none; }
+    .cta-coppia .cta { display: inline-flex; align-items: center; gap: .45rem; text-decoration: none; color: #fff; }
     .cta-wa { background: #25d366; }
     .cta-wa:hover { background: #1da851; }
     .cta-coppia--chiaro .cta-chiama { background: #fff; color: var(--blu-scuro) !important; padding: .7rem 1.4rem; font-weight: 700; }
@@ -275,7 +275,9 @@ const schema = schemaExtra
       padding: 1.4rem 1.5rem; margin-top: 2.4rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: space-between;
     }
     .riquadro-prenota strong { display: block; margin-bottom: .2rem; }
-    .riquadro-prenota span { color: var(--grigio); font-size: .92rem; }
+    .riquadro-prenota > div > span { color: var(--grigio); font-size: .92rem; }
+    /* Il testo dentro i bottoni resta del colore del bottone (bianco su blu e verde), qualunque regola di contesto. */
+    .cta-coppia .cta span { color: inherit; font-size: inherit; }
     .ritratto { float: right; width: 240px; margin: .2rem 0 1.2rem 1.6rem; }
     .ritratto img { width: 100%; height: auto; border-radius: 14px; aspect-ratio: 4/5; object-fit: cover; }
     .ritratto figcaption { font-size: .82rem; color: var(--grigio); margin-top: .5rem; line-height: 1.4; }
