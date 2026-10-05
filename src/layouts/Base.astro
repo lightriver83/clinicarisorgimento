@@ -116,7 +116,9 @@ const schema = schemaExtra
 </head>
 <body>
   <slot />
-  {/* Conta i click su Chiama / WhatsApp: manda al Worker clinica-eventi solo tipo di pulsante e pagina, senza cookie né identificativi. */}
+  {/* Conta i click su Chiama / WhatsApp e le pagine aperte: manda al Worker clinica-eventi solo tipo di evento, pagina,
+      sito di provenienza (solo il nome, «=» se interno) e tipo di dispositivo, senza cookie né identificativi.
+      Le viste sostituiscono nel report i numeri campionati di Cloudflare Web Analytics (5/10/2026). */}
   <script is:inline>
     (function () {
       var W = 'https://clinica-eventi.nicola-giunchi.workers.dev/e';
@@ -139,6 +141,22 @@ const schema = schemaExtra
           else fetch(W, { method: 'POST', body: d, keepalive: true });
         } catch (e) {}
       }, true);
+      if (window.__nocontare || navigator.webdriver) return;
+      var r = '';
+      try {
+        if (document.referrer) {
+          var h = new URL(document.referrer).hostname.toLowerCase().replace(/^www\./, '');
+          r = h === location.hostname.replace(/^www\./, '') ? '=' : h;
+        }
+      } catch (e) {}
+      var ua = navigator.userAgent;
+      var d = /iPad|Tablet/i.test(ua) || (/Android/i.test(ua) && !/Mobile/i.test(ua)) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)
+        ? 'tablet' : (/Mobi|iPhone|Android/i.test(ua) ? 'mobile' : 'desktop');
+      var v = JSON.stringify({ e: 'vista', p: location.pathname, r: r, d: d });
+      try {
+        if (navigator.sendBeacon) navigator.sendBeacon(W, v);
+        else fetch(W, { method: 'POST', body: v, keepalive: true });
+      } catch (e) {}
     })();
   </script>
   <style is:global>
