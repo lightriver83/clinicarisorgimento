@@ -9,10 +9,14 @@ const pagine = [
   { href: '/problemi/unghia-nera', nome: 'Unghia nera', testo: 'Dopo una corsa, una scarpa stretta o un colpo. Cosa succede sotto, quando cade, e quali macchie vanno fatte vedere.' },
   { href: '/problemi/unghia-gialla-spessa', nome: 'Unghia gialla e spessa: è un fungo?', testo: 'Una volta su due non lo è. Come si distingue e perché gli smalti antimicotici spesso non funzionano.' },
 ];
+const pelle = [
+  { href: '/problemi/verruca-plantare', nome: 'Verruca sotto il piede', testo: 'Un punto duro sotto la pianta che fa male quando lo stringi. Verruca o callo, cosa fare a casa e quando farla vedere.' },
+  { href: '/problemi/calli-duroni', nome: 'Calli, duroni e occhio di pernice', testo: 'Il callo con il nucleo che punge, il durone sotto la pianta, l\'occhio di pernice fra le dita. Perché tornano.' },
+];
 ---
 <Base
   title="Problemi del piede: cosa fare, spiegato da chi li cura | Forlì"
-  description="Unghia incarnita, giradito, unghia nera, unghia gialla e spessa: pagine scritte dalla Dott.ssa Laura Zanoni che partono da come le persone descrivono il problema, non dal nome tecnico."
+  description="Unghia incarnita, giradito, unghia nera, unghia gialla e spessa, verruca sotto il piede: cosa fare e quando farlo vedere, spiegato dalla Dott.ssa Laura Zanoni."
   path="/problemi"
 >
   <Header attiva="problemi" />
@@ -34,7 +38,16 @@ const pagine = [
           </a>
         ))}
       </div>
-      <p class="nota" style="margin-top:2.4rem;">Altre pagine sono in preparazione: verruche, calli e duroni profondi, dolore al tallone, dolore alla pianta, alluce valgo. Se il tuo problema non è qui, chiama: al telefono si capisce in due minuti se è un caso da vedere.</p>
+      <h2>Pelle del piede</h2>
+      <div class="griglia-schede" style="margin-top:1rem;">
+        {pelle.map((p) => (
+          <a class="scheda" href={p.href}>
+            <h3>{p.nome}</h3>
+            <p>{p.testo}</p>
+          </a>
+        ))}
+      </div>
+      <p class="nota" style="margin-top:2.4rem;">Altre pagine sono in preparazione: dolore al tallone, dolore alla pianta, alluce valgo. Se il tuo problema non è qui, prenota un controllo in studio: al telefono o su WhatsApp si fissa l'appuntamento.</p>
       <div class="riquadro-prenota">
         <div><strong>Vuoi che lo guardiamo insieme?</strong><span>Su appuntamento, lunedì–venerdì 8.30–19.30 · anche su WhatsApp</span></div>
         <CtaContatti />

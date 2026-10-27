@@ -1,0 +1,59 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+// Testo rivisto da Laura il 27/10/2026 (docx in .plancia/allegati/2026-10-27). Le FAQ sono quelle della bozza
+// del 19/10, che nel suo testo non c'erano: dentro per decisione di Nick (AT-797, 27/10/2026).
+const faq = [
+  { d: "Le verruche passano da sole?",
+    r: "Possono, ma negli adulti ci vuole spesso più di un anno, e nel frattempo possono allargarsi o moltiplicarsi. Se non fa male e non cresce, si può aspettare; se fa male camminando o ne compaiono altre, conviene trattarla." },
+  { d: "È contagiosa?",
+    r: "Sì, poco ma sì: il virus passa con la pelle bagnata, a piedi nudi su pavimenti in comune. Ciabatte in piscina e nelle docce, asciugamano tuo e non grattarla bastano a ridurre il rischio per te e per chi vive con te." },
+  { d: "Posso usare il callifugo?",
+    r: "Il callifugo è un acido, come molti prodotti per le verruche, ma è fatto per i calli: per una verruca si usa un prodotto fatto per le verruche. Sulla pelle sana attorno brucia. Se hai il diabete o problemi di circolazione, niente acidi sul piede." },
+  { d: "Fa male toglierla?",
+    r: "Togliere la pelle dura che la copre non fa male. Quanto fastidio dà il trattamento vero e proprio dipende da quale si sceglie: te lo dico prima di cominciare." },
+  { d: "Posso andare in piscina?",
+    r: "Sì, con le ciabatte negli spogliatoi e nelle docce, e con la verruca coperta da un cerotto impermeabile." },
+];
+---
+<PaginaProblema
+  titolo="Verruca sotto il piede"
+  titoloSeo="Verruca sotto il piede: come riconoscerla e cosa fare | Forlì"
+  descrizione="Un punto duro sotto la pianta che fa male quando lo stringi. Come distinguere la verruca da un callo, cosa fare a casa e quando farla vedere."
+  path="/problemi/verruca-plantare"
+  faq={faq}
+  dataAgg="2026-10-27"
+>
+  <p>Molti arrivano convinti di avere un callo: un punto duro sotto la pianta, che fa male camminando e che ricresce dopo la pietra pomice. A volte è un callo, a volte è una verruca, e le due cose si curano in modo diverso. Questa pagina serve a capire quale delle due hai, cosa puoi fare da solo e da che punto conviene farla vedere.</p>
+
+  <h2>Cosa fare a casa</h2>
+  <p>Se sei sicuro che sia una verruca e non hai diabete né problemi di circolazione, puoi provare con i prodotti all'acido salicilico della farmacia: cerotti, soluzioni o gel. Si mettono solo sulla verruca, proteggendo la pelle attorno, ogni giorno, per settimane. È una cura lenta, e funziona solo se la si porta avanti. Prima di ogni applicazione si può ammorbidire la pelle in acqua tiepida e passare una limetta usa e getta, che poi non si usa per altro.</p>
+  <p>Cosa non fare: tagliarla o scavarla con le forbicine o la lametta, perché sanguina, si infetta e il virus passa alla pelle vicina; usare lo stesso prodotto su un callo e su una verruca senza sapere quale dei due è; mettere acidi se hai il diabete, la pelle sottile o la circolazione scarsa, perché bruciano anche la pelle sana e aprono una ferita che fatica a chiudersi.</p>
+  <p>Per non passarla ad altri, e per non farne nascere di nuove: ciabatte in piscina, in palestra e nelle docce in comune, asciugamano tuo, calze cambiate ogni giorno.</p>
+
+  <h2>Perché succede</h2>
+  <p>La verruca è un'infezione della pelle da papillomavirus (HPV). Il virus entra da piccole screpolature, più facilmente quando la pelle è umida e ammorbidita: piscine, docce, spogliatoi. Sotto la pianta il peso del corpo la spinge verso l'interno. Per questo fa più male di quelle sulle mani, cresce in profondità e si copre di uno strato di pelle dura che la fa sembrare un callo. A volte se ne formano diverse, vicine fra loro, a mosaico.</p>
+
+  <h2>Come capire se è una verruca o un callo</h2>
+  <p><strong>Le righe della pelle.</strong> Sul callo le linee della pelle, quelle delle impronte, passano sopra senza interrompersi. Sulla verruca si interrompono e le girano attorno.</p>
+  <p><strong>I puntini neri.</strong> Limando la superficie della verruca compaiono puntini scuri: sono piccoli vasi di sangue coagulato. Il callo non li ha.</p>
+  <p><strong>Il dolore.</strong> Il callo fa male se premi dritto. La verruca fa male soprattutto se la stringi di lato, fra due dita.</p>
+  <p><strong>Dove sta.</strong> Il callo nasce dove la scarpa o l'osso premono. La verruca può comparire anche dove la pressione non c'è.</p>
+  <p>Sono segni che orientano. In studio si guarda con l'ingrandimento e, se serve, si toglie lo strato di pelle dura per vedere cosa c'è sotto. Se ti sembra un callo, c'è una pagina anche per quello: <a href="/problemi/calli-duroni">calli, duroni e occhio di pernice</a>.</p>
+
+  <h2>Quando venire in studio, e quando invece dal medico</h2>
+  <p>Vieni se dopo due-tre mesi di cure a casa la verruca è uguale, se fa male camminando, se se ne formano altre, se non sei sicuro che sia una verruca, o se hai il diabete o problemi di circolazione e non puoi usare gli acidi da solo.</p>
+  <p>Vai dal medico o dal dermatologo se la macchia cambia colore o forma, sanguina senza motivo, cresce in fretta, ha i bordi irregolari, o non assomiglia a niente di quello che è descritto qui: sotto il piede possono comparire anche lesioni che non sono verruche, e quelle le deve vedere il dermatologo. Dal medico anche se hai le difese basse per una malattia o per dei farmaci, o se compaiono tante verruche in poco tempo.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Guardo la lesione con l'ingrandimento e tolgo la pelle dura che la copre. Spesso è già un sollievo, perché è quello spessore a premere, ed è anche il modo per vedere meglio cosa c'è sotto. Se la lesione non mi convince, non la tratto: ti mando dal dermatologo.</p>
+  <p>Se è una verruca, scegliamo insieme il trattamento. Si fa in più sedute, a distanza di qualche settimana l'una dall'altra, e i tempi dipendono da quanto è profonda e da quante sono.</p>
+
+  <h3>Possibili terapie che vengono eseguite presso Clinica Risorgimento</h3>
+  <p><strong>1. Trattamento con acidi specifici (solitamente ad alte percentuali).</strong> Questi prodotti agiscono in maniera progressiva sul tessuto interessato, favorendone l'eliminazione. Il trattamento viene modulato in base alla risposta della cute e può richiedere più applicazioni.</p>
+  <p><strong>2. Trattamento con laser Fisioline LUMIX C.P.S. Podiatry.</strong> Nel mio studio utilizzo anche un laser multidiodico ad alta potenza, specificamente studiato per applicazioni podologiche.</p>
+  <p>Spesso, quando parlo di laser, i pazienti pensano a quello utilizzato in fisioterapia. In realtà, pur partendo dalla stessa tecnologia, l'impiego è differente.</p>
+  <p><strong>Il laser fisioterapico</strong> viene utilizzato principalmente per ridurre il dolore, trattare gli stati infiammatori e favorire i processi di recupero dei tessuti.</p>
+  <p><strong>Il laser che utilizzo per le verruche</strong>, invece, viene impiegato con modalità e parametri specifici per concentrare l'energia sulla lesione e ottenere un'azione mirata sul tessuto interessato.</p>
+  <p>Il LUMIX C.P.S. Podiatry permette infatti di utilizzare differenti modalità di emissione laser e, attraverso un apposito terminale focalizzato, di intervenire sulla verruca con precisione.</p>
+  <p>La differenza principale, quindi, non è semplicemente nella potenza del laser, ma <strong>nel modo in cui l'energia viene utilizzata e nell'obiettivo del trattamento</strong>.</p>
+</PaginaProblema>

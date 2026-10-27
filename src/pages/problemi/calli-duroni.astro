@@ -1,0 +1,47 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+// Testo rivisto da Laura il 27/10/2026 (docx in .plancia/allegati/2026-10-27). Le FAQ sono quelle della bozza del 19/10,
+// che nel suo testo non c'erano: dentro come per la verruca (Nick, AT-797, 27/10/2026), salvo quella sulle creme
+// all'urea, un consiglio a casa che Laura ha tolto (Nick, AT-802, 27/10/2026: «Tolgo la FAQ sull'urea»). Alluce valgo e dito a martello
+// restano senza link finché le loro pagine non escono.
+const faq = [
+  { d: "Il callo ha le radici?",
+    r: "Non come una pianta. Ha un nucleo, una punta di pelle dura e compatta che spinge verso l'interno ed è quella che fa male. Tolto il nucleo, di solito il dolore passa; se la pressione resta, si riforma." },
+  { d: "Ogni quanto va tolto?",
+    r: "Dipende da quanto in fretta si riforma, cioè da quanto la causa è ancora lì. Lo scopo non è toglierlo a intervalli fissi per sempre, ma fare in modo che smetta di tornare." },
+  { d: "Il plantare toglie i calli?",
+    r: "Toglie la pressione che li forma, quando la causa è l'appoggio. Se la causa è la scarpa o un dito storto, il plantare da solo non basta." },
+  { d: "Ho il diabete: posso togliermi il callo da solo?",
+    r: "No: niente lametta e niente callifugo. Nel diabete il callo va tolto da un podologo e controllato con regolarità, in accordo con il tuo medico o con il centro diabetologico." },
+];
+---
+<PaginaProblema
+  titolo="Calli, duroni e occhio di pernice"
+  titoloSeo="Calli, duroni e occhio di pernice: perché tornano | Forlì"
+  descrizione="Il callo con il nucleo che punge, il durone sotto la pianta, l'occhio di pernice fra le dita. Cosa fare a casa, cosa evitare e perché tornano."
+  path="/problemi/calli-duroni"
+  faq={faq}
+  dataAgg="2026-10-27"
+>
+  <p>Il callo è il problema del piede più curato in casa: pietra pomice, lametta, callifugo. Per qualche settimana va meglio, poi torna, sempre nello stesso punto. Torna perché la pelle sta facendo il suo lavoro: si ispessisce dove viene schiacciata o sfregata. Finché quel punto viene schiacciato, il callo si riforma. Questa pagina spiega cosa puoi fare da solo, cosa è meglio evitare e come si arriva a farlo smettere di tornare.</p>
+
+  <h2>Perché succede</h2>
+  <p>Callo e durone sono la stessa cosa in due forme: pelle che si ispessisce (ipercheratosi) dove c'è troppa pressione o troppo attrito. Il durone è largo e piatto, di solito sotto la pianta, dove l'avampiede porta il peso. Il callo è piccolo, con un nucleo duro che spinge verso l'interno come un chiodo. L'occhio di pernice è un callo molle fra le dita, bianco e macerato dall'umidità, nato dove due dita si schiacciano a vicenda.</p>
+  <p>Le cause sono per lo più meccaniche: scarpe strette, corte o con il tacco, che spostano il peso in avanti; dita che non stanno dritte, come l'alluce valgo o il dito a martello; un appoggio che carica troppo un punto del piede; calze con le cuciture nel posto sbagliato. Con gli anni, poi, il cuscinetto di grasso sotto la pianta si assottiglia, e l'osso preme di più.</p>
+
+  <h2>Come capire cosa hai</h2>
+  <p><strong>Durone.</strong> Una zona larga, giallastra, dura, poco dolorosa. Quando diventa spessa dà fastidio come un sasso nella scarpa.</p>
+  <p><strong>Callo.</strong> Piccolo, rotondo, con un punto centrale più scuro o trasparente. Fa male se premi dritto, come una puntina.</p>
+  <p><strong>Tiloma/Heloma (Occhio di pernice).</strong> Fra il quarto e il quinto dito (nella maggior parte dei casi), bianco, molle, a volte con una piccola ferita al centro.</p>
+  <p><strong>Callo con una macchia scura sotto, o con del liquido.</strong> Di solito sotto c'è un piccolo versamento di sangue o una vescica, segno di una pressione forte. Da far vedere presto, a maggior ragione se hai il diabete; se la macchia resta anche tolto il callo, la deve vedere il dermatologo.</p>
+  <p>Un «callo» su cui le righe della pelle si interrompono, con dei puntini neri, potrebbe essere una verruca: ne ho scritto nella pagina sulla <a href="/problemi/verruca-plantare">verruca sotto il piede</a>.</p>
+
+  <h2>Quando venire in studio</h2>
+  <p>Vieni se il callo fa male camminando, se torna dopo che l'hai tolto, se c'è una macchia scura sotto, se non riesci a raggiungerlo o a vederlo bene. E vieni sempre se hai il diabete o problemi di circolazione: in quei casi niente lame né callifughi, il callo lo toglie il podologo.</p>
+  <p>Vai dal podologo se attorno al callo la pelle è rossa, calda e gonfia, se esce pus o se hai la febbre: sotto il callo può esserci un'infezione, a quel punto sarà il podologo ad inviarti dal medico, che decide l'eventuale antibiotico.</p>
+  <p>Se hai il diabete e sotto il callo si è aperta una ferita, chiama oggi il centro del piede diabetico. Ho passato dodici anni nell'ambulatorio del Piede Diabetico dell'ospedale di Forlì: nel diabete un callo è uno dei punti da cui può partire un'ulcera, e non si aspetta.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Tolgo il callo con il bisturi, strato dopo strato, fino al «nucleo». Non fa male, perché si lavora sulla pelle morta e non su quella viva, e di solito il sollievo si sente già uscendo: era lo spessore a premere. Se sotto c'è una piccola ferita, si medica.</p>
+  <p>Poi si cerca la causa, che è la parte che decide se il callo torna. Guardo le scarpe che porti, come appoggi il piede, se le dita stanno dritte. Quando serve si misura l'appoggio con l'esame baropodometrico, che fa vedere sullo schermo dove il peso si concentra. Le soluzioni sono di tre tipi: la scarpa giusta, un'ortesi in silicone fatta su misura che protegge un dito o lo tiene in una posizione migliore, e, se l'appoggio lo richiede, un <a href="/servizi/plantari-su-misura">plantare su misura</a>. Se il plantare non serve, te lo dico.</p>
+</PaginaProblema>
