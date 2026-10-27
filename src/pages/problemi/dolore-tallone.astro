@@ -1,0 +1,62 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+// Testo rivisto da Laura il 27/10/2026 (docx in .plancia/allegati/2026-10-27). Le FAQ sono quelle della bozza
+// del 19/10, che nel suo testo non c'erano: dentro come per verruca e calli (Nick, AT-797, 27/10/2026).
+const faq = [
+  { d: "La spina calcaneare va operata?",
+    r: "Quasi mai. La spina si trova anche in chi non ha nessun dolore, e il dolore si cura lavorando sulla fascia, non sull'osso. Se un giorno servisse un intervento, lo decide l'ortopedico." },
+  { d: "Quanto dura una fascite plantare?",
+    r: "Di solito mesi, non giorni. Con gli esercizi fatti tutti i giorni, meno carico e le scarpe giuste, il dolore cala piano, nel giro di settimane o mesi. Gli esercizi vanno continuati anche quando fa meno male, perché il dolore può tornare." },
+  { d: "Posso continuare a correre?",
+    r: "Se durante la corsa il dolore è lieve e il giorno dopo non è peggiorato, si può ridurre invece di fermarsi. Se zoppichi, ti fermi finché il dolore non passa, e intanto bici o nuoto." },
+  { d: "Le talloniere della farmacia servono?",
+    r: "Possono dare sollievo nelle prime settimane, soprattutto se il cuscinetto sotto il tallone è sottile. Se dopo un mese non è cambiato niente, conviene capire perché la fascia è sovraccarica." },
+  { d: "E gli antinfiammatori?",
+    r: "Li decide il medico. Possono togliere il dolore per qualche giorno, ma non tolgono il sovraccarico che lo produce." },
+];
+---
+<PaginaProblema
+  titolo="Dolore al tallone appena alzati"
+  titoloSeo="Dolore al tallone al mattino: fascite, spina, cosa fare | Forlì"
+  descrizione="Una fitta sotto il tallone ai primi passi del mattino, che si scioglie camminando e torna la sera. Cosa fare a casa, quanto dura e quando farlo vedere."
+  path="/problemi/dolore-tallone"
+  faq={faq}
+  dataAgg="2026-10-27"
+  servizio={{ href: '/servizi/plantari-su-misura', label: 'Plantari su misura' }}
+>
+  <p>Il racconto si somiglia: appena giù dal letto i primi passi sono una fitta sotto il tallone, poi camminando si scioglie, e torna la sera o dopo essere stati seduti a lungo.</p>
+  <p>Questa pagina spiega cosa c'è di solito dietro quel dolore, cosa si può fare da soli e quanto tempo ci vuole davvero.</p>
+
+  <h2>Cosa fare a casa</h2>
+  <p>Togli carico per qualche settimana: meno corsa, meno ore in piedi, niente salti. Non vuol dire stare fermi: bici e nuoto vanno bene.</p>
+  <p>Allunga il polpaccio due-tre volte al giorno: in piedi davanti a un muro, una gamba indietro con il tallone a terra e il ginocchio dritto, trenta secondi per lato. Prima di alzarti dal letto, tira verso di te le dita del piede con la mano per qualche secondo: i primi passi fanno meno male. La sera, fai rotolare sotto la pianta una pallina da tennis per qualche minuto.</p>
+  <p>Scarpe con un piccolo tacco, due-tre centimetri, e una suola che ammortizza, anche in casa. Niente ciabatte piatte, niente piedi nudi su pavimenti duri.</p>
+  <p>Cosa non fare: correre sul dolore per «scaldarlo»; cambiare scarpe ogni settimana alla ricerca di quella che lo fa passare; prendere antinfiammatori per settimane senza averne parlato con il medico.</p>
+
+  <h2>Perché succede</h2>
+  <p>Il dolore sotto il tallone viene più spesso dalla fascia plantare, la banda di tessuto che va dal tallone alle dita e tiene su l'arco del piede. Quando è sovraccaricata si irrita nel punto in cui si attacca al tallone (aponeurosi plantare).</p>
+  <p>Le cause più frequenti sono un aumento brusco di corsa o di ore in piedi, qualche chilo in più, polpacci rigidi, scarpe piatte e consumate, un piede molto piatto/pronato o molto cavo.</p>
+  <p>La «spina» della radiografia è un piccolo becco d'osso vicino al punto in cui la fascia si attacca al tallone. La si trova anche in tante persone che non hanno nessun dolore: da sola non spiega il male, e per guarire non serve toglierla.</p>
+
+  <h2>Non tutto il dolore al tallone è fascite</h2>
+  <p><strong>Sotto il tallone, verso l'interno, peggio ai primi passi.</strong> È il quadro tipico della fascite plantare.</p>
+  <p><strong>Dietro il tallone, dove si attacca il tendine d'Achille.</strong> Di solito è il tendine, non la fascia, e gli esercizi sono diversi.</p>
+  <p><strong>Al centro del tallone, come un livido profondo, peggio sui pavimenti duri.</strong> Può essere il cuscinetto di grasso sotto il tallone che si è assottigliato.</p>
+  <p><strong>Bruciore, formicolio, una scossa che scende verso le dita.</strong> Può esserci di mezzo un nervo.</p>
+  <p><strong>Tutti e due i talloni, con rigidità al mattino anche in altre articolazioni.</strong> Va escluso un problema infiammatorio.</p>
+
+  <h2>Quando venire in studio, e quando invece dal medico</h2>
+  <p>Vieni se dopo tre-quattro settimane di cure a casa il dolore non cala, se ti fa zoppicare, se torna ogni volta che riprendi a correre, o se vuoi capire se c'entra il modo in cui appoggi il piede.</p>
+  <p>Vai prima dal medico se il dolore è cominciato dopo una caduta, se il tallone è gonfio o caldo, se hai la febbre, se senti formicolio o perdi sensibilità.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Prima ascolto come è cominciato e cerco con le mani il punto che fa male. Poi guardo come appoggi e come cammini, e quando serve misuro l'appoggio con l'esame baropodometrico. Se c'è bisogno di vedere la fascia o il tendine, si fa una valutazione ecografica di supporto: si vede lo spessore della fascia nel punto in cui si attacca al tallone, e le immagini le porti al tuo medico.</p>
+  <p>Il trattamento si costruisce su quello che si trova: esercizi da fare a casa, le scarpe giuste e, quando l'appoggio lo richiede, un <a href="/servizi/plantari-su-misura">plantare su misura</a>, controllato dopo la consegna. Se il plantare non serve, lo dico.</p>
+  <p>A volte possono essere necessarie altre terapie come onde d'urto in caso di sperone o laser terapia in caso di fascite, associata a bendaggio; per non lasciarti andare via con lo stesso dolore con il quale sei arrivato e darti un sollievo temporaneo.</p>
+  <p>I bendaggi sono:</p>
+  <ul>
+    <li><strong>Low-Dye Taping</strong>: bendaggio funzionale rigido, specifico per sostenere l'arco plantare e ridurre la tensione sulla fascia plantare.</li>
+    <li><strong>Kinesio Taping</strong>: bendaggio elastico con i caratteristici nastri colorati, utilizzato per fornire supporto senza limitare troppo il movimento.</li>
+  </ul>
+  <p>Sui tempi, onestamente: la fascite plantare migliora senza intervento nella grande maggioranza dei casi, ma ci vogliono mesi. Gli esercizi vanno fatti anche quando il dolore cala.</p>
+</PaginaProblema>

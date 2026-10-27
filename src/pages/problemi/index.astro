@@ -13,6 +13,9 @@ const pelle = [
   { href: '/problemi/verruca-plantare', nome: 'Verruca sotto il piede', testo: 'Un punto duro sotto la pianta che fa male quando lo stringi. Verruca o callo, cosa fare a casa e quando farla vedere.' },
   { href: '/problemi/calli-duroni', nome: 'Calli, duroni e occhio di pernice', testo: 'Il callo con il nucleo che punge, il durone sotto la pianta, l\'occhio di pernice fra le dita. Perché tornano.' },
 ];
+const dolore = [
+  { href: '/problemi/dolore-tallone', nome: 'Dolore al tallone appena alzati', testo: 'Una fitta sotto il tallone ai primi passi del mattino, che si scioglie camminando. Cosa fare a casa, quanto dura e quando farlo vedere.' },
+];
 ---
 <Base
   title="Problemi del piede: cosa fare, spiegato da chi li cura | Forlì"
@@ -47,7 +50,16 @@ const pelle = [
           </a>
         ))}
       </div>
-      <p class="nota" style="margin-top:2.4rem;">Altre pagine sono in preparazione: dolore al tallone, dolore alla pianta, alluce valgo. Se il tuo problema non è qui, prenota un controllo in studio: al telefono o su WhatsApp si fissa l'appuntamento.</p>
+      <h2>Dolore al piede</h2>
+      <div class="griglia-schede" style="margin-top:1rem;">
+        {dolore.map((p) => (
+          <a class="scheda" href={p.href}>
+            <h3>{p.nome}</h3>
+            <p>{p.testo}</p>
+          </a>
+        ))}
+      </div>
+      <p class="nota" style="margin-top:2.4rem;">Altre pagine sono in preparazione: dolore alla pianta, alluce valgo. Se il tuo problema non è qui, prenota un controllo in studio: al telefono o su WhatsApp si fissa l'appuntamento.</p>
       <div class="riquadro-prenota">
         <div><strong>Vuoi che lo guardiamo insieme?</strong><span>Su appuntamento in studio, lunedì–venerdì 8.30–19.30 · si prenota anche su WhatsApp</span></div>
         <CtaContatti />
