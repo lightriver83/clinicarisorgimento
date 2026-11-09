@@ -22,7 +22,11 @@ const servizi = [
   { icona: '/img/icona-fisioterapia.webp', nome: 'Fisioterapia',
     testo: "Recupero dopo un trauma, un intervento o un periodo fermi: caviglia, ginocchio, schiena. Si parte dalla valutazione e si misura il progresso." },
 ];
-// Foto della sede, serie del 9/11/2026 (originali in brand/foto-sede/2026-11-09/). Le vecchie sede-1..6 restano per l'eroe e l'og:image.
+// Foto dell'apertura: la pedana con la mappa dell'appoggio, scelta di Nick del 9/11/2026 («come foto d'apertura volgio la A, quella con l'immagine della pedana»).
+// `viva: true` accende il nuovo aspetto (foto piena, velo a sinistra, sul telefono foto sotto la scritta).
+// `telefono` (facoltativo) è un taglio 3:2 per gli schermi stretti, dove la foto va sotto la scritta.
+const apertura = { viva: true, largo: '/img/apertura/pedana-largo.webp', telefono: null, pos: '60% 50%', alt: "Esame baropodometrico: in piedi sulla pedana, e sul portatile la mappa dell'appoggio dei due piedi." };
+// Foto della sede, serie del 9/11/2026 (originali in brand/foto-sede/2026-11-09/). 
 const foto = [
   { n: 'sala-valutazioni-ecografo', w: 1165, h: 1530, alt: "Sala delle valutazioni: lettino reclinabile, lampada con lente e l'ecografo per la valutazione ecografica del piede." },
   { n: 'sala-podologia', w: 1170, h: 1541, alt: 'Sala di podologia: poltrona con poggiagambe, lampada con lente e micromotore.' },
@@ -38,8 +42,13 @@ const foto = [
   <Header />
 
   <main>
-    <div class="eroe">
-      <div class="sfondo"><img src="/img/sede-1.webp" alt="" fetchpriority="high" /></div>
+    <div class:list={["eroe", { "foto-viva": apertura.viva }]}>
+      <div class="sfondo">
+        <picture>
+          {apertura.telefono && <source media="(max-width: 700px)" srcset={apertura.telefono} />}
+          <img src={apertura.largo} alt={apertura.alt} style={`object-position:${apertura.pos}`} fetchpriority="high" />
+        </picture>
+      </div>
       <div class="contenitore">
         <div class="contenuto">
           <p class="occhiello">Clinica Risorgimento · Forlì</p>

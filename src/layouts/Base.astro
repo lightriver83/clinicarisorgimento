@@ -1,12 +1,13 @@
 ---
 import { hasCredential, sameAsLaura } from '../data/laura';
+import Visore from '../components/Visore.astro';
 const {
   title = 'Podologo e osteopata a Forlì | Clinica Risorgimento',
   description = "Lo studio della Dott.ssa Laura Zanoni a Forlì: podologia, posturologia, plantari su misura, osteopatia e patologie dell'unghia. Su appuntamento: 346 2172234.",
   path = '/',
   noindex = false,
   schemaExtra = null,
-  ogImage = 'https://clinicarisorgimento.it/img/sede-1.webp',
+  ogImage = 'https://clinicarisorgimento.it/img/apertura/pedana-largo.webp',
 } = Astro.props;
 const canonical = new URL(path, Astro.site).href;
 
@@ -18,7 +19,7 @@ const schemaBase = {
       "@id": "https://clinicarisorgimento.it/#clinica",
       "name": "Clinica Risorgimento",
       "url": "https://clinicarisorgimento.it/",
-      "image": "https://clinicarisorgimento.it/img/sede-1.webp",
+      "image": "https://clinicarisorgimento.it/img/apertura/pedana-largo.webp",
       "logo": "https://clinicarisorgimento.it/img/logo.png",
       "telephone": "+393462172234",
       "vatID": "03658160407",
@@ -213,6 +214,10 @@ const schema = schemaExtra
     .eroe { position: relative; color: #fff; overflow: hidden; background: var(--inchiostro); }
     .eroe .sfondo { position: absolute; inset: 0; }
     .eroe .sfondo img { width: 100%; height: 100%; object-fit: cover; opacity: .38; }
+    /* Apertura con la foto scelta (classe foto-viva): foto piena e velo scuro sotto la scritta (sinistra), la foto si vede a destra.
+       Contrasto del testo bianco misurato sulle anteprime da 390 a 1440 px. Senza la classe resta l'aspetto di prima (foto a .38). */
+    .eroe.foto-viva .sfondo img { opacity: 1; display: block; }
+    .eroe.foto-viva .sfondo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(29,39,51,.94) 0%, rgba(29,39,51,.90) 45%, rgba(29,39,51,.62) 70%, rgba(29,39,51,.18) 100%); }
     .eroe .contenuto { position: relative; padding: 6.5rem 0 6rem; max-width: 760px; }
     .eroe .occhiello { text-transform: uppercase; letter-spacing: .18em; font-size: .8rem; opacity: .85; }
     .eroe h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); line-height: 1.15; margin: .6rem 0 1rem; font-weight: 700; }
@@ -318,8 +323,17 @@ const schema = schemaExtra
     .direzione { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; align-items: center; }
     @media (max-width: 760px) { .direzione { grid-template-columns: 1fr; } .credenziali li { grid-template-columns: 4.2rem 1fr; } }
 
+    /* Tablet e portatili piccoli (701-1100 px): la scritta occupa quasi tutta la larghezza, il velo resta scuro fino in fondo al titolo. */
+    @media (min-width: 701px) and (max-width: 1100px) {
+      .eroe.foto-viva .sfondo::after { background: linear-gradient(90deg, rgba(29,39,51,.94) 0%, rgba(29,39,51,.90) 85%, rgba(29,39,51,.55) 100%); }
+    }
     @media (max-width: 700px) {
+      /* Sul telefono la foto non sta dietro la scritta: va sotto i pulsanti, intera e senza velo, e la scritta resta su fondo pieno. */
       .eroe .contenuto { padding: 4.5rem 0 4rem; }
+      .eroe.foto-viva { display: flex; flex-direction: column; }
+      .eroe.foto-viva .sfondo { position: relative; inset: auto; order: 2; aspect-ratio: 3 / 2; }
+      .eroe.foto-viva .sfondo::after { display: none; }
+      .eroe.foto-viva .contenuto { padding: 3.2rem 0 2.2rem; }
       .barra { gap: .6rem; }
       .menu-toggle {
         display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
@@ -344,5 +358,6 @@ const schema = schemaExtra
       .cta-coppia-mobile { display: inline-flex; }
     }
   </style>
+  <Visore />
 </body>
 </html>
