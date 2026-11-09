@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CtaContatti from '../components/CtaContatti.astro';
-import { hasCredential } from '../data/laura';
+import { hasCredential, sameAsLaura, ATENEO_PODIATRIA } from '../data/laura';
 
 // FRASE PROVVISORIA (21/9/2026): scritta da Nick nel modo di lavorare che Laura descrive
 // in studio, non ancora detta da lei. «Che risolva, non un rimedio provvisorio» al posto di
@@ -26,14 +26,15 @@ const schemaExtra = [{
     "image": "https://clinicarisorgimento.it/img/laura-zanoni-quadrata.jpg",
     "jobTitle": "Podologa e podiatra, posturologa, osteopata",
     "workLocation": { "@type": "Place", "name": "Clinica Risorgimento", "address": { "@type": "PostalAddress", "streetAddress": "Viale Risorgimento 283", "postalCode": "47121", "addressLocality": "Forlì", "addressRegion": "FC", "addressCountry": "IT" } },
-    "description": "Podologa dal 2006 e podiatra (laurea in Podiatria in Spagna, 2026), posturologa clinica, osteopata. Corso di Ecografía Podológica (World Academy of Podiatric Science, 2024). Docente del Master Clinico in Visione e Postura all'Istituto Zaccagnini dal 2014. Referente podologo dell'ambulatorio Piede Diabetico dell'Ospedale Morgagni-Pierantoni di Forlì dal 2007 al 2019. Dal 2008 guida il proprio studio a Forlì, oggi Clinica Risorgimento.",
-    "sameAs": ["https://www.istitutozaccagnini.it/istituto/docenti/zanoni-laura", "https://it.linkedin.com/in/laura-zanoni-121255169", "https://www.facebook.com/p/Clinica-Risorgimento-Forl%C3%AC-61566933374873/", "https://www.google.com/maps?cid=16692031514607331278"],
+    "description": "Podologa dal 2006 e podiatra (laurea in Podiatria a UManresa, Universitat de Vic – Universitat Central de Catalunya, 2026), posturologa clinica, osteopata. Corso di Ecografía Podológica (World Academy of Podiatric Science, 2024). Docente del Master Clinico in Visione e Postura all'Istituto Zaccagnini dal 2014. Referente podologo dell'ambulatorio Piede Diabetico dell'Ospedale Morgagni-Pierantoni di Forlì dal 2007 al 2019. Dal 2008 guida il proprio studio a Forlì, oggi Clinica Risorgimento.",
+    "sameAs": sameAsLaura,
     "worksFor": { "@id": "https://clinicarisorgimento.it/#clinica" },
     "hasCredential": hasCredential,
     "alumniOf": [
       { "@type": "CollegeOrUniversity", "name": "Università degli Studi di Perugia" },
       { "@type": "CollegeOrUniversity", "name": "Università di Pisa" },
-      { "@type": "EducationalOrganization", "name": "CRESO — Centro Ricerche e Studi in Osteopatia" }
+      { "@type": "EducationalOrganization", "name": "CRESO", "url": "https://creso.academy/" },
+      ATENEO_PODIATRIA
     ],
     "knowsAbout": [
       "Podologia", "Posturologia clinica", "Osteopatia", "Podiatria",
@@ -79,7 +80,7 @@ const schemaExtra = [{
         <li><span class="anno">2011</span><span><strong>Master in Posturologia clinica</strong>, Università di Pisa</span></li>
         <li><span class="anno">2018</span><span>Diploma in <strong>Osteopatia</strong>, percorso sessennale, CRESO</span></li>
         <li><span class="anno">2024</span><span>Corso di <strong>Ecografia podologica</strong>, World Academy of Podiatric Science (WAPS), Huesca — attività accreditata dalla Commissione di Formazione Continua del Sistema Sanitario Nazionale spagnolo (Aragona)</span></li>
-        <li><span class="anno">2026</span><span>Laurea in <strong>Podiatria</strong>, conseguita in Spagna</span></li>
+        <li><span class="anno">2026</span><span>Laurea in <strong>Podiatria</strong> a UManresa, campus di Manresa della Universitat de Vic – Universitat Central de Catalunya (Spagna)</span></li>
       </ul>
 
       <h2>Esperienza</h2>
