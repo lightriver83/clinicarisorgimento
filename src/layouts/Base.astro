@@ -325,17 +325,25 @@ const schema = schemaExtra
     @media (max-width: 760px) { .direzione { grid-template-columns: 1fr; } .credenziali li { grid-template-columns: 4.2rem 1fr; } }
 
     /* Apertura chiara (classe foto-chiara, per foto su muro bianco come la scritta oro): fondo bianco caldo #f5f2ec, testo scuro.
-       Le due immagini (scritta-oro-calda e -tel) hanno il muro appiattito allo stesso #f5f2ec (scarto ai bordi ≤2 su 255, misura
+       Le due immagini (scritta-oro-calda-stretta e scritta-oro-calda-tel) hanno il muro appiattito allo stesso #f5f2ec (scarto ai bordi ≤2 su 255, misura
        del 9/11): niente velo né maschera, il bordo della foto non si vede. Scelta di Nick del 9/11/2026 (AT-1668, «B bianco caldo»).
-       Sul computer la foto copre tutto il riquadro, ancorata a destra; sotto i 1100 px va sotto i pulsanti, intera (contain),
-       così la «C» non si taglia e le fasce vuote sono dello stesso colore del muro. Contrasto testo/fondo 13,5:1 da 390 a 1440 px.
-       Tetto: verso i 4000 px di larghezza lo zoom di «cover» comincia a tagliare la scritta in alto e in basso (a 3200 px restano 52 px di margine). */
+       Sul computer (oltre 1100 px) la scritta sta dentro la stessa colonna del titolo (.contenitore, 1080 px meno 1,25rem per lato),
+       accanto al testo: il riquadro va da 620 px dall'inizio della colonna al suo bordo destro (quello della quarta carta dei servizi),
+       l'immagine è il ritaglio stretto attorno all'oro (scritta-oro-calda-stretta) in contain, ancorata a destra. Il testo si ferma
+       a 600 px, così non va mai sotto l'oro. La colonna è larga uguale da 1101 px in su: distanza testo-scritta uguale a ogni schermo
+       (Nick, 9/11: «sempre abbastanza vicino alla hero e al sottotitolo»). Sotto i 1100 px la foto va sotto i pulsanti, intera
+       (contain), così la «C» non si taglia e le fasce vuote sono dello stesso colore del muro. Contrasto testo/fondo 13,5:1. */
     .eroe.foto-chiara { background: #f5f2ec; color: var(--inchiostro); }
     .eroe.foto-chiara .sfondo { left: 0; }
     .eroe.foto-chiara .sfondo img { -webkit-mask-image: none; mask-image: none; }
     .eroe.foto-viva.foto-chiara .sfondo::after { display: none; }
     .eroe.foto-chiara .contenuto p { color: var(--inchiostro); opacity: 1; }
     .eroe.foto-chiara .azioni a:first-child { box-shadow: inset 0 0 0 1.5px var(--inchiostro); }
+    @media (min-width: 1101px) {
+      .eroe.foto-chiara .sfondo { left: calc(max(0px, (100% - 1080px) / 2) + 1.25rem + 620px); right: calc(max(0px, (100% - 1080px) / 2) + 1.25rem); }
+      .eroe.foto-chiara .sfondo img { object-fit: contain; }
+      .eroe.foto-chiara .contenuto { max-width: 600px; }
+    }
     @media (max-width: 1100px) {
       .eroe.foto-chiara { display: flex; flex-direction: column; }
       .eroe.foto-chiara .sfondo { position: relative; inset: auto; order: 2; aspect-ratio: 3 / 2; max-height: 420px; }
