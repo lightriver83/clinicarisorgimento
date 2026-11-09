@@ -7,7 +7,7 @@ const {
   path = '/',
   noindex = false,
   schemaExtra = null,
-  ogImage = 'https://clinicarisorgimento.it/img/apertura/pedana-largo.webp',
+  ogImage = 'https://clinicarisorgimento.it/img/apertura/scritta-oro.webp',
 } = Astro.props;
 const canonical = new URL(path, Astro.site).href;
 
@@ -19,7 +19,7 @@ const schemaBase = {
       "@id": "https://clinicarisorgimento.it/#clinica",
       "name": "Clinica Risorgimento",
       "url": "https://clinicarisorgimento.it/",
-      "image": "https://clinicarisorgimento.it/img/apertura/pedana-largo.webp",
+      "image": "https://clinicarisorgimento.it/img/apertura/scritta-oro.webp",
       "logo": "https://clinicarisorgimento.it/img/logo.png",
       "telephone": "+393462172234",
       "vatID": "03658160407",
@@ -323,6 +323,23 @@ const schema = schemaExtra
     .direzione { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; align-items: center; }
     @media (max-width: 760px) { .direzione { grid-template-columns: 1fr; } .credenziali li { grid-template-columns: 4.2rem 1fr; } }
 
+    /* Apertura chiara (classe foto-chiara, per foto su muro bianco come la scritta oro): fondo color muro, testo scuro a sinistra,
+       foto a destra che sfuma nel muro; sotto i 1100 px la foto va sotto i pulsanti. Contrasto testo/fondo 10,4:1 misurato da 390 a 1440 px. */
+    .eroe.foto-chiara { background: #d6d6d7; color: var(--inchiostro); }
+    .eroe.foto-chiara .sfondo { left: 58%; }
+    .eroe.foto-chiara .sfondo img { object-fit: contain; object-position: 50% 50%;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%), linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+      -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 22%), linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%); mask-composite: intersect; }
+    .eroe.foto-viva.foto-chiara .sfondo::after { display: none; }
+    .eroe.foto-chiara .contenuto p { color: var(--inchiostro); opacity: 1; }
+    .eroe.foto-chiara .occhiello { color: #3c4a5a; }
+    .eroe.foto-chiara .azioni a:first-child { box-shadow: inset 0 0 0 1.5px var(--inchiostro); }
+    @media (max-width: 1100px) {
+      .eroe.foto-chiara { display: flex; flex-direction: column; }
+      .eroe.foto-chiara .sfondo { position: relative; inset: auto; left: 0; order: 2; aspect-ratio: 3 / 2; max-height: 420px; }
+      .eroe.foto-chiara .sfondo img { object-fit: cover; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%); mask-image: linear-gradient(180deg, transparent 0%, #000 12%); }
+      .eroe.foto-chiara .contenuto { padding-bottom: 1rem; }
+    }
     /* Tablet e portatili piccoli (701-1100 px): la scritta occupa quasi tutta la larghezza, il velo resta scuro fino in fondo al titolo. */
     @media (min-width: 701px) and (max-width: 1100px) {
       .eroe.foto-viva .sfondo::after { background: linear-gradient(90deg, rgba(29,39,51,.94) 0%, rgba(29,39,51,.90) 85%, rgba(29,39,51,.55) 100%); }

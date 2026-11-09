@@ -22,10 +22,11 @@ const servizi = [
   { icona: '/img/icona-fisioterapia.webp', nome: 'Fisioterapia',
     testo: "Recupero dopo un trauma, un intervento o un periodo fermi: caviglia, ginocchio, schiena. Si parte dalla valutazione e si misura il progresso." },
 ];
-// Foto dell'apertura: la pedana con la mappa dell'appoggio, scelta di Nick del 9/11/2026 («come foto d'apertura volgio la A, quella con l'immagine della pedana»).
-// `viva: true` accende il nuovo aspetto (foto piena, velo a sinistra, sul telefono foto sotto la scritta).
+// Foto dell'apertura: la scritta oro «Clinica Risorgimento» sul muro dello studio, scelta di Nick del 9/11/2026
+// («bellissima la scritta ORO!!!! mettila!!!!»), al posto della pedana pubblicata poco prima.
+// `viva: true` accende la foto piena; `chiara: true` il fondo color muro col testo scuro (Base.astro, .foto-chiara).
 // `telefono` (facoltativo) è un taglio 3:2 per gli schermi stretti, dove la foto va sotto la scritta.
-const apertura = { viva: true, largo: '/img/apertura/pedana-largo.webp', telefono: null, pos: '60% 50%', alt: "Esame baropodometrico: in piedi sulla pedana, e sul portatile la mappa dell'appoggio dei due piedi." };
+const apertura = { viva: true, chiara: true, largo: '/img/apertura/scritta-oro.webp', telefono: null, pos: '50% 50%', alt: 'La scritta «Clinica Risorgimento» in oro sul muro dello studio.' };
 // Foto della sede, serie del 9/11/2026 (originali in brand/foto-sede/2026-11-09/). 
 const foto = [
   { n: 'sala-valutazioni-ecografo', w: 1165, h: 1530, alt: "Sala delle valutazioni: lettino reclinabile, lampada con lente e l'ecografo per la valutazione ecografica del piede." },
@@ -42,7 +43,7 @@ const foto = [
   <Header />
 
   <main>
-    <div class:list={["eroe", { "foto-viva": apertura.viva }]}>
+    <div class:list={["eroe", { "foto-viva": apertura.viva, "foto-chiara": apertura.chiara }]}>
       <div class="sfondo">
         <picture>
           {apertura.telefono && <source media="(max-width: 700px)" srcset={apertura.telefono} />}
