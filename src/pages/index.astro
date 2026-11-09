@@ -22,7 +22,17 @@ const servizi = [
   { icona: '/img/icona-fisioterapia.webp', nome: 'Fisioterapia',
     testo: "Recupero dopo un trauma, un intervento o un periodo fermi: caviglia, ginocchio, schiena. Si parte dalla valutazione e si misura il progresso." },
 ];
-const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sede-4.webp','/img/sede-5.webp','/img/sede-6.jpeg'];
+// Foto della sede, serie del 9/11/2026 (originali in brand/foto-sede/2026-11-09/). Le vecchie sede-1..6 restano per l'eroe e l'og:image.
+const foto = [
+  { n: 'sala-valutazioni-ecografo', w: 1165, h: 1530, alt: "Sala delle valutazioni: lettino reclinabile, lampada con lente e l'ecografo per la valutazione ecografica del piede." },
+  { n: 'sala-podologia', w: 1170, h: 1541, alt: 'Sala di podologia: poltrona con poggiagambe, lampada con lente e micromotore.' },
+  { n: 'sala-posturologia', w: 1170, h: 873, alt: 'Sala della posturologia: telo con filo a piombo, tappeto e tapis roulant.' },
+  { n: 'sala-lettino-tavolo', w: 1170, h: 867, alt: 'Sala con lettino da trattamento, un tavolo e le sedie.' },
+  { n: 'attesa-poltroncine', w: 1170, h: 1563, alt: "Sala d'attesa: due poltroncine e un tavolino." },
+  { n: 'attesa-quadro', w: 1170, h: 1563, alt: "Sala d'attesa: due sedie, un tavolino e un quadro." },
+  { n: 'scrivania-diplomi', w: 1170, h: 1561, alt: 'Scrivania dello studio, con i diplomi alla parete.' },
+  { n: 'scritta-clinica-risorgimento', w: 1170, h: 833, alt: 'La scritta Clinica Risorgimento sulla parete dello studio.' },
+];
 ---
 <Base path="/">
   <Header />
@@ -70,8 +80,8 @@ const foto = ['/img/sede-1.webp','/img/sede-2.jpeg','/img/sede-3.webp','/img/sed
         <h2>Viale Risorgimento 283, Forlì</h2>
         <p class="intro-sez">Sale separate per la podologia, la valutazione strumentale e l'osteopatia. La strumentazione è in sede: pedana baropodometrica, ecografo, laser per le unghie. Si riceve solo su appuntamento, così ogni visita ha il tempo che le serve.</p>
         <div class="galleria">
-          {foto.map((f, i) => (
-            <img src={f} alt={`Clinica Risorgimento, gli ambienti dello studio di Forlì — ${i + 1}`} loading="lazy" />
+          {foto.map((f) => (
+            <img src={`/img/studio/${f.n}.webp`} srcset={`/img/studio/${f.n}-640.webp 640w, /img/studio/${f.n}.webp ${f.w}w`} sizes="(max-width: 600px) 100vw, 300px" width={f.w} height={f.h} alt={f.alt} loading="lazy" decoding="async" />
           ))}
         </div>
       </div>
