@@ -25,8 +25,8 @@ const servizi = [
 // Foto dell'apertura: la scritta oro «Clinica Risorgimento» sul muro dello studio, scelta di Nick del 9/11/2026
 // («bellissima la scritta ORO!!!! mettila!!!!»), al posto della pedana pubblicata poco prima.
 // `viva: true` accende la foto piena; `chiara: true` il fondo color muro col testo scuro (Base.astro, .foto-chiara).
-// `telefono` (facoltativo) è un taglio 3:2 per gli schermi stretti, dove la foto va sotto la scritta.
-const apertura = { viva: true, chiara: true, largo: '/img/apertura/scritta-oro.webp', telefono: null, pos: '50% 50%', alt: 'La scritta «Clinica Risorgimento» in oro sul muro dello studio.' };
+// `telefono` (facoltativo) è la foto per gli schermi fino a 1100 px, dove va sotto la scritta. Fondo bianco caldo: scelta di Nick, AT-1668.
+const apertura = { viva: true, chiara: true, largo: '/img/apertura/scritta-oro-calda.webp', telefono: '/img/apertura/scritta-oro-calda-tel.webp', pos: '100% 50%', alt: 'La scritta «Clinica Risorgimento» in oro sul muro dello studio.' };
 // Foto della sede, serie del 9/11/2026 (originali in brand/foto-sede/2026-11-09/). 
 const foto = [
   { n: 'sala-valutazioni-ecografo', w: 1165, h: 1530, alt: "Sala delle valutazioni: lettino reclinabile, lampada con lente e l'ecografo per la valutazione ecografica del piede." },
@@ -45,7 +45,7 @@ const foto = [
     <div class:list={["eroe", { "foto-viva": apertura.viva, "foto-chiara": apertura.chiara }]}>
       <div class="sfondo">
         <picture>
-          {apertura.telefono && <source media="(max-width: 700px)" srcset={apertura.telefono} />}
+          {apertura.telefono && <source media="(max-width: 1100px)" srcset={apertura.telefono} />}
           <img src={apertura.largo} alt={apertura.alt} style={`object-position:${apertura.pos}`} fetchpriority="high" />
         </picture>
       </div>
