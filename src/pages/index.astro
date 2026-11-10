@@ -8,19 +8,19 @@ const servizi = [
   { icona: '/img/icona-podologia.webp', nome: 'Podologia', href: '/servizi/podologia',
     testo: "Ferite e infezioni della pelle del piede, verruche, calli che tornano, dolori al tallone e alla pianta. Medichiamo, togliamo la causa e, quando serve il medico, lo diciamo subito." },
   { icona: '/img/icona-unghie.svg', nome: 'Trattamenti ungueali', href: '/servizi/unghie',
-    testo: "Unghia incarnita, ispessita, con micosi, nera dopo un colpo. Esame micologico con coltura, laser, rieducazione della crescita. I tempi si dicono prima." },
+    testo: "Unghia incarnita, ispessita, con micosi, nera dopo un colpo. Esame micologico con coltura, laser, rieducazione della crescita. I tempi li diciamo prima." },
   { icona: '/img/icona-solette.webp', nome: 'Plantari e solette su misura', href: '/servizi/plantari-su-misura',
-    testo: "Nascono dalla valutazione, non da un catalogo, e si controllano dopo la consegna. Se non servono, lo diciamo." },
+    testo: "Nascono dalla valutazione, non da un catalogo, e li controlliamo dopo la consegna. Se non servono, lo diciamo." },
   { icona: '/img/icona-posturologia.webp', nome: 'Posturologia e biomeccanica', href: '/servizi/posturologia',
     testo: "Come il piede si appoggia e come questo si riflette su ginocchia, anche e schiena. Esame baropodometrico e analisi del passo, con un referto che si legge." },
   { icona: '/img/icona-osteopatia.webp', nome: 'Osteopatia', href: '/servizi/osteopatia',
-    testo: "Trattamento manuale di articolazioni, muscoli e fasce. Qui si legge insieme al piede: un appoggio sbagliato e un mal di schiena spesso si tengono a vicenda." },
+    testo: "Trattamento manuale di articolazioni, muscoli e fasce. Qui lo leggiamo insieme al piede: un appoggio sbagliato e un mal di schiena spesso si tengono a vicenda." },
   { icona: '/img/icona-gravidanza.webp', nome: 'Trattamenti in gravidanza',
-    testo: "Osteopatia per schiena, bacino e gambe quando il peso e l'appoggio cambiano. Si valuta di trimestre in trimestre cosa è utile e cosa no." },
+    testo: "Osteopatia per schiena, bacino e gambe quando il peso e l'appoggio cambiano. Valutiamo di trimestre in trimestre cosa è utile e cosa no." },
   { icona: '/img/icona-motorie.webp', nome: 'Ginnastica posturale',
-    testo: "Pochi esercizi, precisi, per tenere quello che plantari e osteopatia hanno corretto. Prima si misura la postura, poi si sceglie cosa allenare." },
+    testo: "Pochi esercizi, precisi, per tenere quello che plantari e osteopatia hanno corretto. Prima misuriamo la postura, poi scegliamo cosa allenare." },
   { icona: '/img/icona-fisioterapia.webp', nome: 'Fisioterapia',
-    testo: "Recupero dopo un trauma, un intervento o un periodo fermi: caviglia, ginocchio, schiena. Si parte dalla valutazione e si misura il progresso." },
+    testo: "Recupero dopo un trauma, un intervento o un periodo fermi: caviglia, ginocchio, schiena. Partiamo dalla valutazione e misuriamo il progresso." },
 ];
 // Foto dell'apertura: la scritta oro «Clinica Risorgimento» sul muro dello studio, scelta di Nick del 9/11/2026
 // («bellissima la scritta ORO!!!! mettila!!!!»), al posto della pedana pubblicata poco prima.
@@ -63,7 +63,7 @@ const foto = [
       <div class="contenitore">
         <p class="occhiello-sez">Di cosa ci occupiamo</p>
         <h2>Piede, appoggio, postura, movimento</h2>
-        <p class="intro-sez">Sono legati fra loro, e qui si guardano insieme. Ogni percorso parte da una valutazione con strumenti (esame baropodometrico, analisi del passo, ecografia quando serve) e si chiude con un referto scritto per essere capito: dal paziente prima, dal suo medico poi.</p>
+        <p class="intro-sez">Sono legati fra loro, e qui li guardiamo insieme. Ogni percorso parte da una valutazione con strumenti (esame baropodometrico, analisi del passo, ecografia quando serve) e si chiude con un referto scritto per essere capito: dal paziente prima, dal suo medico poi.</p>
         <div class="griglia-servizi">
           {servizi.map((s) => s.href ? (
             <a class="servizio scheda" href={s.href}>
@@ -87,7 +87,7 @@ const foto = [
       <div class="contenitore">
         <p class="occhiello-sez">Lo studio</p>
         <h2>Viale Risorgimento 283, Forlì</h2>
-        <p class="intro-sez">Sale separate per la podologia, la valutazione strumentale e l'osteopatia. La strumentazione è in sede: pedana baropodometrica, ecografo, laser per le unghie. Si riceve solo su appuntamento, così ogni visita ha il tempo che le serve.</p>
+        <p class="intro-sez">Sale separate per la podologia, la valutazione strumentale e l'osteopatia. La strumentazione è in sede: pedana baropodometrica, ecografo, laser per le unghie. Riceviamo solo su appuntamento, così ogni visita ha il tempo che le serve.</p>
         <div class="galleria">
           {foto.map((f) => (
             <img src={`/img/studio/${f.n}.webp`} srcset={`/img/studio/${f.n}-640.webp 640w, /img/studio/${f.n}.webp ${f.w}w`} sizes="(max-width: 600px) 100vw, 300px" width={f.w} height={f.h} alt={f.alt} loading="lazy" decoding="async" />
