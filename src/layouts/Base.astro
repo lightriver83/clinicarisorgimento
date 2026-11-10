@@ -222,7 +222,7 @@ const schema = schemaExtra
     .eroe .contenuto { position: relative; padding: 6.5rem 0 6rem; max-width: 760px; }
     .eroe .occhiello { text-transform: uppercase; letter-spacing: .18em; font-size: .8rem; opacity: .85; }
     .eroe h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); line-height: 1.15; margin: .6rem 0 1rem; font-weight: 700; }
-    .eroe p { font-size: 1.1rem; max-width: 560px; opacity: .95; }
+    .eroe p { font-size: 1.1rem; max-width: 560px; opacity: .95; text-wrap: pretty; /* niente parola sola sull’ultima riga (a 1440 restava «diciamo.»); dove non è supportato va a capo come prima */ }
     .eroe .azioni { margin-top: 1.8rem; display: flex; gap: .9rem; flex-wrap: wrap; }
     .bottone-chiaro {
       background: #fff; color: var(--blu-scuro); text-decoration: none;
