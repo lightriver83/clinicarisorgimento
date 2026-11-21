@@ -1,0 +1,49 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+// Bozza del 19/10/2026 riscritta al «noi» della clinica e pubblicata senza la rilettura di Laura (Nick, AT-2812, 21/11/2026: «Sì, al noi»).
+// Tolto rispetto alla bozza: il ghiaccio (Laura sceglie i rimedi meccanici, correzioni del 27/10). Ortesi in silicone su misura:
+// come in /servizi/podologia e /servizi/podiatria.
+const faq = [
+  { d: "Il plantare raddrizza l'alluce?",
+    r: "No, nessun plantare lo fa. Può togliere carico dall'avampiede e ridurre il dolore, ma non riporta l'osso al suo posto." },
+  { d: "Peggiora per forza?",
+    r: "Non sempre. In molti peggiora lentamente negli anni, in altri resta uguale a lungo. Le scarpe giuste non lo raddrizzano, ma aiutano a tenere lontano il dolore." },
+  { d: "Quando va operato?",
+    r: "Quando il dolore limita la vita di tutti i giorni nonostante scarpe e protezioni. Lo valuta l'ortopedico; per l'aspetto, da solo, di solito non si opera." },
+  { d: "Dopo l'intervento può tornare?",
+    r: "Può succedere. Quanto è probabile nel tuo caso te lo dice l'ortopedico; dopo l'intervento, scarpe e appoggio contano quanto prima." },
+];
+---
+<PaginaProblema
+  titolo="Alluce valgo"
+  titoloSeo="Alluce valgo: cosa aiuta, cosa no, quando operarlo | Forlì"
+  descrizione="La «cipolla» alla base dell'alluce che sfrega nella scarpa. Cosa aiuta davvero, cosa non lo raddrizza e quando è il momento dell'ortopedico."
+  path="/problemi/alluce-valgo"
+  faq={faq}
+  firma="clinica"
+  dataAgg="2026-11-21"
+>
+  <p>L'alluce piega verso le altre dita, e alla sua base l'osso sporge, rosso e dolente nella scarpa: la «cipolla», come la chiamano in tanti. La prima domanda, di solito, è se si può raddrizzare senza operare. La risposta onesta è no: niente di quello che si mette nella scarpa o sul piede riporta l'osso al suo posto. Ma si può fare molto perché faccia meno male.</p>
+
+  <h2>Cosa fare a casa</h2>
+  <p>Scarpe larghe in punta, in materiale morbido, senza cuciture sopra la sporgenza, con il tacco basso. Le protezioni e i distanziatori in silicone della farmacia, fra l'alluce e il secondo dito o sopra la sporgenza, riducono l'attrito, e spesso il dolore.</p>
+  <p>Cosa non fare: spendere in tutori notturni o «correttori» che promettono di raddrizzare l'alluce. Possono dare sollievo, ma la forma dell'osso non la cambiano.</p>
+
+  <h2>Perché succede</h2>
+  <p>L'alluce valgo è una deviazione dell'articolazione alla base dell'alluce: il primo metatarso, l'osso lungo che porta all'alluce, si sposta verso l'interno del piede, l'alluce si piega verso le altre dita, e la testa del metatarso sporge. Conta molto la predisposizione: la forma del piede si eredita, e spesso c'è qualcuno in famiglia con lo stesso problema. È più frequente nelle donne. Le scarpe strette e a punta non sono l'unica causa, ma lo peggiorano e lo rendono doloroso.</p>
+  <p>Con il tempo l'alluce porta meno peso, e il carico passa alle ossa vicine. Per questo chi ha l'alluce valgo ha spesso anche un durone sotto la pianta e il secondo dito che comincia a piegarsi a <a href="/problemi/dito-a-martello">martello</a>.</p>
+
+  <h2>A che punto sei</h2>
+  <p><strong>Lieve.</strong> L'alluce è appena inclinato, fa male solo con certe scarpe.</p>
+  <p><strong>Moderato.</strong> L'alluce si appoggia al secondo dito, la sporgenza si arrossa spesso.</p>
+  <p><strong>Marcato.</strong> L'alluce passa sotto o sopra il secondo dito, compaiono duroni sotto la pianta e il secondo dito si piega.</p>
+  <p>Quanto si vede e quanto fa male non vanno di pari passo: ci sono alluci molto storti che non danno fastidio e alluci appena inclinati che fanno male ogni giorno. Conta il dolore, e quanto limita la vita, non l'aspetto.</p>
+
+  <h2>Quando venire in studio, e quando invece dal medico</h2>
+  <p>Vieni se la sporgenza si arrossa e fa male nella scarpa, se compaiono duroni sotto la pianta o calli sulle dita vicine, se il secondo dito comincia a piegarsi, o se vuoi sapere quali scarpe e quali protezioni hanno senso per il tuo piede.</p>
+  <p>Vai dal medico se l'articolazione dell'alluce diventa all'improvviso rossa, calda e molto dolorosa senza che sia successo niente: può essere un attacco di gotta. Se hai il diabete e sulla sporgenza si apre una ferita, chiama oggi il tuo medico. L'intervento lo propone e lo fa l'ortopedico: ha senso quando il dolore limita la vita di tutti i giorni nonostante scarpe e protezioni, non per l'aspetto.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Guardiamo il piede in piedi e da seduto, guardiamo come cammini e dove si formano i calli. Togliamo calli e duroni, che sono la parte del dolore che si può togliere subito. Poi lavoriamo su quello che peggiora la situazione: le scarpe, un'ortesi in silicone fatta su misura per proteggere la sporgenza o tenere separate le dita, e un <a href="/servizi/plantari-su-misura">plantare su misura</a> se l'appoggio carica troppo l'avampiede.</p>
+  <p>Lo scopo è che faccia meno male, e che le altre dita ne risentano il meno possibile. Se vediamo che è il momento dell'ortopedico, te lo diciamo, senza aspettare che peggiori.</p>
+</PaginaProblema>

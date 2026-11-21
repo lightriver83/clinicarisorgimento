@@ -1,0 +1,45 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+// Bozza del 19/10/2026 riscritta al «noi» della clinica e pubblicata senza la rilettura di Laura (Nick, AT-2812, 21/11/2026: «Sì, al noi»).
+// Tolte le protezioni in silicone della farmacia sulla nocca: sui calli Laura non vuole il fai-da-te (correzioni del 27/10).
+// La domanda per Laura sui tempi dell'ortesi in silicone (in giornata o in una seconda seduta) resta aperta: non lo scriviamo.
+const faq = [
+  { d: "Si raddrizza da solo?",
+    r: "No. Se è ancora flessibile, scarpe ed esercizi possono rallentarlo e ridurre il dolore; se è diventato rigido, la forma la cambia solo un intervento." },
+  { d: "L'ortesi va portata sempre?",
+    r: "Si porta nelle scarpe, che è dove il dito viene schiacciato. Quanto e quando te lo diciamo alla consegna." },
+  { d: "È colpa delle scarpe?",
+    r: "In parte. Le scarpe corte e strette lo favoriscono e lo fanno far male; la forma del piede e l'alluce valgo fanno il resto." },
+];
+---
+<PaginaProblema
+  titolo="Dito a martello"
+  titoloSeo="Dito a martello: il callo sopra il dito e cosa fare | Forlì"
+  descrizione="Il secondo dito che si piega e sfrega nella scarpa, con il callo sulla nocca. Cosa fare a casa, cosa aiuta finché è flessibile, quando serve l'ortopedico."
+  path="/problemi/dito-a-martello"
+  faq={faq}
+  firma="clinica"
+  dataAgg="2026-11-21"
+>
+  <p>Il dito si piega all'articolazione di mezzo e si alza, e la scarpa ci sfrega sopra: il callo compare lì, sulla nocca, e a volte anche sulla punta, che batte a terra. Di solito è il secondo dito, spesso insieme all'<a href="/problemi/alluce-valgo">alluce valgo</a>. Finché il dito si raddrizza con la mano si può fare molto; quando diventa rigido, le strade si riducono.</p>
+
+  <h2>Cosa fare a casa</h2>
+  <p>Scarpe con la punta alta e larga, che non premono sopra il dito, e il tacco basso. Se il dito è ancora flessibile, due esercizi semplici: raccogliere un asciugamano con le dita, e da seduto tenere le dita distese a terra per qualche secondo, più volte al giorno.</p>
+  <p>Cosa non fare: tagliare da soli il callo sulla nocca; usare callifughi, che sulla pelle sottile sopra l'articolazione aprono facilmente una ferita.</p>
+
+  <h2>Perché succede</h2>
+  <p>Il dito a martello nasce da uno squilibrio fra i tendini che piegano il dito e quelli che lo stendono. Lo favoriscono le scarpe corte o strette portate per anni, un alluce valgo che spinge il secondo dito fuori posto, un secondo dito più lungo dell'alluce, un piede cavo; più di rado una malattia dei nervi o delle articolazioni.</p>
+  <p>Ci sono anche il dito ad artiglio, piegato in due punti, e il dito a maglio, piegato solo in punta. Li affrontiamo in modo simile.</p>
+
+  <h2>A che punto sei</h2>
+  <p><strong>Flessibile.</strong> Il dito si raddrizza se lo spingi con la mano. È il momento in cui scarpe ed esercizi rendono di più.</p>
+  <p><strong>Rigido.</strong> Il dito resta piegato anche se lo spingi. Il dolore si può ridurre, ma la forma non cambia più senza un intervento.</p>
+  <p>I punti dove fa male sono tre: il callo sopra la nocca, il callo sulla punta del dito, e un durone sotto la pianta in corrispondenza di quel dito (ne abbiamo scritto nella pagina sul <a href="/problemi/dolore-pianta-piede">dolore sotto la pianta</a>).</p>
+
+  <h2>Quando venire in studio, e quando invece dal medico</h2>
+  <p>Vieni se il callo sopra il dito fa male, se il dito comincia a irrigidirsi, se si accavalla sul dito vicino, o se non trovi più scarpe che non facciano male.</p>
+  <p>Vai dal medico se il dito diventa rosso, caldo e gonfio, se sul callo si apre una ferita e hai il diabete o problemi di circolazione, o se in poco tempo si piegano più dita insieme a debolezza o formicolio nel piede. L'intervento, quando il dito è rigido e fa male nonostante tutto, lo valuta l'ortopedico.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Togliamo i calli sulla nocca e sulla punta: di solito è il sollievo più rapido. Poi guardiamo perché il dito si è piegato: le scarpe, l'alluce, l'appoggio. Per un dito ancora flessibile possiamo fare un'ortesi in silicone su misura, che lo protegge e lo tiene in una posizione migliore quando sei in scarpa. Se sotto la pianta c'è sovraccarico, valutiamo un <a href="/servizi/plantari-su-misura">plantare su misura</a>. Se il dito è rigido e il dolore non passa, te lo diciamo e ti indichiamo l'ortopedico.</p>
+</PaginaProblema>

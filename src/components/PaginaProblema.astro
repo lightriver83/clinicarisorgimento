@@ -10,7 +10,10 @@ const {
   bozza = false,
   dataAgg,                // 'AAAA-MM-GG': data dell'ultima modifica del testo della pagina, la passa la pagina
   servizio = { href: '/servizi/podologia', label: 'Podologia' },
+  firma = 'laura',        // 'laura': testo scritto o rivisto da Laura, in prima persona · 'clinica': scritto dalla clinica al «noi», Laura non l'ha riletto (Nick, AT-2812, 21/11/2026: «Sì, al noi»)
 } = Astro.props;
+if (!['laura', 'clinica'].includes(firma)) throw new Error(`PaginaProblema ${path}: firma «${firma}» sconosciuta (laura|clinica)`);
+const diClinica = firma === 'clinica';
 if (!/^\d{4}-\d{2}-\d{2}$/.test(dataAgg ?? '')) throw new Error(`PaginaProblema ${path}: manca dataAgg (AAAA-MM-GG), la data dell'ultima modifica del testo`);
 const dataLeggibile = new Date(dataAgg).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
 const schemaExtra = [
@@ -22,8 +25,10 @@ const schemaExtra = [
     "description": descrizione,
     "inLanguage": "it-IT",
     "dateModified": dataAgg,
-    "author": { "@id": "https://clinicarisorgimento.it/#laura-zanoni" },
-    "reviewedBy": { "@id": "https://clinicarisorgimento.it/#laura-zanoni" },
+    ...(diClinica
+      ? { "author": { "@id": "https://clinicarisorgimento.it/#clinica" } }
+      : { "author": { "@id": "https://clinicarisorgimento.it/#laura-zanoni" },
+          "reviewedBy": { "@id": "https://clinicarisorgimento.it/#laura-zanoni" } }),
     "publisher": { "@id": "https://clinicarisorgimento.it/#clinica" },
     "audience": { "@type": "PeopleAudience", "audienceType": "adulti" }
   },
@@ -50,7 +55,9 @@ const schemaExtra = [
         <p class="briciole"><a href="/">Clinica Risorgimento</a> › <a href="/problemi">Problemi del piede</a> › {titolo}</p>
         <h1>{titolo}</h1>
         <p class="sottotitolo">{descrizione}</p>
-        <p class="briciole" style="margin-top:.8rem;">Scritto e rivisto dalla <a href="/laura-zanoni">Dott.ssa Laura Zanoni</a> · aggiornato il {dataLeggibile}</p>
+        {diClinica
+          ? <p class="briciole" style="margin-top:.8rem;">A cura della Clinica Risorgimento · aggiornato il {dataLeggibile}</p>
+          : <p class="briciole" style="margin-top:.8rem;">Scritto e rivisto dalla <a href="/laura-zanoni">Dott.ssa Laura Zanoni</a> · aggiornato il {dataLeggibile}</p>}
       </div>
     </div>
     <div class="contenitore articolo">
@@ -63,7 +70,7 @@ const schemaExtra = [
       <slot />
       {faq.length > 0 && (
         <section style="margin-top:2.4rem;">
-          <h2>Le domande che mi fanno più spesso</h2>
+          <h2>{diClinica ? 'Le domande che ci fanno più spesso' : 'Le domande che mi fanno più spesso'}</h2>
           {faq.map((f) => (
             <details style="border-bottom:1px solid var(--bordo);padding:.7rem 0;">
               <summary style="cursor:pointer;font-weight:600;">{f.d}</summary>

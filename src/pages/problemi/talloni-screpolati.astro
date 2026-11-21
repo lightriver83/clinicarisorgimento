@@ -1,0 +1,48 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+// Bozza del 19/10/2026 riscritta al «noi» della clinica e pubblicata senza la rilettura di Laura (Nick, AT-2812, 21/11/2026: «Sì, al noi»).
+// Tolta rispetto alla bozza: la pietra pomice a casa (sui calli Laura ha tolto pomice e lametta, correzioni del 27/10); la crema
+// all'urea resta perché qui è pelle secca e spessa, non un callo. Le domande per Laura (ogni quanto rivede le ragadi, prodotti
+// per medicarle, esame del fungo in studio o fuori) restano aperte: testo generico.
+const faq = [
+  { d: "Che crema devo usare?",
+    r: "Una crema con l'urea, dal 10% in su: è la sostanza che ammorbidisce la pelle spessa e la aiuta a trattenere l'acqua. Le creme solo idratanti vanno bene quando la pelle è secca ma non spessa." },
+  { d: "Le ragadi tornano?",
+    r: "Se tornano le ciabatte aperte dietro e si smette la crema, sì. Con la crema tutti i giorni e le scarpe chiuse dietro di solito si tengono lontane." },
+  { d: "Ho il diabete e i talloni screpolati: cosa faccio?",
+    r: "Crema tutti i giorni, mai fra le dita, niente lame né raspe, e un controllo regolare del piede dal podologo, in accordo con il tuo medico. Se una crepa si arrossa, si scalda o esce pus, chiama oggi il tuo medico; se sanguina, vieni a farla medicare." },
+];
+---
+<PaginaProblema
+  titolo="Talloni screpolati e ragadi"
+  titoloSeo="Talloni screpolati e ragadi: cosa fare e quando curarli | Forlì"
+  descrizione="Pelle dura e secca sul bordo del tallone che si spacca e a volte sanguina. Cosa mettere a casa, cosa evitare, e quando la crepa va medicata."
+  path="/problemi/talloni-screpolati"
+  faq={faq}
+  firma="clinica"
+  dataAgg="2026-11-21"
+>
+  <p>D'estate, con i sandali, il bordo del tallone si fa duro e giallo e si apre in crepe che a volte sanguinano e fanno male camminando. Sembra un problema di pelle secca, e in parte lo è. Ma la crepa vera, la ragade, nasce dove la pelle è diventata troppo spessa per piegarsi.</p>
+
+  <h2>Cosa fare a casa</h2>
+  <p>Crema all'urea tutti i giorni, sul tallone, dopo la doccia: in farmacia si trova in diverse concentrazioni, dal 10% in su; più è alta, più ammorbidisce. La sera, crema e un paio di calze di cotone sopra. Scarpe chiuse dietro, che tengono insieme il tallone. Lo spessore, quando c'è, lo togliamo in studio.</p>
+  <p>Cosa non fare: lamette, raspe di metallo, tagliare le pellicine, perché si arriva alla pelle viva e si apre una ferita; camminare scalzi su pavimenti freddi e duri; chiudere sotto un cerotto una ragade aperta senza averla pulita.</p>
+
+  <h2>Perché succede</h2>
+  <p>Sul bordo del tallone la pelle lavora molto: a ogni passo il cuscinetto del tallone si allarga, e se la pelle è spessa e secca invece di allargarsi si spacca. Le ragadi le favoriscono le ciabatte e i sandali aperti dietro, le molte ore in piedi, qualche chilo in più, l'acqua calda frequente, la pelle che con gli anni produce meno grasso.</p>
+  <p>Alcune condizioni le rendono più facili: il diabete, la tiroide che lavora poco, la psoriasi, un fungo della pelle che fa ispessire tutta la pianta.</p>
+
+  <h2>A che punto sei</h2>
+  <p><strong>Pelle secca e ruvida, senza crepe.</strong> Basta la crema.</p>
+  <p><strong>Bordo giallo e spesso, con crepe superficiali.</strong> Crema tutti i giorni e qualche settimana di pazienza; se lo spessore non cede, lo togliamo in studio.</p>
+  <p><strong>Crepe profonde che sanguinano o fanno male camminando.</strong> È una ferita, e va medicata.</p>
+  <p><strong>Rossore, calore e gonfiore attorno alla crepa, o pus.</strong> Può essere un'infezione: è del medico.</p>
+  <p><strong>Pianta tutta ispessita e farinosa, su tutti e due i piedi.</strong> Può esserci un fungo.</p>
+
+  <h2>Quando venire in studio, e quando invece dal medico</h2>
+  <p>Vieni se le crepe sanguinano o fanno male camminando, se dopo tre-quattro settimane di crema non cambia niente, se la pelle è così spessa che la crema non entra, o se sospetti un fungo. Se hai il diabete o problemi di circolazione vieni comunque: una ragade è una porta d'ingresso.</p>
+  <p>Vai dal medico se attorno alla crepa la pelle è rossa e calda, se c'è pus o se hai la febbre: l'eventuale antibiotico lo decide il medico. Se hai il diabete e la ragade non migliora in pochi giorni, chiama il tuo medico o il centro del piede diabetico.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Togliamo con il bisturi lo spessore della pelle, finché torna elastica e i bordi della crepa non tirano più. Lavoriamo sulla pelle morta, e di solito non fa male. Le ragadi aperte le medichiamo. Se c'è il sospetto di un fungo, va verificato prima di scegliere la crema, e la crema antimicotica la decide il medico. Poi ti spieghiamo cosa mettere e ogni quanto, e quali scarpe aiutano. Un controllo dopo qualche settimana dice se basta la cura a casa.</p>
+</PaginaProblema>

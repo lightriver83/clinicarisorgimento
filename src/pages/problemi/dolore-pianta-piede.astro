@@ -1,0 +1,51 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+// Bozza del 19/10/2026 riscritta al «noi» della clinica e pubblicata senza la rilettura di Laura (Nick, AT-2812, 21/11/2026: «Sì, al noi»).
+// Tolti rispetto alla bozza: ghiaccio e crema all'urea sul durone (Laura sceglie i rimedi meccanici e non vuole il fai-da-te
+// sui duroni, correzioni del 27/10). La domanda per Laura sull'ecografia nel neuroma di Morton resta aperta: testo generico.
+const faq = [
+  { d: "È il nervo o l'osso?",
+    r: "Il nervo dà bruciore, scossa e dita intorpidite. L'osso e le articolazioni danno un dolore sordo, sotto il peso. Spesso lo capiamo già da come lo racconti in visita; poi lo guardiamo sul piede." },
+  { d: "Il plantare serve?",
+    r: "Se il dolore viene da come l'avampiede porta il peso, spesso sì: un plantare fatto sulla misura può spostare il carico dal punto che fa male. Se viene dalla scarpa, prima si cambia la scarpa." },
+  { d: "Il neuroma di Morton va operato?",
+    r: "Non subito. Prima proviamo a togliergli pressione, con scarpe più larghe e un plantare. Se non basta, il medico può proporre altre cure, e l'intervento lo valuta l'ortopedico." },
+  { d: "Perché mi fa male da quando ho cambiato scarpe?",
+    r: "Perché la scarpa decide dove va il peso. Una suola più sottile, un tacco più alto o una punta più stretta bastano a spostare il carico sull'avampiede." },
+];
+---
+<PaginaProblema
+  titolo="Dolore sotto la pianta, verso le dita"
+  titoloSeo="Dolore sotto la pianta del piede (metatarsalgia, Morton) | Forlì"
+  descrizione="Come camminare su un sasso, o una scossa fra le dita. Cosa fare a casa per il dolore all'avampiede, quali segnali sono del medico e cosa misuriamo."
+  path="/problemi/dolore-pianta-piede"
+  faq={faq}
+  firma="clinica"
+  dataAgg="2026-11-21"
+  servizio={{ href: '/servizi/plantari-su-misura', label: 'Plantari su misura' }}
+>
+  <p>«Come camminare su un sasso», o «come avere la calza arrotolata sotto le dita»: così ci descrivono il dolore sotto l'avampiede, la parte della pianta appena prima delle dita. A volte è una fitta solo con certe scarpe, a volte una scossa che costringe a togliersi la scarpa in mezzo alla strada. Le cause sono diverse, e la prima cosa è capire quale.</p>
+
+  <h2>Cosa fare a casa</h2>
+  <p>Scarpe con la punta larga, il tacco basso, sotto i tre-quattro centimetri, e una suola spessa che ammortizza: il tacco alto sposta il peso proprio lì. Meno corsa e meno salti per qualche settimana.</p>
+  <p>Cosa non fare: camminare a lungo scalzi su pavimenti duri; stringere i lacci sull'avampiede; insistere con una scarpa che già in negozio dava fastidio; togliere da soli il durone sotto la pianta con lametta o callifugo.</p>
+
+  <h2>Perché succede</h2>
+  <p>L'avampiede porta il peso del corpo a ogni passo, e ne porta di più se il tacco è alto, se la scarpa è stretta, se il piede è cavo, se l'alluce non lavora come dovrebbe (<a href="/problemi/alluce-valgo">alluce valgo</a>, alluce rigido), se le dita sono ad artiglio o <a href="/problemi/dito-a-martello">a martello</a>, o se con gli anni il cuscinetto di grasso sotto la pianta si è assottigliato. Il dolore che ne nasce sotto la base delle dita si chiama metatarsalgia: è un sintomo, e le cause possono essere diverse.</p>
+  <p>Un caso a parte è il neuroma di Morton. Un nervo che passa fra le teste di due metatarsi (le ossa lunghe che portano alle dita), di solito fra il terzo e il quarto dito, si ispessisce e si irrita. Dà bruciore, una scossa o le dita intorpidite, e spesso si calma togliendo la scarpa e massaggiando.</p>
+
+  <h2>Come capire cosa hai</h2>
+  <p><strong>Dolore sotto la base delle dita, peggio camminando, con un durone sopra.</strong> Di solito è il sovraccarico dell'avampiede, il caso più comune.</p>
+  <p><strong>Bruciore o scossa fra il terzo e il quarto dito, dita intorpidite, sollievo togliendo la scarpa.</strong> Fa pensare al neuroma di Morton.</p>
+  <p><strong>Dolore sopra o dentro il piede, cresciuto dopo un periodo di cammino o di corsa più intenso del solito, con un po' di gonfiore.</strong> Può essere una frattura da stress, ed è del medico.</p>
+  <p><strong>Un'articolazione rossa, calda e gonfia, all'improvviso.</strong> È del medico.</p>
+  <p><strong>Formicolio o bruciore in tutti e due i piedi, che sale.</strong> È del medico.</p>
+
+  <h2>Quando venire in studio, e quando invece dal medico</h2>
+  <p>Vieni se il dolore dura da più di tre-quattro settimane nonostante scarpe e riposo, se c'è un durone che torna, se senti la scossa fra le dita, o se il dolore ti fa cambiare il modo di camminare.</p>
+  <p>Vai prima dal medico negli ultimi tre casi qui sopra (sospetta frattura da stress, articolazione rossa e calda, formicolio a tutti e due i piedi), e se hai il diabete e sotto la pianta si è aperta una ferita. Radiografie, farmaci e infiltrazioni li decide il medico; un intervento per il neuroma di Morton lo valuta l'ortopedico.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Guardiamo e tocchiamo il piede per capire quale punto fa male e perché. Poi misuriamo l'appoggio con l'esame baropodometrico, che fa vedere sullo schermo dove il peso si concentra, da fermo e mentre cammini: lo vedi anche tu, in diretta. Se c'è un durone lo togliamo, perché lo spessore aumenta la pressione. Quando serve guardare i tessuti sotto la pelle, facciamo una valutazione ecografica in studio.</p>
+  <p>Poi scegliamo con te il modo di togliere carico da quel punto: le scarpe, un'ortesi in silicone su misura se c'entra un dito, e un <a href="/servizi/plantari-su-misura">plantare su misura</a> quando la misura dice che serve, controllato dopo la consegna.</p>
+</PaginaProblema>

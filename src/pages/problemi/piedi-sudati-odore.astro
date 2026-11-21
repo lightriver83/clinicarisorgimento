@@ -1,0 +1,49 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+// Bozza del 19/10/2026 riscritta al «noi» della clinica e pubblicata senza la rilettura di Laura (Nick, AT-2812, 21/11/2026: «Sì, al noi»).
+// Le domande per Laura (esame micologico sulla pelle, trattamenti in studio per il sudore) restano aperte: non diciamo chi fa l'esame
+// né nominiamo trattamenti per il sudore.
+const faq = [
+  { d: "Il borotalco aiuta?",
+    r: "Assorbe un po' di sudore, ma se si impasta fra le dita trattiene l'umidità. Meglio asciugare bene e usare calze che portano via il sudore." },
+  { d: "Le scarpe puzzano anche lavate: cosa faccio?",
+    r: "Lasciale asciugare all'aria per almeno un giorno, con le solette fuori, e alternale con un altro paio. Se si possono lavare, lavale; se no, cambia le solette." },
+  { d: "È contagioso?",
+    r: "Il sudore no. Il fungo del piede d'atleta sì, per contatto con pavimenti bagnati e asciugamani: ciabatte nelle docce in comune e asciugamano tuo." },
+  { d: "Il sudore dei piedi si cura per sempre?",
+    r: "Si tiene sotto controllo. Le cure a casa e gli antitraspiranti funzionano finché si usano; per le forme molto forti ci sono terapie che decide il dermatologo." },
+];
+---
+<PaginaProblema
+  titolo="Piedi che sudano e che puzzano"
+  titoloSeo="Piedi che sudano e puzzano: cause e cosa fare | Forlì"
+  descrizione="Sudore che bagna le calze, odore che resta nelle scarpe, pelle bianca fra le dita. Cosa funziona a casa, quando c'entra un fungo e quando serve il medico."
+  path="/problemi/piedi-sudati-odore"
+  faq={faq}
+  firma="clinica"
+  dataAgg="2026-11-21"
+>
+  <p>Se ne parla poco, per imbarazzo, ed è uno dei problemi su cui si può fare di più. Il sudore dei piedi, da solo, non ha odore: l'odore lo fanno i batteri che vivono sulla pelle quando il sudore resta chiuso nella scarpa. Per questo funziona ciò che tiene il piede asciutto, non ciò che copre l'odore.</p>
+
+  <h2>Cosa fare a casa</h2>
+  <p>Lava i piedi tutti i giorni con un sapone delicato e asciugali bene, soprattutto fra le dita. Calze di lana, di cotone misto o tecniche da sport, che portano via l'umidità, cambiate ogni giorno, anche due volte d'estate. Alterna le scarpe: un paio ha bisogno di almeno un giorno per asciugarsi. Solette assorbenti, da cambiare spesso.</p>
+  <p>In farmacia ci sono antitraspiranti per i piedi, a base di sali di alluminio: si mettono la sera, sulla pelle asciutta, e funzionano finché li usi. Non vanno sulla pelle irritata, screpolata o con tagli; se bruciano o arrossano, sospendi.</p>
+  <p>Cosa non fare: profumare le scarpe senza farle asciugare; portare tutto il giorno scarpe di plastica o di gomma; calze di solo nylon che non lasciano passare l'aria.</p>
+
+  <h2>Perché succede</h2>
+  <p>Sotto la pianta ci sono moltissime ghiandole del sudore, e alcune persone sudano più di altre anche senza caldo né sforzo (iperidrosi): spesso c'è qualcuno in famiglia con lo stesso problema. Il sudore chiuso nella scarpa ammorbidisce la pelle, i batteri lo decompongono e nasce l'odore.</p>
+  <p>Sulla pelle sempre umida si fanno strada anche i funghi: il «piede d'atleta» (tinea pedis) dà prurito e pelle bianca, macerata, che si spella fra le dita. E c'è un'infezione batterica poco conosciuta, la cheratolisi puntata: tanti piccoli buchi sulla pianta, come crateri, con un odore molto forte.</p>
+
+  <h2>Come capire cosa hai</h2>
+  <p><strong>Sudore e odore, pelle sana.</strong> È il sudore, e le cure a casa sono il primo passo.</p>
+  <p><strong>Prurito, pelle bianca che si spella fra le dita, a volte piccole crepe.</strong> Può essere un fungo.</p>
+  <p><strong>Piccoli buchi sulla pianta, odore molto forte.</strong> Può essere la cheratolisi puntata.</p>
+  <p><strong>Sudore in tutto il corpo, anche di notte, comparso da poco, insieme a perdita di peso, febbre o batticuore.</strong> Non è un problema dei piedi: è del medico.</p>
+
+  <h2>Quando venire in studio, e quando invece dal medico</h2>
+  <p>Vieni se dopo un mese di cure a casa sudore e odore non cambiano, se la pelle fra le dita è bianca, macerata o si spacca, se c'è prurito, o se vedi i piccoli buchi sulla pianta.</p>
+  <p>Vai dal medico se il sudore riguarda tutto il corpo, se è comparso all'improvviso, se c'è febbre o perdita di peso, o se hai il diabete e fra le dita si apre una ferita. Farmaci per bocca, creme antibiotiche e le terapie per il sudore molto forte li decidono il medico o il dermatologo.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>Guardiamo la pelle con l'ingrandimento per capire se c'è solo sudore, oppure una macerazione, un fungo o la cheratolisi. Togliamo la pelle macerata e ispessita, che trattiene umidità e odore. Se il sospetto è un fungo, prima di iniziare una cura va confermato con un esame, e la cura antimicotica, se serve, la decide il medico. Poi ti diamo indicazioni precise su calze, scarpe e antitraspiranti, e se il problema è della pelle in senso stretto ti mandiamo dal dermatologo.</p>
+</PaginaProblema>
