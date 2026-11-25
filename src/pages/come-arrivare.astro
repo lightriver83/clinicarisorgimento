@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CtaContatti from '../components/CtaContatti.astro';
+// Tempi letti su Google Maps il 25/11/2026 mattina, ricontrollati con OSRM:
+// clinica-risorgimento-digitale/verifiche/2026-11-25-zone/ (Nick, AT-3468: «Pubblica»).
+const tempi = [
+  { da: 'Faenza', tempo: 'circa 25 minuti', strada: 'via Emilia' },
+  { da: 'Cesena', tempo: 'circa 35 minuti', strada: 'via Emilia o autostrada A14' },
+  { da: 'Imola', tempo: 'circa 40 minuti', strada: 'autostrada A14' },
+  { da: 'Ravenna', tempo: '40-45 minuti', strada: 'via Ravegnana' },
+  { da: 'Rimini', tempo: '45-50 minuti', strada: 'autostrada A14' },
+];
+---
+<Base
+  title="Come arrivare a Forlì da Cesena, Faenza, Ravenna, Rimini e Imola"
+  description="Lo studio è in Viale Risorgimento 283, a Forlì: quanto ci vuole in auto dalle città vicine, dove parcheggiare e come prenotare."
+  path="/come-arrivare"
+>
+  <Header />
+  <main>
+    <div class="testata-pagina">
+      <div class="contenitore">
+        <p class="briciole"><a href="/">Clinica Risorgimento</a> › Come arrivare</p>
+        <h1>Venire in studio da Cesena, Faenza, Ravenna, Rimini e Imola</h1>
+        <p class="sottotitolo">Lo studio è a Forlì, in Viale Risorgimento 283. Qui trovi quanto ci vuole in auto dalle città vicine, dove lasciare la macchina e come prenotare, così organizzi il viaggio prima di partire.</p>
+      </div>
+    </div>
+    <div class="contenitore articolo">
+      <h2 style="margin-top:0;">Quanto ci vuole in auto</h2>
+      <table class="tempi">
+        <thead><tr><th>Da</th><th>Tempo</th><th>Strada più veloce</th></tr></thead>
+        <tbody>
+          {tempi.map((t) => (
+            <tr><td>{t.da}</td><td>{t.tempo}</td><td>{t.strada}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      <p>Sono i tempi di Google Maps dal centro di ogni città, letti un mercoledì mattina di novembre: con il traffico cambiano. <a href="https://www.google.com/maps/search/?api=1&query=Clinica+Risorgimento+Viale+Risorgimento+283+Forl%C3%AC" rel="noopener">Apri il percorso in Google Maps</a></p>
+
+      <h2>Dove lasciare l'auto</h2>
+      <p>Lo studio ha un parcheggio interno gratuito, che condividiamo con altre attività. Se è pieno, nella zona c'è molto parcheggio a bordo strada, anche quello gratuito.</p>
+
+      <h2>Prima di partire</h2>
+      <p>Riceviamo solo su appuntamento, dal lunedì al venerdì, dalle 8.30 alle 19.30. Fissa l'ora al telefono o su WhatsApp: <a href="tel:+393462172234">346 2172234</a>, oppure il fisso <a href="tel:+390543405479">0543 405479</a>.</p>
+
+      <h2>Cosa trovi in studio</h2>
+      <p>La strumentazione è in sede: pedana baropodometrica, ecografo, laser per le unghie. Le visite le trovi in <a href="/servizi">Servizi</a>; se parti da un problema, nelle pagine <a href="/problemi">Problemi del piede</a> diciamo cosa fare a casa e quando venire.</p>
+
+      <div class="riquadro-prenota">
+        <div><strong>Prenotare una visita</strong><span>Su appuntamento, lunedì–venerdì 8.30–19.30 · anche su WhatsApp</span></div>
+        <CtaContatti />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>
+<style>
+  .tempi { border-collapse: collapse; width: 100%; margin: .4rem 0 1.2rem; font-size: .98rem; }
+  .tempi th { text-align: left; font-weight: 600; color: var(--grigio); font-size: .85rem; padding: .5rem .6rem .5rem 0; border-bottom: 1px solid var(--bordo); }
+  .tempi td { padding: .6rem .6rem .6rem 0; border-bottom: 1px solid var(--bordo); vertical-align: top; }
+  .tempi td:first-child { font-weight: 500; }
+</style>
