@@ -11,15 +11,22 @@ const faq = [
   { d: "È colpa delle scarpe?",
     r: "In parte. Le scarpe corte e strette lo favoriscono e lo fanno far male; la forma del piede e l'alluce valgo fanno il resto." },
 ];
+// In breve (idea C2, Nick 26/11/2026, AT-3646): riassume le sezioni a casa / quando venire / quando dal medico di questa pagina.
+const inBreve = [
+  { t: "A casa:", r: "scarpe con la punta alta e larga; se il dito è ancora flessibile, raccogli un asciugamano con le dita. Il callo non tagliarlo da solo." },
+  { t: "Vieni da noi se", r: "il callo sulla nocca fa male, se il dito si irrigidisce o si accavalla su quello vicino." },
+  { t: "Dal medico se", r: "il dito è rosso, caldo e gonfio, o se hai il diabete e sul callo si apre una ferita." },
+];
 ---
 <PaginaProblema
+  inBreve={inBreve}
   titolo="Dito a martello"
   titoloSeo="Dito a martello: il callo sopra il dito e cosa fare | Forlì"
   descrizione="Il secondo dito che si piega e sfrega nella scarpa, con il callo sulla nocca. Cosa fare a casa, cosa aiuta finché è flessibile, quando serve l'ortopedico."
   path="/problemi/dito-a-martello"
   faq={faq}
   firma="clinica"
-  dataAgg="2026-11-21"
+  dataAgg="2026-11-26"
 >
   <p>Il dito si piega all'articolazione di mezzo e si alza, e la scarpa ci sfrega sopra: il callo compare lì, sulla nocca, e a volte anche sulla punta, che batte a terra. Di solito è il secondo dito, spesso insieme all'<a href="/problemi/alluce-valgo">alluce valgo</a>. Finché il dito si raddrizza con la mano si può fare molto; quando diventa rigido, le strade si riducono.</p>
 

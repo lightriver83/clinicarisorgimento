@@ -14,14 +14,21 @@ const faq = [
   { d: "Ho il diabete: posso togliermi il callo da solo?",
     r: "No: niente lametta e niente callifugo. Nel diabete il callo va tolto da un podologo e controllato con regolarità, in accordo con il tuo medico o con il centro diabetologico." },
 ];
+// In breve (idea C2, Nick 26/11/2026, AT-3646): riassume le sezioni a casa / quando venire / quando dal medico di questa pagina.
+const inBreve = [
+  { t: "A casa:", r: "per calli e duroni non diamo rimedi fai-da-te: il callo lo togliamo in studio, e cerchiamo la pressione che lo fa tornare." },
+  { t: "Vieni da noi se", r: "fa male camminando, se torna dopo che l'hai tolto, se c'è una macchia scura sotto, e sempre se hai il diabete." },
+  { t: "Se è rosso, gonfio o esce pus,", r: "vieni da noi: se serve l'antibiotico, ti mandiamo dal medico. Con il diabete e una ferita aperta sotto il callo, chiama oggi il centro del piede diabetico." },
+];
 ---
 <PaginaProblema
+  inBreve={inBreve}
   titolo="Calli, duroni e occhio di pernice"
   titoloSeo="Calli, duroni e occhio di pernice: perché tornano | Forlì"
   descrizione="Il callo con il nucleo che punge, il durone sotto la pianta, l'occhio di pernice fra le dita: come riconoscerli, perché tornano e quando venire in studio."
   path="/problemi/calli-duroni"
   faq={faq}
-  dataAgg="2026-10-29"
+  dataAgg="2026-11-26"
 >
   <p>Il callo è il problema del piede più curato in casa: pietra pomice, lametta, callifugo. Per qualche settimana va meglio, poi torna, sempre nello stesso punto. Torna perché la pelle sta facendo il suo lavoro: si ispessisce dove viene schiacciata o sfregata. Finché quel punto viene schiacciato, il callo si riforma. Questa pagina spiega come capire cosa hai, perché torna e come si arriva a farlo smettere di tornare.</p>
 

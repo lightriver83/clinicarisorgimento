@@ -16,13 +16,20 @@ const faq = [
   { d: "L'unghia tornerà com'era?",
     r: "Se la causa viene tolta e la matrice, la parte che produce l'unghia, non ha subito danni, sì, ma ci vuole il tempo di una ricrescita completa. Se l'unghia è stata spessa e deformata per anni, può restare un po' diversa: si tiene in ordine e si convive bene." },
 ];
+// In breve (idea C2, Nick 26/11/2026, AT-3646): riassume le sezioni a casa / quando venire / quando dal medico di questa pagina.
+const inBreve = [
+  { t: "A casa:", r: "unghia corta, piede asciutto, ciabatte nelle docce comuni; fotografala oggi e poi una volta al mese, per vedere se cambia." },
+  { t: "Vieni da noi", r: "per sapere se è davvero un fungo: lo dice l'esame micologico con coltura, prima di mesi di smalto." },
+  { t: "Dal medico se", r: "serve una cura per bocca. Dal dermatologo se l'unghia diventa marrone-nera, con una striscia scura che non si sposta." },
+];
 ---
 <PaginaProblema
+  inBreve={inBreve}
   titolo="Unghia gialla, spessa, che si sbriciola: è un fungo?"
   titoloSeo="Unghia dell'alluce gialla e spessa: fungo o no? Cosa fare | Forlì"
   descrizione="Unghia dell'alluce ingiallita, ispessita, che si sfalda o si stacca. Circa una volta su due non è una micosi. Come si distingue e cosa facciamo in studio."
   path="/problemi/unghia-gialla-spessa"
-  dataAgg="2026-11-02"
+  dataAgg="2026-11-26"
   immagine={{ src: '/img/problemi/unghia-gialla-spessa.webp', alt: "Unghia dell'alluce gialla, ispessita e friabile, con la superficie irregolare: il quadro tipico di un'onicomicosi", credito: 'Foto: <a href="https://commons.wikimedia.org/wiki/File:Toefungus.jpg" rel="noopener">Medguy, Wikimedia Commons</a>, pubblico dominio, ritagliata.' }}
   faq={faq}
 >

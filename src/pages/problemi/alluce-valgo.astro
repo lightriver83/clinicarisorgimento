@@ -13,15 +13,22 @@ const faq = [
   { d: "Dopo l'intervento può tornare?",
     r: "Può succedere. Quanto è probabile nel tuo caso te lo dice l'ortopedico; dopo l'intervento, scarpe e appoggio contano quanto prima." },
 ];
+// In breve (idea C2, Nick 26/11/2026, AT-3646): riassume le sezioni a casa / quando venire / quando dal medico di questa pagina.
+const inBreve = [
+  { t: "A casa:", r: "scarpe larghe e morbide in punta, tacco basso, protezioni in silicone della farmacia sulla sporgenza." },
+  { t: "Vieni da noi se", r: "la sporgenza si arrossa e fa male nella scarpa, se compaiono duroni sotto la pianta o se il secondo dito si piega." },
+  { t: "Dal medico se", r: "l'articolazione diventa all'improvviso rossa, calda e molto dolorosa. L'intervento lo valuta l'ortopedico." },
+];
 ---
 <PaginaProblema
+  inBreve={inBreve}
   titolo="Alluce valgo"
   titoloSeo="Alluce valgo: cosa aiuta, cosa no, quando operarlo | Forlì"
   descrizione="La «cipolla» alla base dell'alluce che sfrega nella scarpa. Cosa aiuta davvero, cosa non lo raddrizza e quando è il momento dell'ortopedico."
   path="/problemi/alluce-valgo"
   faq={faq}
   firma="clinica"
-  dataAgg="2026-11-21"
+  dataAgg="2026-11-26"
 >
   <p>L'alluce piega verso le altre dita, e alla sua base l'osso sporge, rosso e dolente nella scarpa: la «cipolla», come la chiamano in tanti. La prima domanda, di solito, è se si può raddrizzare senza operare. La risposta onesta è no: niente di quello che si mette nella scarpa o sul piede riporta l'osso al suo posto. Ma si può fare molto perché faccia meno male.</p>
 

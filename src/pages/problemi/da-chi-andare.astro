@@ -1,0 +1,51 @@
+---
+import PaginaProblema from '../../components/PaginaProblema.astro';
+// Idea C1 del piano Conqueror (Nick, 26/11/2026, AT-3646: «…la C1, C2, C3 e C4 per clinica e risorgimento. Quindi mettile pure a piano»).
+// Riga 12 dell'universo query (strategia/2026-09-03-universo-query-sintomi.md): «podologo o ortopedico / dermatologo / pedicure».
+// Al «noi» della clinica, firma="clinica": Laura non l'ha riletta. Niente prezzi (solo se Laura li approva).
+// Ogni caso per problema rimanda alla sua pagina e dice le stesse cose di quella pagina: se una pagina cambia, si rilegge qui.
+// Callo infetto: primo passo dal podologo, che manda dal medico (correzione di Laura del 27/10, AT-801).
+const faq = [
+  { d: "Podologo e pedicure sono la stessa cosa?",
+    r: "No. La pedicure dell'estetista cura l'aspetto di un piede sano. Il podologo è un professionista sanitario che cura i problemi del piede: unghie incarnite, calli che fanno male, verruche, ferite." },
+  { d: "Se ho il diabete posso andare dal podologo?",
+    r: "Sì, ed è uno dei casi in cui conviene. Con il diabete i calli non toglierli da soli, né con la lametta né con il callifugo: li togliamo noi. Se sul piede c'è una ferita che non guarisce, o è rossa e gonfia, chiama oggi anche il tuo medico." },
+  { d: "Per l'alluce valgo, podologo o ortopedico?",
+    r: "Tutti e due, in momenti diversi. Il podologo lavora su scarpe, protezioni, calli e appoggio, perché faccia meno male. L'intervento lo valuta e lo fa l'ortopedico." },
+  { d: "Una macchia scura sotto l'unghia: da chi vado?",
+    r: "Dopo un colpo o una corsa di solito è sangue, e crescendo l'unghia lo porta verso la punta. Una striscia scura che parte dalla base e non si sposta, un colore che esce sulla pelle attorno o una macchia comparsa senza motivo vanno visti dal dermatologo." },
+];
+---
+<PaginaProblema
+  titolo="Podologo, ortopedico, dermatologo o pedicure: da chi andare"
+  titoloSeo="Podologo, ortopedico, dermatologo o pedicure: da chi andare | Forlì"
+  descrizione="Unghia incarnita, callo, verruca, alluce valgo, macchia sotto l'unghia: chi se ne occupa, cosa fa il podologo e quali casi sono del medico."
+  path="/problemi/da-chi-andare"
+  faq={faq}
+  firma="clinica"
+  dataAgg="2026-11-26"
+>
+  <p>Il piede fa male e non sai a chi chiedere. Un'amica ti consiglia la sua estetista, su internet c'è chi dice dermatologo e chi ortopedico, e intanto la scarpa continua a far male. Qui mettiamo in fila chi fa cosa, problema per problema, e quali casi sono del medico.</p>
+
+  <h2>Chi fa cosa</h2>
+  <p><strong>Il podologo</strong> è un professionista sanitario che cura i problemi del piede senza chirurgia; i farmaci li decide il medico. Si occupa di unghie incarnite, ispessite o con micosi, calli e duroni, verruche, talloni che si spaccano, piccole ferite e la loro medicazione, il piede della persona con diabete. Guarda anche come appoggi e cammini, e se serve fa il plantare su misura. Quando un caso è del medico, lo dice e ti manda da lui.</p>
+  <p><strong>Il medico di famiglia</strong> è la prima porta per tutto ciò che vuole un farmaco o un esame: febbre, un'infezione che si allarga, antibiotici, diabete o circolazione da tenere sotto controllo, la ricetta per una visita specialistica.</p>
+  <p><strong>L'ortopedico</strong> è il medico di ossa e articolazioni: fratture, deformità che vanno operate (l'alluce valgo quando il dolore non si governa più), dolori articolari importanti. Decide radiografie, infiltrazioni e intervento.</p>
+  <p><strong>Il dermatologo</strong> è il medico della pelle: nei e macchie da controllare, una macchia scura sotto l'unghia che non si spiega con un colpo, malattie della pelle che toccano anche il piede, i farmaci per bocca contro una micosi estesa.</p>
+  <p><strong>L'estetista</strong> si occupa del piede sano: unghie tagliate e limate, pelle ammorbidita, smalto. Quando c'è qualcosa che fa male, che sanguina o che torna, non è più il suo campo.</p>
+
+  <h2>Problema per problema</h2>
+  <p><strong><a href="/problemi/unghia-incarnita">Unghia incarnita</a>.</strong> Dal podologo, che toglie la spicola, il pezzetto d'unghia che punge la carne, e lavora perché non torni. Dal medico prima se hai febbre, se il rossore risale sul piede, se hai il diabete o prendi anticoagulanti.</p>
+  <p><strong><a href="/problemi/giradito">Giradito con pus</a>.</strong> Dal medico subito se hai febbre, se una striscia rossa risale verso il piede, se il gonfiore prende tutto il dito o se hai il diabete; dal medico anche se dopo 48 ore di pediluvi la raccolta non si apre da sola, perché aprirla e prescrivere l'antibiotico sono atti medici. Dal podologo se dietro al giradito c'è un'unghia che punge, se torna sullo stesso dito, o per le medicazioni nei giorni dopo.</p>
+  <p><strong><a href="/problemi/unghia-gialla-spessa">Unghia gialla e spessa</a>.</strong> Dal podologo, che con l'esame micologico, cioè la coltura di un frammento d'unghia, capisce se è un fungo. Se servono farmaci per bocca li decide il medico.</p>
+  <p><strong><a href="/problemi/unghia-nera">Unghia nera</a>.</strong> Dopo un colpo, se il dolore pulsante è forte, dal medico o al pronto soccorso nelle prime 24-48 ore: far uscire il sangue con un piccolo foro è un atto medico. Dal podologo quando l'unghia si stacca, ricresce storta o le unghie nere ti tornano a ogni stagione di corsa. Una striscia scura che parte dalla base e non si sposta con la crescita, o una macchia comparsa senza motivo, dal dermatologo.</p>
+  <p><strong><a href="/problemi/calli-duroni">Calli e duroni</a>.</strong> Dal podologo, e non dall'estetista, se fanno male o tornano: toglie lo spessore e cerca la pressione che li fa tornare. Se attorno al callo la pelle è rossa e gonfia o esce pus, vieni dal podologo: se serve l'antibiotico, ti manda dal medico.</p>
+  <p><strong><a href="/problemi/verruca-plantare">Verruca sotto il piede</a>.</strong> Dal podologo, che distingue la verruca dal callo e la tratta. Dal medico o dal dermatologo se la macchia cambia colore o forma, sanguina senza motivo, cresce in fretta o non assomiglia a una verruca.</p>
+  <p><strong><a href="/problemi/alluce-valgo">Alluce valgo</a> e <a href="/problemi/dito-a-martello">dito a martello</a>.</strong> Dal podologo per scarpe, protezioni, calli e plantare. Dall'ortopedico quando si parla di intervento.</p>
+  <p><strong><a href="/problemi/dolore-tallone">Dolore al tallone</a>.</strong> Dal podologo, che misura l'appoggio e cerca la causa. Prima dal medico se il dolore è cominciato dopo una caduta, se il tallone è gonfio o caldo, se hai la febbre, se senti formicolio o perdi sensibilità.</p>
+  <p><strong><a href="/problemi/dolore-pianta-piede">Dolore sotto la pianta</a>.</strong> Dal podologo, anche se senti la scossa fra le dita. Prima dal medico se il dolore è cresciuto dopo tanto cammino o corsa, con un po' di gonfiore; se un'articolazione è all'improvviso rossa, calda e gonfia; se il formicolio prende tutti e due i piedi; se hai il diabete e sotto la pianta si è aperta una ferita.</p>
+  <p><strong>Ferita al piede con il diabete.</strong> Chiama oggi il tuo medico o il centro del piede diabetico. Il podologo medica e segue la ferita insieme a loro.</p>
+
+  <h2>Cosa facciamo in studio</h2>
+  <p>In studio la Dott.ssa <a href="/laura-zanoni">Laura Zanoni</a>, podologa e podiatra (laurea in Podiatria in Spagna, 2026), guarda il piede, ti dice cosa ha e cosa si può fare qui. Se il caso è del medico o dello specialista te lo diciamo alla prima visita, con quello che abbiamo visto scritto, così non ricominci da capo. Se un trattamento non serve, lo diciamo.</p>
+</PaginaProblema>

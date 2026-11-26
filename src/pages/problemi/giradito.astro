@@ -14,13 +14,20 @@ const faq = [
   { d: "Mi viene spesso, sempre sullo stesso dito: perché?",
     r: "Perché quell'unghia ha una forma, o un taglio, che punge la pelle ogni volta che ricresce. Si risolve lavorando sull'unghia, oltre che sull'infezione." },
 ];
+// In breve (idea C2, Nick 26/11/2026, AT-3646): riassume le sezioni a casa / quando venire / quando dal medico di questa pagina.
+const inBreve = [
+  { t: "A casa:", r: "pediluvi tiepidi tre volte al giorno per 48 ore, dito asciutto e libero; non spremere e non bucare." },
+  { t: "Vieni da noi se", r: "dietro c'è un'unghia che punge, se torna sullo stesso dito, o per le medicazioni dei giorni dopo." },
+  { t: "Subito dal medico se", r: "hai febbre, se una striscia rossa risale verso il piede, se il gonfiore prende tutto il dito o se hai il diabete; dal medico anche se dopo 48 ore la raccolta non si apre da sola." },
+];
 ---
 <PaginaProblema
+  inBreve={inBreve}
   titolo="Giradito al piede: pus vicino all'unghia"
   titoloSeo="Giradito al piede: cosa fare se c'è pus vicino all'unghia | Forlì"
   descrizione="Dito rosso, gonfio, con una bollicina gialla di fianco all'unghia. Cosa fare nelle prime 48 ore, cosa non fare, e quando il giradito ha bisogno del medico."
   path="/problemi/giradito"
-  dataAgg="2026-10-27"
+  dataAgg="2026-11-26"
   immagine={{ src: '/img/problemi/giradito.webp', alt: "Alluce con giradito: la pelle attorno all'unghia è rossa e gonfia e nell'angolo esterno si vede una raccolta di pus giallo", credito: 'Foto: <a href="https://commons.wikimedia.org/wiki/File:Paronychia_green_discolor.jpg" rel="noopener">X-Fi6, Wikimedia Commons</a>, CC0 (pubblico dominio), ritagliata.' }}
   faq={faq}
 >

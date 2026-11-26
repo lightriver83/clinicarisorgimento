@@ -12,15 +12,22 @@ const faq = [
   { d: "Ho il diabete e i talloni screpolati: cosa faccio?",
     r: "Crema tutti i giorni, mai fra le dita, niente lame né raspe, e un controllo regolare del piede dal podologo, in accordo con il tuo medico. Se una crepa si arrossa, si scalda o esce pus, chiama oggi il tuo medico; se sanguina, vieni a farla medicare." },
 ];
+// In breve (idea C2, Nick 26/11/2026, AT-3646): riassume le sezioni a casa / quando venire / quando dal medico di questa pagina.
+const inBreve = [
+  { t: "A casa:", r: "crema all'urea tutti i giorni dopo la doccia, la sera crema e calze di cotone; niente lamette né raspe di metallo." },
+  { t: "Vieni da noi se", r: "le crepe sanguinano o fanno male, se dopo tre-quattro settimane di crema non cambia niente, o se hai il diabete." },
+  { t: "Dal medico se", r: "attorno alla crepa la pelle è rossa e calda, se c'è pus o se hai la febbre." },
+];
 ---
 <PaginaProblema
+  inBreve={inBreve}
   titolo="Talloni screpolati e ragadi"
   titoloSeo="Talloni screpolati e ragadi: cosa fare e quando curarli | Forlì"
   descrizione="Pelle dura e secca sul bordo del tallone che si spacca e a volte sanguina. Cosa mettere a casa, cosa evitare, e quando la crepa va medicata."
   path="/problemi/talloni-screpolati"
   faq={faq}
   firma="clinica"
-  dataAgg="2026-11-21"
+  dataAgg="2026-11-26"
 >
   <p>D'estate, con i sandali, il bordo del tallone si fa duro e giallo e si apre in crepe che a volte sanguinano e fanno male camminando. Sembra un problema di pelle secca, e in parte lo è. Ma la crepa vera, la ragade, nasce dove la pelle è diventata troppo spessa per piegarsi.</p>
 

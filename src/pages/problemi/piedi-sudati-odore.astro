@@ -13,15 +13,22 @@ const faq = [
   { d: "Il sudore dei piedi si cura per sempre?",
     r: "Si tiene sotto controllo. Le cure a casa e gli antitraspiranti funzionano finché si usano; per le forme molto forti ci sono terapie che decide il dermatologo." },
 ];
+// In breve (idea C2, Nick 26/11/2026, AT-3646): riassume le sezioni a casa / quando venire / quando dal medico di questa pagina.
+const inBreve = [
+  { t: "A casa:", r: "lava e asciuga bene i piedi ogni giorno, soprattutto fra le dita, calze che portano via l'umidità, e alterna le scarpe." },
+  { t: "Vieni da noi se", r: "dopo un mese non cambia, se la pelle fra le dita è bianca o si spacca, se c'è prurito o vedi piccoli buchi sulla pianta." },
+  { t: "Dal medico se", r: "sudi su tutto il corpo, se è comparso all'improvviso, o se c'è febbre o perdita di peso." },
+];
 ---
 <PaginaProblema
+  inBreve={inBreve}
   titolo="Piedi che sudano e che puzzano"
   titoloSeo="Piedi che sudano e puzzano: cause e cosa fare | Forlì"
   descrizione="Sudore che bagna le calze, odore che resta nelle scarpe, pelle bianca fra le dita. Cosa funziona a casa, quando c'entra un fungo e quando serve il medico."
   path="/problemi/piedi-sudati-odore"
   faq={faq}
   firma="clinica"
-  dataAgg="2026-11-21"
+  dataAgg="2026-11-26"
 >
   <p>Se ne parla poco, per imbarazzo, ed è uno dei problemi su cui si può fare di più. Il sudore dei piedi, da solo, non ha odore: l'odore lo fanno i batteri che vivono sulla pelle quando il sudore resta chiuso nella scarpa. Per questo funziona ciò che tiene il piede asciutto, non ciò che copre l'odore.</p>
 

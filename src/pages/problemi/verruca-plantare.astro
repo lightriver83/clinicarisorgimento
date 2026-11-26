@@ -14,14 +14,21 @@ const faq = [
   { d: "Posso andare in piscina?",
     r: "Sì, con le ciabatte negli spogliatoi e nelle docce, e con la verruca coperta da un cerotto impermeabile." },
 ];
+// In breve (idea C2, Nick 26/11/2026, AT-3646): riassume le sezioni a casa / quando venire / quando dal medico di questa pagina.
+const inBreve = [
+  { t: "A casa:", r: "se sei sicuro che sia una verruca e non hai diabete né problemi di circolazione, acido salicilico della farmacia ogni giorno; non tagliarla." },
+  { t: "Vieni da noi se", r: "dopo due-tre mesi è uguale, se fa male camminando, se se ne formano altre o se non sei sicuro che sia una verruca." },
+  { t: "Dal medico o dal dermatologo se", r: "la macchia cambia colore o forma, sanguina senza motivo o cresce in fretta." },
+];
 ---
 <PaginaProblema
+  inBreve={inBreve}
   titolo="Verruca sotto il piede"
   titoloSeo="Verruca sotto il piede: come riconoscerla e cosa fare | Forlì"
   descrizione="Un punto duro sotto la pianta che fa male quando lo stringi. Come distinguere la verruca da un callo, cosa fare a casa e quando farla vedere."
   path="/problemi/verruca-plantare"
   faq={faq}
-  dataAgg="2026-10-27"
+  dataAgg="2026-11-26"
 >
   <p>Molti arrivano convinti di avere un callo: un punto duro sotto la pianta, che fa male camminando e che ricresce dopo la pietra pomice. A volte è un callo, a volte è una verruca, e le due cose si curano in modo diverso. Questa pagina serve a capire quale delle due hai, cosa puoi fare da solo e da che punto conviene farla vedere.</p>
 

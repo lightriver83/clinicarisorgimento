@@ -13,15 +13,22 @@ const faq = [
   { d: "Perché mi fa male da quando ho cambiato scarpe?",
     r: "Perché la scarpa decide dove va il peso. Una suola più sottile, un tacco più alto o una punta più stretta bastano a spostare il carico sull'avampiede." },
 ];
+// In breve (idea C2, Nick 26/11/2026, AT-3646): riassume le sezioni a casa / quando venire / quando dal medico di questa pagina.
+const inBreve = [
+  { t: "A casa:", r: "scarpe larghe in punta, tacco sotto i tre-quattro centimetri, suola che ammortizza; meno corsa per qualche settimana." },
+  { t: "Vieni da noi se", r: "il dolore dura da più di tre-quattro settimane, se c'è un durone che torna o se senti la scossa fra le dita." },
+  { t: "Dal medico se", r: "il dolore è cresciuto dopo tanto cammino o corsa, con gonfiore; se un'articolazione è rossa e calda; se il formicolio prende tutti e due i piedi." },
+];
 ---
 <PaginaProblema
+  inBreve={inBreve}
   titolo="Dolore sotto la pianta, verso le dita"
   titoloSeo="Dolore sotto la pianta del piede (metatarsalgia, Morton) | Forlì"
   descrizione="Come camminare su un sasso, o una scossa fra le dita. Cosa fare a casa per il dolore all'avampiede, quali segnali sono del medico e cosa misuriamo."
   path="/problemi/dolore-pianta-piede"
   faq={faq}
   firma="clinica"
-  dataAgg="2026-11-21"
+  dataAgg="2026-11-26"
   servizio={{ href: '/servizi/plantari-su-misura', label: 'Plantari su misura' }}
 >
   <p>«Come camminare su un sasso», o «come avere la calza arrotolata sotto le dita»: così ci descrivono il dolore sotto l'avampiede, la parte della pianta appena prima delle dita. A volte è una fitta solo con certe scarpe, a volte una scossa che costringe a togliersi la scarpa in mezzo alla strada. Le cause sono diverse, e la prima cosa è capire quale.</p>

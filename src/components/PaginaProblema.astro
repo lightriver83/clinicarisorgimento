@@ -7,6 +7,7 @@ const {
   titolo, titoloSeo, descrizione, path,
   immagine = null,        // { src, alt, credito }
   faq = [],               // [{ d, r }]
+  inBreve = [],           // [{ t, r }]: tre righe in cima (a casa, da noi, dal medico); riassumono sezioni che la pagina ha già (idea C2, Nick 26/11/2026, AT-3646)
   bozza = false,
   dataAgg,                // 'AAAA-MM-GG': data dell'ultima modifica del testo della pagina, la passa la pagina
   servizio = { href: '/servizi/podologia', label: 'Podologia' },
@@ -61,6 +62,14 @@ const schemaExtra = [
       </div>
     </div>
     <div class="contenitore articolo">
+      {inBreve.length > 0 && (
+        <section class="in-breve" aria-label="In breve">
+          <p class="in-breve-titolo">In breve</p>
+          {inBreve.map((x) => (
+            <p class="in-breve-riga"><strong>{x.t}</strong> <span>{x.r}</span></p>
+          ))}
+        </section>
+      )}
       {immagine && (
         <figure style="margin:0 0 1.6rem;">
           <img src={immagine.src} alt={immagine.alt} loading="lazy" style="border-radius:12px;width:100%;max-height:420px;object-fit:cover;" />
@@ -89,3 +98,9 @@ const schemaExtra = [
   </main>
   <Footer />
 </Base>
+<style>
+  .in-breve { border: 1px solid var(--bordo); border-left: 3px solid var(--blu); border-radius: 12px; padding: 1.1rem 1.2rem .4rem; margin: 0 0 2rem; background: var(--carta); }
+  .in-breve-titolo { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--blu); font-weight: 700; margin: 0 0 .6rem !important; }
+  .in-breve-riga { margin: 0 0 .7rem !important; line-height: 1.5; }
+  .in-breve-riga strong { color: var(--inchiostro); }
+</style>
