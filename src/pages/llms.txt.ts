@@ -26,6 +26,7 @@ const PAGINE: [string, string][] = [
   ['Home', '/'],
   ['Dott.ssa Laura Zanoni: titoli, formazione, come lavora', '/laura-zanoni'],
   ['Servizi', '/servizi'],
+  ['Cosa succede alla prima visita: quanto dura, cosa portare', '/prima-visita'],
   ['Podologo, ortopedico, dermatologo o pedicure: da chi andare', '/problemi/da-chi-andare'],
   ['Problemi del piede (indice delle pagine per sintomo)', '/problemi'],
   ['Come arrivare da Cesena, Faenza, Ravenna, Rimini e Imola', '/come-arrivare'],

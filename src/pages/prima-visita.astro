@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CtaContatti from '../components/CtaContatti.astro';
+// Idea C4 del piano Conqueror (Nick, 26/11/2026, AT-3646: «…la C1, C2, C3 e C4 per clinica e risorgimento»).
+// Durata, cosa portare e fine visita: risposte di Laura portate da Nick in AT-3648 (27/11/2026):
+// «la prima visita dura circa 40 minuti, il paziente deve portare i referti già avuti, scarpe di tutti i giorni,
+// eventuali plantari o solette. Al termine della visita verrà condiviso con il paziente ogni dettaglio della visita».
+// I passi della visita vengono da «Come lavoriamo» di /servizi/podiatria: se cambiano lì, si rilegge qui.
+// Voce della clinica, al «noi» (skill clinica-voice). Niente prezzi, niente referto scritto promesso a ogni visita
+// (Laura ha detto «condiviso», non «consegnato»), niente visite né consigli a distanza (AT-746).
+const titoloSeo = 'Prima visita dal podologo a Forlì: cosa succede e cosa portare';
+const descrizione = 'Dura circa 40 minuti: ti ascoltiamo, guardiamo il piede e come cammini, e alla fine condividiamo con te ogni dettaglio. Cosa portare e come prenotare.';
+const path = '/prima-visita';
+const schemaExtra = [{
+  "@type": "MedicalWebPage",
+  "@id": `https://clinicarisorgimento.it${path}#pagina`,
+  "url": `https://clinicarisorgimento.it${path}`,
+  "name": titoloSeo,
+  "about": { "@id": "https://clinicarisorgimento.it/#clinica" },
+  "inLanguage": "it-IT"
+}];
+---
+<Base title={titoloSeo} description={descrizione} path={path} schemaExtra={schemaExtra}>
+  <Header />
+  <main>
+    <div class="testata-pagina">
+      <div class="contenitore">
+        <p class="briciole"><a href="/">Clinica Risorgimento</a> › Prima visita</p>
+        <h1>Cosa succede alla prima visita</h1>
+        <p class="sottotitolo">La prima visita dura circa 40 minuti: ti ascoltiamo, guardiamo il piede e come cammini, e alla fine condividiamo con te ogni dettaglio di quello che abbiamo visto.</p>
+      </div>
+    </div>
+    <div class="contenitore articolo">
+      <p>Se è la prima volta che vieni da noi, qui trovi cosa portare e cosa succede, passo per passo. Riceviamo solo su appuntamento, così ogni visita ha il tempo che le serve.</p>
+
+      <h2>Cosa portare</h2>
+      <ul>
+        <li>i referti che hai già avuto;</li>
+        <li>le scarpe che porti tutti i giorni;</li>
+        <li>i plantari o le solette, se li usi.</li>
+      </ul>
+      <p>Le scarpe le guardiamo insieme al piede.</p>
+
+      <h2>Passo per passo</h2>
+      <h3>1. Ti ascoltiamo</h3>
+      <p>Come è cominciato il problema, cosa hai già provato a casa, che scarpe porti.</p>
+      <h3>2. Guardiamo il piede</h3>
+      <p>Lo guardiamo da fermo e sotto carico, cerchiamo con le mani il punto che fa male e osserviamo come appoggi e come cammini.</p>
+      <h3>3. Se serve, misuriamo</h3>
+      <p>L'esame baropodometrico misura come il peso si distribuisce sul piede, da fermo e mentre cammini; con l'analisi del passo vediamo come si muove.</p>
+      <h3>4. Alla fine condividiamo con te ogni dettaglio</h3>
+      <p>Ti diciamo cosa abbiamo visto e cosa proponiamo, in parole semplici. Se un trattamento non serve, te lo diciamo. Se il caso è del medico, te lo diciamo subito e ti mandiamo da lui.</p>
+      <p>Quando il percorso lo prevede, come per unghie e plantari, ti rivediamo e controlliamo con gli stessi strumenti della prima visita.</p>
+
+      <h2>Come arrivare</h2>
+      <p>Lo studio è in Viale Risorgimento 283, a Forlì. C'è un parcheggio interno gratuito, condiviso con altre attività, e nella zona trovi parcheggio gratuito a bordo strada. Se vieni da Cesena, Faenza, Ravenna, Rimini o Imola, i tempi in auto sono nella pagina <a href="/come-arrivare">come arrivare</a>. La Dott.ssa Zanoni parla anche inglese e spagnolo.</p>
+
+      <h2>Come prenotare</h2>
+      <p>Chiamaci al <a href="tel:+393462172234">346 2172234</a> o scrivici su WhatsApp, dal lunedì al venerdì, 8.30–19.30. Telefono e WhatsApp servono a fissare l'appuntamento: il piede lo guardiamo in studio.</p>
+
+      <p class="nota">Le informazioni di questa pagina hanno carattere informativo e non sostituiscono una visita. Le prestazioni sono erogate da professionisti abilitati, ciascuno nell'ambito delle proprie competenze.</p>
+      <div class="riquadro-prenota">
+        <div><strong>Prenotare la prima visita</strong><span>Su appuntamento, dal lunedì al venerdì 8.30–19.30 · anche su WhatsApp</span></div>
+        <CtaContatti />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>
